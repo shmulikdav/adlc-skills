@@ -40,4 +40,4 @@ Review date: October 2026. Scope: v1.0.0 (8 plugins, 41 skills, 23 commands, 2 a
 
 ## 4. What is still unproven
 
-The first plugin is measured: adlc-verify results are in [EVAL-RESULTS.md](EVAL-RESULTS.md). The other seven are not yet; treat their skills as hypotheses until they are. Rule for all of them: cut or fix any skill with Δ ≤ 0, and publish the table. *(Updated 1 October 2026.)*
+Measured results and the status by plugin are in [EVAL-RESULTS.md](EVAL-RESULTS.md). Treat skills in unmeasured plugins as hypotheses. Rule for all of them: cut or fix any skill with Δ ≤ 0, and publish the table.

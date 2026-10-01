@@ -48,7 +48,7 @@ Every skill was checked for whether it applies recognized market practice or som
 
 ## What is still not good enough (honest list)
 
-1. **Measured Δ for one plugin only.** adlc-verify results are published in [EVAL-RESULTS.md](EVAL-RESULTS.md) (three skills with clear gains, two that did not auto-trigger). The other seven plugins remain well-sourced hypotheses until measured. *(Updated 1 October 2026.)*
+1. **Measured Δ for some plugins, not all.** Results and the current status by plugin are in [EVAL-RESULTS.md](EVAL-RESULTS.md). Plugins not yet measured remain well-sourced hypotheses.
 2. **Kit size.** 47 skills risks the "more is worse" effect the benchmarks warn about. Mitigation: role profiles and per-plugin installs. Watch skill-activation telemetry and cut what isn't used.
 3. **No real-world case studies.** Claims of value rest on research, not on teams using this kit. Collect two or three pilot stories.
 4. **Model-graded rubrics.** Eval rubrics are judged by a model; calibrate a sample against human judgment before quoting numbers publicly.

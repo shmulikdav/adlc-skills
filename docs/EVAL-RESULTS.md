@@ -2,6 +2,40 @@
 
 How each plugin performs against a no-plugin baseline, measured with `claude plugin eval`. Results are updated as plugins are measured. Re-run any of them: `claude plugin eval ./adlc-<plugin> --model haiku --judge-model sonnet`.
 
+## Status by plugin
+
+| Plugin | Status | Skills with a clear gain |
+| --- | --- | --- |
+| adlc-foundations | ✅ Measured (5 runs per arm) | 8 of 8 |
+| adlc-verify | ✅ Measured (3 runs per arm) | 3 of 6; 2 did not auto-trigger |
+| adlc-intent, adlc-context, adlc-build, adlc-govern, adlc-operate, adlc-agent-engineering | Not yet measured | — |
+
+This table is the single source for which plugins are measured; other docs link here instead of repeating counts.
+
+## adlc-foundations (1 October 2026)
+
+**Setup:** Claude Code 2.1.286 · answering model Claude Haiku · judge Claude Sonnet · 5 runs per arm · each case graded by 4–7 atomic criteria, scored as the fraction met.
+
+| Case | Skill | Skill loaded | With | Without | Δ |
+| --- | --- | --- | --- | --- | --- |
+| champions | ai-champions-program | 5/5 | 0.97 | 0.20 | +0.77 |
+| ai-policy | ai-stance-policy | 5/5 | 0.77 | 0.29 | +0.49 |
+| map-workflow | sdlc-to-adlc-mapping | 5/5 | 0.70 | 0.30 | +0.40 |
+| nobody-understands-it | comprehension-debt | 5/5 | 0.67 | 0.30 | +0.37 |
+| autonomy-per-task | autonomy-levels | 5/5 | 1.00 | 0.65 | +0.35 |
+| roles | role-transitions | 5/5 | 0.85 | 0.50 | +0.35 |
+| readiness-baseline | adlc-readiness-assessment | 5/5 | 1.00 | 0.67 | +0.33 |
+| roi-measurement | adlc-metrics | 5/5 | 0.96 | 0.72 | +0.24 |
+| near-miss, unrelated-request | none (negative cases) | 0/20 | 1.00 | 1.00 | — |
+
+**What we learned.**
+
+- Every foundations skill loaded on natural phrasing in all 5 runs, and none loaded on the two negative cases, including the near-miss ("what do the four DORA metrics measure?").
+- All eight skills improved answers. The largest gains are on organizational design questions (champions programs, AI policy, workflow mapping), where a model without the kit gives generic advice.
+- **The first run overstated the gains.** With one all-or-nothing rubric per case, every baseline scored 0.00 and four skills showed Δ +1.00. Split into atomic criteria, baselines earn partial credit and the honest gains are +0.24 to +0.77.
+- **The evals caught a usability bug.** With the old `adlc-readiness-assessment`, Haiku asked for more inputs and never assessed (0.00 with the skill), even when the user said "give me your assessment". The skill now gives a provisional assessment and marks gaps as unknown: 1.00 with the skill.
+- **Two gaps to fix next.** `ai-stance-policy` never produced a policy short enough (the "one page" criterion failed in every run, both arms), and `comprehension-debt` never proposed named module owners, one of its own core practices.
+
 ## adlc-verify (1 October 2026)
 
 **Setup:** Claude Code 2.1.286 · answering model Claude Haiku · judge Claude Sonnet · 3 runs per arm · ablation with and without the plugin · each case graded by 5–7 atomic criteria, scored as the fraction met.
@@ -37,4 +71,4 @@ Getting trustworthy numbers took four iterations, recorded here because each one
 
 ## Not yet measured
 
-adlc-foundations, adlc-intent, adlc-context, adlc-build, adlc-govern, adlc-operate, adlc-agent-engineering. Opus results with the current rubrics are also pending; earlier Opus runs used the saturated rubrics and are not comparable.
+See the status table at the top. Opus results with the current rubrics are also pending; earlier Opus runs used saturated rubrics and are not comparable.

@@ -58,21 +58,30 @@ Published benchmarks show that skills are not automatically good. Curated, domai
 
 Run the benchmark yourself: `claude plugin eval ./adlc-govern` (or any plugin). Details in [docs/REVIEW.md](docs/REVIEW.md).
 
-### First results: adlc-verify
+### Results so far
 
-Measured on 1 October 2026 with `claude plugin eval`: Claude Haiku answering, Claude Sonnet judging, 3 runs per arm, each case scored on 5–7 concrete criteria. Δ is the score with the plugin minus the score without it.
+Measured with `claude plugin eval`: Claude Haiku answering, Claude Sonnet judging, each case scored on 4–7 concrete criteria. Δ is the score with the plugin minus the score without it.
 
-| Skill | Skill loaded | With | Without | Δ |
-| --- | --- | --- | --- | --- |
-| definition-of-done | 3/3 | 0.87 | 0.07 | **+0.80** |
-| review-capacity | 3/3 | 0.57 | 0.05 | **+0.52** |
-| hallucination-checks | 3/3 | 0.60 | 0.40 | **+0.20** |
-| behavioral-testing | 3/3 | 0.73 | 0.67 | +0.07 |
-| agent-code-review | 0/3 | 0.81 | 0.81 | 0.00 |
-| tests-from-specs | 0/3 | 0.87 | 0.67 | not attributable |
-| Unrelated question (negative case) | 0/6 | 1.00 | 1.00 | no false triggers |
+| Plugin | Skill | Skill loaded | With | Without | Δ |
+| --- | --- | --- | --- | --- | --- |
+| foundations | ai-champions-program | 5/5 | 0.97 | 0.20 | **+0.77** |
+| foundations | ai-stance-policy | 5/5 | 0.77 | 0.29 | **+0.49** |
+| foundations | sdlc-to-adlc-mapping | 5/5 | 0.70 | 0.30 | **+0.40** |
+| foundations | comprehension-debt | 5/5 | 0.67 | 0.30 | **+0.37** |
+| foundations | autonomy-levels | 5/5 | 1.00 | 0.65 | **+0.35** |
+| foundations | role-transitions | 5/5 | 0.85 | 0.50 | **+0.35** |
+| foundations | adlc-readiness-assessment | 5/5 | 1.00 | 0.67 | **+0.33** |
+| foundations | adlc-metrics | 5/5 | 0.96 | 0.72 | **+0.24** |
+| verify | definition-of-done | 3/3 | 0.87 | 0.07 | **+0.80** |
+| verify | review-capacity | 3/3 | 0.57 | 0.05 | **+0.52** |
+| verify | hallucination-checks | 3/3 | 0.60 | 0.40 | **+0.20** |
+| verify | behavioral-testing | 3/3 | 0.73 | 0.67 | +0.07 |
+| verify | agent-code-review | 0/3 | 0.81 | 0.81 | 0.00 |
+| verify | tests-from-specs | 0/3 | 0.87 | 0.67 | not attributable |
 
-What we learned, including what didn't work, is in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). Short version: skills that encode organizational procedure gave large gains; generic code review did not auto-trigger on pasted diffs, because the model already reviews those well; and the evals caught a flaw in `hallucination-checks` that we fixed and re-measured. Seven plugins are not yet measured. Run them yourself and share results in Discussions.
+Negative cases, including near-misses next to each plugin's territory, triggered no skills.
+
+Which plugins are measured, the method, and what didn't work: [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). Short version: skills that encode organizational procedure gave clear gains; generic code review didn't auto-trigger on pasted diffs, because the model already reviews those well; and the evals caught two skill flaws (in `hallucination-checks` and `adlc-readiness-assessment`) that we fixed and re-measured. Run the suites yourself and share results in Discussions.
 
 ## Built on market best practices
 

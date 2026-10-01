@@ -4,7 +4,7 @@ What has been verified on each platform, how, and what has not. Updated whenever
 
 | Platform | Version tested | Date | Install | Skills | Commands | Review agents | Behavioral evals |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Claude Code (CLI) | 2.1.286 | 2026-10-01 | ✅ From GitHub marketplace | ✅ 47 load | ✅ 28/28 run as documented and load their skills (`scripts/smoke_commands.sh`) | Used by `/review-agent-pr` and `/vet-extension`; not separately tested | ✅ adlc-verify measured ([EVAL-RESULTS.md](EVAL-RESULTS.md)); 7 plugins pending |
+| Claude Code (CLI) | 2.1.286 | 2026-10-01 | ✅ From GitHub marketplace | ✅ 47 load | ✅ 28/28 run as documented and load their skills (`scripts/smoke_commands.sh`) | Used by `/review-agent-pr` and `/vet-extension`; not separately tested | ✅ Measured plugin by plugin; status in [EVAL-RESULTS.md](EVAL-RESULTS.md) |
 | Claude Cowork | Claude desktop app | 2026-10-01 | ✅ Settings → Plugins → Add marketplace | ✅ Listed in the slash menu | ✅ Listed in the slash menu | Not tested | Not available (evals run in Claude Code) |
 | OpenAI Codex (CLI) | 0.159.3 | 2026-10-01 | ✅ 8/8 plugins install and enable | ✅ 47/47 visible to the model (`codex debug prompt-input`) | ✅ 28/28 as `$command` workflow skills, visible to the model | Not available in Codex plugins | Not yet run |
 | Cursor | Desktop app | 2026-10-01 | ✅ Local plugin via `scripts/install-cursor.sh`; official schema and validator pass | ✅ Listed in the slash menu | ✅ Listed in the slash menu, with argument hints | Not tested | Not yet run |

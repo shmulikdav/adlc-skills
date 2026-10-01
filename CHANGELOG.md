@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- **adlc-foundations evals:** compound all-or-nothing rubrics split into atomic criteria, so a partly right baseline scores partial credit instead of 0. A first run with the old rubrics showed large gains (Δ +0.20 to +1.00 on seven of eight skills) but overstated their size; results will be published after the re-run.
+- **adlc-foundations evals:** compound all-or-nothing rubrics split into atomic criteria, so a partly right baseline scores partial credit instead of 0. A first run with the old rubrics showed large gains (Δ +0.20 to +1.00 on seven of eight skills) but overstated their size; re-measured with atomic criteria, all eight skills show gains of +0.24 to +0.77; published in `docs/EVAL-RESULTS.md` and the README.
 - **adlc-readiness-assessment** now gives a provisional assessment from what the user already provided, marking gaps as unknown, instead of asking questions first. The first eval run caught this: with the skill loaded, Haiku asked for more inputs and never assessed, even when told to.
 
 Hardening after an external review.
