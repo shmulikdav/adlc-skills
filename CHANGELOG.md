@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- **Govern re-measured:** `ai-compliance-mapping` rose to +0.40 after its fix; `guardrail-hooks` shows no gain with a fair prompt; `extension-vetting` is still harmful (−0.23) because it never loaded.
+- **extension-vetting** trigger covers general questions asked before a specific extension is shared.
+- New eval case **vet-plugin-files**: a plugin's files inline with four planted problems, so the vetting skill is measured on real vetting (64 cases).
+
 - **adlc-govern measured:** four skills with clear gains (+0.30 to +0.57); results in `docs/EVAL-RESULTS.md` and the README.
 - **extension-vetting** and **/vet-extension** give the full checklist and install / restrict / reject rule before asking for a link. Found by the govern eval: with the kit installed, the model deferred instead of answering (Δ −0.20).
 - **guardrail-hooks** triggers on "must never happen, no matter what"; **agent-permissions** now says why must-never rules need hooks. Found by the govern eval: the two skills collided and the answer missed the key point.

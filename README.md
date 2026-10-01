@@ -2,7 +2,7 @@
 
 # ADLC Skills: The Operating Model for Agentic Development
 
-> 47 skills, 28 commands, 2 agents, and 63 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, architecture guardrails, context, review capacity, governance, Continuous AI, and agent engineering. Runs in Claude Code, OpenAI Codex and Cursor; composes with Superpowers and Anthropic's official plugins.
+> 47 skills, 28 commands, 2 agents, and 64 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, architecture guardrails, context, review capacity, governance, Continuous AI, and agent engineering. Runs in Claude Code, OpenAI Codex and Cursor; composes with Superpowers and Anthropic's official plugins.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml/badge.svg)](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml) [![Release](https://img.shields.io/github/v/release/shmulikdav/adlc-skills)](https://github.com/shmulikdav/adlc-skills/releases) [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-7B61FF)](#installation) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -75,8 +75,9 @@ Measured with `claude plugin eval`: Claude Haiku answering, Claude Sonnet judgin
 | govern | citizen-builder-governance | 5/5 | 0.83 | 0.27 | **+0.57** |
 | govern | agent-permissions | 5/5 | 0.93 | 0.40 | **+0.53** |
 | govern | agentic-threat-model | 5/5 | 1.00 | 0.63 | **+0.37** |
-| govern | ai-compliance-mapping | 5/5 | 0.75 | 0.45 | **+0.30** |
-| govern | extension-vetting, guardrail-hooks | 1/5, 0/5 | — | — | fixed, re-measuring |
+| govern | ai-compliance-mapping | 5/5 | 0.95 | 0.55 | **+0.40** |
+| govern | guardrail-hooks | 0/5 | 0.67 | 0.67 | 0.00 |
+| govern | extension-vetting | 0/5 | 0.00 | 0.23 | −0.23, being fixed |
 | verify | definition-of-done | 3/3 | 0.87 | 0.07 | **+0.80** |
 | verify | review-capacity | 3/3 | 0.57 | 0.05 | **+0.52** |
 | verify | hallucination-checks | 3/3 | 0.60 | 0.40 | **+0.20** |

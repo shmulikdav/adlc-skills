@@ -1,6 +1,6 @@
 ---
 name: extension-vetting
-description: "Use when someone asks whether a skill, plugin, MCP server, hook, or agent rules file is safe to install, before adding a new plugin marketplace, or when building an approved-extensions list for a team."
+description: "Use when someone asks whether a skill, plugin, MCP server, hook, or agent rules file is safe to install, including general questions before they have shared a specific one, before adding a new plugin marketplace, or when building an approved-extensions list for a team."
 ---
 
 # Extension Vetting
