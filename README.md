@@ -168,7 +168,7 @@ bash scripts/install-cursor.sh adlc-foundations adlc-verify   # or: all
 
 Then run **Developer: Reload Window** and confirm the plugin in **Customize**. Commands work as `/adlc-assess`, as in Claude Code. To update, `git pull` and run the script again.
 
-Validated against Cursor's official plugin schema and validator. Not yet tested in the Cursor app itself; please report results in [Discussions](https://github.com/shmulikdav/adlc-skills/discussions).
+Validated against Cursor's official plugin schema and validator, and tested in the Cursor app.
 
 ### Other tools that read Agent Skills
 
