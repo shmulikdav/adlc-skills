@@ -37,3 +37,9 @@ Apply **prompt-versioning** for how prompts and models will be versioned and rel
 
 ### Step 6: Output
 Single design doc with a mermaid diagram. Save as `AgentDesign-[name]-[date].md`.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$build-evals`: define how you will measure it
+- `$red-team-agent`: attack it before users do
+- `$threat-model` (in `adlc-govern`; install it if needed): map the agent's risks

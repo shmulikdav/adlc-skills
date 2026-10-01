@@ -1,7 +1,7 @@
 {
   "name": "adlc-agent-engineering",
   "displayName": "ADLC Agent Engineering",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Agent engineering for teams building AI agents and LLM features: architecture patterns, tool design, eval suites, prompts as versioned code, and runtime guardrails.",
   "author": {
     "name": "Shmulik Davar — BrAIght Wave",

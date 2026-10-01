@@ -28,3 +28,8 @@ Confirm monitors and alerts per **agentops-observability**; for AI features, con
 
 ### Step 4: Decision
 Go / Go with conditions / No-go, with rollout plan and rollback triggers.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `/agent-postmortem`: if something goes wrong after release
+- `/mine-rejections`: learn from rejected agent work

@@ -35,3 +35,8 @@ Keep / fix / cut per skill, with rewritten descriptions for every "fix". Note wh
 
 ### Step 5: Output
 Audit table, rewritten descriptions, eval cases to add.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$vet-extension` (in `adlc-govern`; install it if needed): vet any third-party skill or plugin you keep
+- `$codify`: replace a weak skill with a hook or test

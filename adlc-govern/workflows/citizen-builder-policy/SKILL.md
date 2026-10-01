@@ -31,3 +31,8 @@ Apply **extension-vetting** to the plugins, skills, and connectors business team
 
 ### Step 4: Output
 Policy document, inventory template, and a one-paragraph announcement for business teams.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$governance-pack`: align it with the engineering policy
+- `$threat-model`: for apps that touch customer data

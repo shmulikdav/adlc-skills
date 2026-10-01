@@ -30,3 +30,8 @@ Context-file lines (**agent-context-files**), a skill, a hook config, or a test.
 
 ### Step 4: Verify
 Provide a test prompt that should now produce the correct behavior, and how to check it.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$audit-skills`: check the library still earns its context
+- `$init-agent-context`: if the rule belongs in the context file

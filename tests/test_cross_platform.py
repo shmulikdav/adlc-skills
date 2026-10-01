@@ -67,3 +67,15 @@ class CrossPlatform(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DocsReferenceRealCommands(unittest.TestCase):
+    def test_every_documented_command_exists(self):
+        commands = {p.stem for p in ROOT.glob("adlc-*/commands/*.md")}
+        docs = [ROOT / "README.md", ROOT / "docs" / "USE-CASES.md", ROOT / "docs" / "TRY-IT.md"]
+        for doc in docs:
+            text = doc.read_text(encoding="utf-8")
+            for name in re.findall(r"`[/$]([a-z][a-z0-9-]+)(?:[ `])", text):
+                if name in {"plugin", "plugins", "model", "login", "exit", "code-review", "security-review", "mcp", "skill-name", "command-name", "command", "chrome"}:
+                    continue
+                self.assertIn(name, commands, f"{doc.name} mentions /{name}, which is not a command")

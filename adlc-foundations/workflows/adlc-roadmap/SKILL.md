@@ -48,6 +48,10 @@ For each phase: deliverables, owner, exit criteria, risks. Add a decision gate b
 ```
 Save as markdown.
 
-### Step 5: Offer next steps
-- "Want me to draft the AI stance announcement?"
-- "Should I design the champions program in detail?"
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- Continue here: Want me to draft the AI stance announcement?
+- Continue here: Should I design the champions program in detail?
+- `$init-agent-context` (in `adlc-context`; install it if needed): first build-phase move: context files
+- `$governance-pack` (in `adlc-govern`; install it if needed): policy and permissions before scaling
+- `$fix-review-queue` (in `adlc-verify`; install it if needed): if review will become the bottleneck

@@ -34,6 +34,10 @@ Apply the **acceptance-criteria** skill so every requirement has testable criter
 ### Step 5: Self-check and save
 Run the agentic-prd self-check (no orphan requirements, no unquantified adjectives, stop conditions present). Save as `AgentSpec-[feature]-[date].md`.
 
-### Step 6: Offer next steps
-- "Want me to break this into agent-sized tasks?"
-- "Should I derive the test suite from these acceptance criteria?"
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- Continue here: Want me to break this into agent-sized tasks?
+- Continue here: Should I derive the test suite from these acceptance criteria?
+- `$clarify-spec`: if open questions remain
+- `$derive-tests` (in `adlc-verify`; install it if needed): turn the acceptance criteria into tests
+- `$plan-long-run` (in `adlc-build`; install it if needed): if the work will run for hours

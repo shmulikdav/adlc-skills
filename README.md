@@ -2,9 +2,24 @@
 
 # ADLC Skills: The Operating Model for Agentic Development
 
-> 47 skills, 28 commands, 2 agents, and 55 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, architecture guardrails, context, review capacity, governance, Continuous AI, and agent engineering. Built for Claude Code and Cowork; composes with Superpowers and Anthropic's official plugins.
+> 47 skills, 28 commands, 2 agents, and 55 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, architecture guardrails, context, review capacity, governance, Continuous AI, and agent engineering. Runs in Claude Code, OpenAI Codex and Cursor; composes with Superpowers and Anthropic's official plugins.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml/badge.svg)](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml) [![Release](https://img.shields.io/github/v/release/shmulikdav/adlc-skills)](https://github.com/shmulikdav/adlc-skills/releases) [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-7B61FF)](#installation) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+## Start here
+
+| Your situation | Start with |
+| --- | --- |
+| Rolling out coding agents across an engineering org | `/adlc-assess` |
+| Agent PRs pile up in review, or get rubber-stamped | `/fix-review-queue` |
+| Security asks whether your agents are safe | `/threat-model` |
+| A ticket needs to be ready for an agent to build | `/write-agentic-prd` |
+| Business teams are building their own apps with AI | `/citizen-builder-policy` |
+| Modernizing a legacy system with agents | `/modernize` |
+| Shipping an AI agent as a product | `/design-agent` |
+| Agent work caused an incident | `/agent-postmortem` |
+
+Each command suggests the next one when it finishes. Step-by-step paths for these situations: [docs/USE-CASES.md](docs/USE-CASES.md).
 
 ## Try it in 60 seconds
 
@@ -202,6 +217,8 @@ Examples: `/write-agentic-prd Let admins export audit logs as CSV` · `/clarify-
 
 Commands: `/init-agent-context` · `/map-codebase` · `/codify` · `/audit-skills`
 
+Examples: `/init-agent-context audit — our CLAUDE.md is 600 lines and the agent still ignores half of it` · `/codify The agent keeps using axios; we use our own httpClient wrapper with retries` · `How much of our context window goes to rules nobody reads?`
+
 **4. adlc-build — Execution stack & delivery shape (4 skills, 3 commands)**
 
 This plugin does not ship its own coding workflow. It picks and wires the best one.
@@ -212,6 +229,8 @@ This plugin does not ship its own coding workflow. It picks and wires the best o
 - `legacy-modernization` — Characterize behavior first, extract the implicit spec, migrate in parity-checked slices (pairs with the official `code-modernization` plugin)
 
 Commands: `/choose-rail` · `/plan-long-run` · `/modernize`
+
+Examples: `/choose-rail We use Claude Code and Cursor; should we standardize on Superpowers or Spec Kit?` · `/modernize Java 8 monolith, 400k lines, no tests in the billing module` · `How do we run an agent on a two-day migration without losing control?`
 
 **5. adlc-verify — Review capacity & behavioral validation (6 skills, 4 commands, 1 agent)**
 
@@ -224,6 +243,8 @@ Commands: `/choose-rail` · `/plan-long-run` · `/modernize`
 
 Commands: `/fix-review-queue` · `/review-agent-pr` · `/derive-tests` · `/verify-change` — Agent: `agent-output-reviewer`
 
+Examples: `/fix-review-queue Agent PRs wait two days and get approved in five minutes` · `/derive-tests Here is our Xray export for checkout` · `The agent added a package called fast-json-sanitizerx. Anything to check before merging?`
+
 **6. adlc-govern — Security, permissions & compliance (6 skills, 4 commands, 1 agent)**
 
 - `agentic-threat-model` — Walk the OWASP Top 10 for Agentic Applications (ASI01–ASI10) for your setup
@@ -234,6 +255,8 @@ Commands: `/fix-review-queue` · `/review-agent-pr` · `/derive-tests` · `/veri
 - `citizen-builder-governance` — Paved road for non-engineers building tools with AI: tiers, data rules, inventory, promotion
 
 Commands: `/threat-model` · `/governance-pack` · `/vet-extension` · `/citizen-builder-policy` — Agent: `security-reviewer`
+
+Examples: `/threat-model Claude Code for 40 engineers, GitHub and Jira MCP servers, community skills allowed` · `/vet-extension https://github.com/some-org/some-plugin` · `What does the EU AI Act require from our internal coding agents?`
 
 **7. adlc-operate — Release, observe, learn (6 skills, 4 commands)**
 
@@ -246,6 +269,8 @@ Commands: `/threat-model` · `/governance-pack` · `/vet-extension` · `/citizen
 
 Commands: `/release-check` · `/plan-continuous-ai` · `/mine-rejections` · `/agent-postmortem`
 
+Examples: `/plan-continuous-ai Flaky CI, 40 untriaged issues a week, reviewers already overloaded` · `/agent-postmortem An agent migration dropped a column in staging` · `Our AI spend tripled this quarter. Where is it going?`
+
 **8. adlc-agent-engineering — Building agents as products (5 skills, 3 commands)**
 
 - `agent-architecture` — Simplest pattern that works: single call → workflow → agent loop
@@ -255,6 +280,8 @@ Commands: `/release-check` · `/plan-continuous-ai` · `/mine-rejections` · `/a
 - `agent-runtime-guardrails` — Input provenance, tool allow-lists, approvals, limits, kill switch
 
 Commands: `/design-agent` · `/build-evals` · `/red-team-agent`
+
+Examples: `/design-agent Support agent that issues refunds up to $200` · `/build-evals for our ticket-triage agent` · `How should we version prompts so a change can be rolled back?`
 
 ---
 

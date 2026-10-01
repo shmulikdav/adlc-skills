@@ -30,3 +30,9 @@ Apply **small-batch-delivery** to set the PR budget and stacking policy the chos
 
 ### Step 4: Output
 One-page stack decision with artifact wiring and a 2-week trial metric.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `/init-agent-context` (in `adlc-context`; install it if needed): prepare context for the chosen rail
+- `/spec-feature` (in `adlc-intent`; install it if needed): run the first feature through it
+- `/plan-long-run`: if tasks run for hours

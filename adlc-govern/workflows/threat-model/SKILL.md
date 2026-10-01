@@ -29,3 +29,9 @@ Translate gaps into concrete configuration using **agent-permissions** and **gua
 
 ### Step 4: Output
 Risk register, top 5 actions, validation tests. Save as markdown.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$governance-pack`: turn the controls into policy, permissions and hooks
+- `$vet-extension`: vet the plugins and MCP servers in use
+- `$red-team-agent` (in `adlc-agent-engineering`; install it if needed): if you are shipping an agent product

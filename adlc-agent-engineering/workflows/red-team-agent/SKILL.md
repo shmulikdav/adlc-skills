@@ -34,3 +34,8 @@ Propose controls with **agent-runtime-guardrails**; add each scenario as a regre
 
 ### Step 5: Output
 Scenario table with results, control changes, and new eval cases. Only test systems you own or are authorized to test.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$build-evals`: turn findings into regression evals
+- `$governance-pack` (in `adlc-govern`; install it if needed): update permissions and guardrails

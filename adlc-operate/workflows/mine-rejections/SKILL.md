@@ -31,3 +31,8 @@ For anything that reached production, run **agent-incident-review**.
 
 ### Step 4: Output
 Learning report with artifacts to ship, owners, and the metric to watch.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$codify` (in `adlc-context`; install it if needed): turn the top patterns into rules, hooks or tests
+- `$init-agent-context` (in `adlc-context`; install it if needed): update the context file

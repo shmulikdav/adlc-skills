@@ -34,3 +34,9 @@ Recommend strangler-fig or rewrite with rationale; produce the slice plan with p
 
 ### Step 5: Output
 Save `Modernization-Plan-[system]-[date].md`.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$map-codebase` (in `adlc-context`; install it if needed): map the system first if you haven't
+- `$derive-tests` (in `adlc-verify`; install it if needed): lock behavior with characterization tests
+- `$plan-long-run`: run the migration in checkpoints

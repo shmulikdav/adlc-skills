@@ -28,3 +28,8 @@ Execute every automatable item (tests, type check, lint, dependency verification
 
 ### Step 3: Report
 Checklist with evidence per item; list human gates still required. Do not mark anything verified without output to show.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `/review-agent-pr`: hand to human review with the evidence
+- `/release-check` (in `adlc-operate`; install it if needed): if it is ready to ship

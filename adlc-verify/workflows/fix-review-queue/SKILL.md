@@ -31,3 +31,9 @@ Apply **definition-of-done** for the authoring contract and **agent-code-review*
 
 ### Step 4: Output
 Diagnosis table, tier and routing rules, layer configuration, PR context-packet template, metrics to track for 30 days.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$review-agent-pr`: apply the new review standard to a real PR
+- `$plan-continuous-ai` (in `adlc-operate`; install it if needed): automate the machine first pass
+- `$verify-change`: raise the bar before PRs reach review

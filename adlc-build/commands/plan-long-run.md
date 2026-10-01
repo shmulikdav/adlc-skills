@@ -33,3 +33,8 @@ Apply **small-batch-delivery** so output lands as reviewable stacked PRs.
 
 ### Step 5: Output
 Run plan plus a pilot package to execute first.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `/verify-change` (in `adlc-verify`; install it if needed): verify each checkpoint
+- `/release-check` (in `adlc-operate`; install it if needed): before the result ships

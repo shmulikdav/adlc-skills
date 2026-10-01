@@ -38,7 +38,11 @@ Apply the **comprehension-debt** skill's assessment to the team's critical modul
 ### Step 5: Report
 Produce the readiness report (maturity level, scorecard, top constraints, first three moves, what not to do yet) and the autonomy table. Save as markdown.
 
-### Step 6: Offer next steps
-- "Want me to map your current workflow to the ADLC step by step?"
-- "Should I draft your AI stance policy?"
-- "Want a 90-day ADLC roadmap from these findings?"
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- Continue here: Want me to map your current workflow to the ADLC step by step?
+- Continue here: Should I draft your AI stance policy?
+- Continue here: Want a 90-day ADLC roadmap from these findings?
+- `/adlc-roadmap`: turn the gaps into a 90-day plan
+- `/fix-review-queue` (in `adlc-verify`; install it if needed): if review capacity is the top constraint
+- `/governance-pack` (in `adlc-govern`; install it if needed): if there is no written AI policy

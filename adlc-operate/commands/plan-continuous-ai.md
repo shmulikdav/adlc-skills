@@ -30,3 +30,9 @@ Apply **agentops-observability** for traces and alerts, and **ai-cost-management
 
 ### Step 4: Output
 Workflow catalogue and a two-week shadow-mode rollout plan.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `/governance-pack` (in `adlc-govern`; install it if needed): permissions for background agents
+- `/fix-review-queue` (in `adlc-verify`; install it if needed): keep agent output reviewable
+- `/release-check`: gate what the workflows ship

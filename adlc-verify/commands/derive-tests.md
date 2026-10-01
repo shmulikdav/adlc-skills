@@ -32,3 +32,8 @@ Write missing tests in the project's style, run them, and report results.
 
 ### Step 5: Output
 Matrix, new tests, results, and criteria to rewrite.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `/verify-change`: run the new tests against the change
+- `/review-agent-pr`: review with the coverage map attached

@@ -31,6 +31,9 @@ Apply the **codebase-map** skill: module index, core flows, change recipes, risk
 ### Step 4: Save and link
 Save `docs/codebase-map.md` and propose a one-line pointer for the context file (**agent-context-files**).
 
-### Step 5: Offer next steps
-- "Want a modernization plan for the highest-risk modules?"
-- "Should I set up the context file for this repo?"
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- Continue here: Want a modernization plan for the highest-risk modules?
+- Continue here: Should I set up the context file for this repo?
+- `$init-agent-context`: link the map from the context file
+- `$modernize` (in `adlc-build`; install it if needed): if this is a legacy system

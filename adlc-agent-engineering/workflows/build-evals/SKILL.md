@@ -29,3 +29,8 @@ Produce the task file (YAML/JSONL) and grader code or rubrics.
 
 ### Step 4: Wire
 Propose CI integration and thresholds; link to **prompt-versioning** for the change gate.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$red-team-agent`: add adversarial cases
+- `$release-check` (in `adlc-operate`; install it if needed): make the evals a release gate

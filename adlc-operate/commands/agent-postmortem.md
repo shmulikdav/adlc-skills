@@ -28,3 +28,9 @@ Turn each finding into a durable artifact with owner and due date; propose the r
 
 ### Step 4: Output
 Save `Postmortem-[title]-[date].md`.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `/codify` (in `adlc-context`; install it if needed): make the fix permanent
+- `/threat-model` (in `adlc-govern`; install it if needed): if it exposed a security gap
+- `/mine-rejections`: look for the same pattern elsewhere

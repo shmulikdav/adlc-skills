@@ -35,3 +35,9 @@ Apply **ai-compliance-mapping** for the frameworks in scope and list the evidenc
 
 ### Step 6: Output
 A single governance document with sections for each step plus an owner/cadence table. Flag items needing legal review.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$threat-model`: if you haven't mapped the threats yet
+- `$vet-extension`: approve the extension allowlist
+- `$citizen-builder-policy`: if non-engineers are building too

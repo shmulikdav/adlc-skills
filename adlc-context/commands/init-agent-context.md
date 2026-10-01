@@ -33,6 +33,10 @@ Apply the **context-budget** skill: move anything rarely needed into skills, nes
 ### Step 5: Output
 The new or revised file (with a diff summary in audit mode) and a list of conventions that should become hooks, tests, or skills instead.
 
-### Step 6: Offer next steps
-- "Want me to turn the top recurring mistake into a skill or hook?"
-- "Should I generate a codebase map and link it?"
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- Continue here: Want me to turn the top recurring mistake into a skill or hook?
+- Continue here: Should I generate a codebase map and link it?
+- `/map-codebase`: add an architecture map the agent can use
+- `/codify`: turn recurring corrections into rules or hooks
+- `/audit-skills`: review the skills already installed

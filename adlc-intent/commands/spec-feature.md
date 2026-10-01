@@ -40,6 +40,10 @@ Apply **task-decomposition** to produce `tasks.md` with parallel markers and an 
 ### Step 7: Summary
 List artifacts created, gates approved, and gates pending.
 
-### Step 8: Offer next steps
-- "Ready to implement task by task?"
-- "Want me to identify which tasks can run in parallel agents?"
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- Continue here: Ready to implement task by task?
+- Continue here: Want me to identify which tasks can run in parallel agents?
+- `/derive-tests` (in `adlc-verify`; install it if needed): tests from the spec before implementation
+- `/plan-long-run` (in `adlc-build`; install it if needed): for multi-session work
+- `/review-agent-pr` (in `adlc-verify`; install it if needed): review the result against the spec

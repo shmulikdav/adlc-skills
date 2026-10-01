@@ -48,7 +48,7 @@ def fm_value(fm: str, key: str) -> str:
     return m.group(1).strip().strip('"') if m else ""
 
 
-def workflow_skill(plugin: str, cmd: Path) -> str:
+def workflow_skill(plugin: str, cmd: Path, all_commands: list) -> str:
     """Translate a Claude Code command into a Codex skill with the same workflow."""
     fm, body = split_frontmatter(cmd.read_text(encoding="utf-8"))
     name = cmd.stem
@@ -56,7 +56,8 @@ def workflow_skill(plugin: str, cmd: Path) -> str:
     description = (f"Run the ADLC {name} workflow: {purpose[0].lower() + purpose[1:]}. "
                    f"Use when the user invokes ${name} or asks for this workflow end to end.")
     body = body.replace("$ARGUMENTS", "the user's request")
-    body = re.sub(rf"(?<![\w/])/{re.escape(name)}\b", f"${name}", body)
+    for other in sorted(all_commands, key=len, reverse=True):
+        body = re.sub(rf"(?<![\w/])/{re.escape(other)}(?![\w-])", f"${other}", body)
     # Step 0 in Codex terms: skills are opened from the plugin's skill list, not via a Skill tool.
     body = re.sub(
         r"Your first action must be a Skill tool call for each of these skills: (.*?)\. This command file is only an outline",
@@ -76,6 +77,7 @@ def main() -> None:
     repo_url = f"https://github.com/{META['repo']}"
     codex_entries, cursor_entries = [], []
     counts = {"workflows": 0, "codex": 0, "cursor": 0}
+    all_commands = [p.stem for p in ROOT.glob("adlc-*/commands/*.md")]
 
     for pl in META["plugins"]:
         name = pl["name"]
@@ -91,7 +93,7 @@ def main() -> None:
         for cmd in commands:
             out = wdir / cmd.stem / "SKILL.md"
             out.parent.mkdir(parents=True, exist_ok=True)
-            out.write_text(workflow_skill(name, cmd), encoding="utf-8")
+            out.write_text(workflow_skill(name, cmd, all_commands), encoding="utf-8")
             counts["workflows"] += 1
 
         display = f"ADLC {name.replace('adlc-', '').replace('-', ' ').title()}"

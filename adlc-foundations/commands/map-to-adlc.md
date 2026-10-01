@@ -32,6 +32,10 @@ Apply the **role-transitions** skill for the roles that appear in the flow.
 ### Step 5: Output
 Mapping table, ranked top-3 entry points, autonomy table, and role-impact summary. Save as markdown.
 
-### Step 6: Offer next steps
-- "Want me to write the first feature as an agent-ready spec?"
-- "Should I set up the repo context files for the pilot team?"
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- Continue here: Want me to write the first feature as an agent-ready spec?
+- Continue here: Should I set up the repo context files for the pilot team?
+- `/adlc-roadmap`: sequence the changes
+- `/spec-feature` (in `adlc-intent`; install it if needed): pilot the new intent stage on one feature
+- `/choose-rail` (in `adlc-build`; install it if needed): pick the execution framework

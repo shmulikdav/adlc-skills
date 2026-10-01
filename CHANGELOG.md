@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## v2.4.0 — 2026-10-01
+
+Easier to start, and the commands now flow into each other.
+
+- **Use cases** (`docs/USE-CASES.md`): ten situations engineering organizations hit with coding agents, each with a step-by-step path through the commands, what each step produces, and a prompt to try.
+- **Start here** table at the top of the README: pick your situation, get the first command.
+- **Chained commands:** every command ends by suggesting at most two next steps, chosen by what it found, including commands in other plugins. Codex workflow skills get the same chaining as `$command`.
+- Examples (prompts and command invocations) for all eight plugins.
+- New test: every command mentioned in the README and docs must exist.
+
 ## v2.3.0 — 2026-10-01
 
 Now installable in OpenAI Codex and Cursor, alongside Claude Code and Cowork, plus the first published eval results.

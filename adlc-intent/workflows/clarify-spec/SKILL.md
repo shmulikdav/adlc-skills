@@ -31,5 +31,8 @@ Present the question table (Blocking → Important → Minor) with recommended d
 ### Step 4: Update
 Apply answers to the spec, add a dated Clarifications section, and re-check acceptance criteria with the **acceptance-criteria** skill.
 
-### Step 5: Offer next steps
-- "Want me to turn the clarified spec into tasks?"
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- Continue here: Want me to turn the clarified spec into tasks?
+- `$write-agentic-prd`: write the spec from the answers
+- `$spec-feature`: run the full spec-driven flow

@@ -27,3 +27,8 @@ Apply the **extension-vetting** skill checklist. Delegate code-heavy components 
 
 ### Step 3: Verdict
 Install / install with restrictions / reject, with evidence and approval conditions.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$audit-skills` (in `adlc-context`; install it if needed): review the rest of the installed library
+- `$governance-pack`: make the allowlist policy

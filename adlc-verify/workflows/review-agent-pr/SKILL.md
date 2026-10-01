@@ -35,3 +35,9 @@ Compare against the **definition-of-done** checklist and list missing evidence.
 
 ### Step 6: Report
 Verdict, coverage table, findings, missing evidence.
+
+### Finally: suggest the next step
+End with one short line suggesting at most two of these, chosen by what you found:
+- `$verify-change`: re-verify after fixes
+- `$release-check` (in `adlc-operate`; install it if needed): before it ships
+- `$mine-rejections` (in `adlc-operate`; install it if needed): if the same issues keep coming back
