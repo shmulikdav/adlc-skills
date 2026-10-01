@@ -1,8 +1,26 @@
+<p align="center"><img src=".github/assets/social-preview.png" alt="ADLC Skills — the operating model for agentic development" width="820"></p>
+
 # ADLC Skills: The Operating Model for Agentic Development
 
 > 40 skills, 23 commands, 2 agents, and 48 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, context, governance, release, operations, and agent engineering. Built for Claude Code and Cowork; composes with Superpowers and Anthropic's official plugins.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml/badge.svg)](.github/workflows/tests.yml) [![Evals](https://github.com/shmulikdav/adlc-skills/actions/workflows/evals.yml/badge.svg)](.github/workflows/evals.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml/badge.svg)](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml) [![Release](https://img.shields.io/github/v/release/shmulikdav/adlc-skills)](https://github.com/shmulikdav/adlc-skills/releases) [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-7B61FF)](#installation) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+## Try it in 60 seconds
+
+```bash
+claude plugin marketplace add shmulikdav/adlc-skills
+claude plugin install adlc-foundations@adlc-skills
+claude
+```
+
+Then paste:
+
+```
+/adlc-assess 40 engineers, Claude Code for everyone for two months, weekly deploys, ~35% test coverage, no written AI policy, PRs wait 3 days for review
+```
+
+You get a maturity level, a scorecard against the DORA AI capabilities and agent-specific readiness, the constraints that will break first, and three first moves. Five more role-based prompts: [docs/TRY-IT.md](docs/TRY-IT.md).
 
 ## Why this kit exists
 
@@ -22,6 +40,8 @@ Published benchmarks show that skills are not automatically good. Curated, domai
 - **Recommends installing by role**, because focused sets of 2–3 skills outperform large bundles
 
 Run the benchmark yourself: `claude plugin eval ./adlc-govern` (or any plugin). Details in [docs/REVIEW.md](docs/REVIEW.md).
+
+**Benchmark status:** the suites are published; the first public WITH / W/OUT / Δ results will be posted here and in the release notes. Skills that don't show a positive Δ will be fixed or removed. Run it on your own model and share results in Discussions.
 
 ## Install by role
 
@@ -189,6 +209,23 @@ Commands: `/design-agent` · `/build-evals` · `/red-team-agent`
 
 ---
 
+## FAQ
+
+**Does installing a plugin run any code on my machine?**
+No. The plugins contain Markdown skills, commands, and agent definitions only: no hooks, MCP servers, or binaries. The hook in `templates/` is opt-in; you copy it yourself. See [SECURITY.md](SECURITY.md).
+
+**How is this different from Superpowers or Spec Kit?**
+Those run the work inside a session: planning, TDD, review. ADLC Skills covers what surrounds it: readiness, autonomy policy, agent-ready specs, governance of the agent setup, release gates, cost, and measurement. Use them together; `/choose-rail` helps you pick.
+
+**Should I install all eight plugins?**
+No. Benchmarks show focused skill sets beat large bundles. Install the profile for your role.
+
+**Does it work outside Claude Code?**
+Skills follow the Agent Skills format and work in Cowork, Codex, Cursor, Gemini CLI, and OpenCode. Slash commands, subagents, and evals are Claude Code features.
+
+**Can I use it with clients or inside my company?**
+Yes. MIT licensed: use, fork, and adapt it, including commercially. Keep the license notice.
+
 ## Research Foundations
 
 The skills synthesize public research and practice. Full notes and sources: [docs/ADLC-RESEARCH.md](docs/ADLC-RESEARCH.md).
@@ -204,13 +241,15 @@ The skills synthesize public research and practice. Full notes and sources: [doc
 
 ## About
 
-Curated by Shmulik Davar, Founder & CEO of [BrAIght Wave](https://www.braightwave.com) (AI Strategy & Applied Solutions), AI lecturer at Reichman University. The methodology behind it: Map → Prioritize → Build → Scale.
+Created by **Shmulik Davar**, Founder & CEO of [BrAIght Wave](https://www.braightwave.com) (AI Strategy & Applied Solutions) and AI lecturer at Reichman University. The kit distills methods used in ADLC discovery and enablement work with engineering organizations. The methodology behind it: Map → Prioritize → Build → Scale.
+
+Need help rolling ADLC out in your organization? [braightwave.com](https://www.braightwave.com)
 
 Structure inspired by [phuryn/pm-skills](https://github.com/phuryn/pm-skills); skill-writing standards informed by [Superpowers](https://github.com/obra/superpowers).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). New skills must include eval cases and show a positive Δ. Run `python3 scripts/eval_cases.py`, `python3 scripts/sync_manifests.py`, `python3 validate_plugins.py`, and `python3 -m unittest discover -s tests` before opening a PR.
+See [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), and [SECURITY.md](SECURITY.md). Skill ideas: open a *Skill proposal* issue. New skills must include eval cases and show a positive Δ. Run `python3 scripts/eval_cases.py`, `python3 scripts/sync_manifests.py`, `python3 validate_plugins.py`, and `python3 -m unittest discover -s tests` before opening a PR.
 
 ## License
 

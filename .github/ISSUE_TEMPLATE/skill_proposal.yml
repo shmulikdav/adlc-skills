@@ -1,0 +1,28 @@
+name: Skill proposal
+description: Propose a new skill or a change to an existing one
+labels: [skill-proposal]
+body:
+  - type: textarea
+    id: situation
+    attributes:
+      label: When should it trigger?
+      description: Write it as "Use when…". Situations and symptoms, not the workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: What org- or domain-specific method does it encode?
+      description: What would a strong model NOT do correctly without this skill?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source or evidence
+      description: Research, standard, or real practice the method comes from
+  - type: textarea
+    id: eval
+    attributes:
+      label: Eval case idea
+      description: A natural prompt that should trigger it, and what a passing answer must contain

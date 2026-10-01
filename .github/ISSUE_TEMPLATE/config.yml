@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/shmulikdav/adlc-skills/security/advisories/new
+    about: Please report security issues privately.
+  - name: Questions and ideas
+    url: https://github.com/shmulikdav/adlc-skills/discussions
+    about: Ask how to use the kit or share how you adopted it.

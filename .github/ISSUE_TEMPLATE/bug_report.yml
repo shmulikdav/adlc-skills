@@ -1,0 +1,36 @@
+name: Bug report
+description: A skill, command, or agent behaved wrongly, didn't trigger, or failed to install
+labels: [bug]
+body:
+  - type: input
+    id: plugin
+    attributes:
+      label: Plugin and skill/command
+      placeholder: adlc-intent / write-agentic-prd
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: What you typed
+      description: The exact prompt or command
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected vs what happened
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "Claude Code 2.1.x / Cowork / Codex; model"
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed any confidential information from this report
+          required: true
