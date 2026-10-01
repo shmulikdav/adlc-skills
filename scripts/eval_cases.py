@@ -357,6 +357,68 @@ test('CHK-106 missing postcode shows error', ...)
 PROMPT_OVERRIDE = {"review-agent-diff": REVIEW_DIFF_PROMPT, "tests-from-xray": XRAY_PROMPT}
 TURNS_OVERRIDE = {"review-agent-diff": 12, "tests-from-xray": 12}
 
+# adlc-foundations: atomic criteria split from the original compound rubrics (same requirements, one per grader).
+STRICT.update({
+ "readiness-baseline": [
+  "PASS only if the response gives an explicit score or rating per dimension for organizational capabilities such as AI policy, delivery practices, testing, or review. FAIL otherwise.",
+  "PASS only if the response separately assesses agent-specific readiness such as context files for agents, verification of agent output, or agent governance. FAIL otherwise.",
+  "PASS only if the response assigns an overall readiness or maturity level. FAIL otherwise.",
+  "PASS only if the overall level is justified by the weakest critical dimensions (for example low coverage or slow review) rather than by averaging. FAIL otherwise.",
+  "PASS only if the response identifies the multi-day review wait as a constraint to address before scaling agents. FAIL otherwise.",
+  "PASS only if the response lists concrete first moves. FAIL otherwise.",
+ ],
+ "autonomy-per-task": [
+  "PASS only if the response answers separately for dependency bumps, CRUD endpoints, and schema migrations. FAIL otherwise.",
+  "PASS only if the response rates the tasks on explicit factors such as blast radius, reversibility, or how verifiable the result is. FAIL otherwise.",
+  "PASS only if schema migrations get a stricter autonomy level or approval requirement than dependency bumps. FAIL otherwise.",
+  "PASS only if the response states criteria for raising or lowering an agent's autonomy over time. FAIL otherwise.",
+ ],
+ "roi-measurement": [
+  "PASS only if the response warns that self-reported speedups are unreliable as evidence. FAIL otherwise.",
+  "PASS only if the response requires a baseline and a comparison design, such as before and after or teams with and without agents. FAIL otherwise.",
+  "PASS only if the response includes stability or rework metrics such as change-failure rate, revert rate, or rework, alongside throughput. FAIL otherwise.",
+  "PASS only if the response explains how to attribute changes to agents versus humans. FAIL otherwise.",
+  "PASS only if the response does not propose lines of code or number of prompts as a main measure. FAIL otherwise.",
+ ],
+ "map-workflow": [
+  "PASS only if the response says, for each workflow step, whether a human, an agent, or both does the work. FAIL otherwise.",
+  "PASS only if the response names a human checkpoint or gate kept at the steps. FAIL otherwise.",
+  "PASS only if the response names at least one new failure mode that agents introduce. FAIL otherwise.",
+  "PASS only if the response ranks where agents should be introduced first, based on how verifiable each step's output is. FAIL otherwise.",
+ ],
+ "ai-policy": [
+  "PASS only if the draft is short (roughly one page or less). FAIL otherwise.",
+  "PASS only if the draft lists approved tools or how tools get approved. FAIL otherwise.",
+  "PASS only if the draft states data rules for what may and may not go into prompts. FAIL otherwise.",
+  "PASS only if the draft separates what agents may do on their own from what requires a human. FAIL otherwise.",
+  "PASS only if the draft states that the human who merges code owns it. FAIL otherwise.",
+  "PASS only if the draft covers how extensions such as MCP servers or plugins are approved. FAIL otherwise.",
+  "PASS only if the draft flags items for legal review. FAIL otherwise.",
+ ],
+ "roles": [
+  "PASS only if the response says what QA does less of and what it does more of. FAIL otherwise.",
+  "PASS only if the response highlights designing behavioral tests or eval suites, or owning the verification harness. FAIL otherwise.",
+  "PASS only if the response proposes new performance signals for QA. FAIL otherwise.",
+  "PASS only if the response does not claim QA is no longer needed. FAIL otherwise.",
+ ],
+ "champions": [
+  "PASS only if the response proposes a champions or train-the-trainer network. FAIL otherwise.",
+  "PASS only if the response gives criteria for selecting champions. FAIL otherwise.",
+  "PASS only if the response allocates recognized time for champions. FAIL otherwise.",
+  "PASS only if the curriculum covers practices such as specs, context, verification, or governance, not just tool features. FAIL otherwise.",
+  "PASS only if the response proposes a shared library of skills, plugins, prompts, or examples. FAIL otherwise.",
+  "PASS only if success is measured by outcomes rather than session counts or attendance. FAIL otherwise.",
+ ],
+ "nobody-understands-it": [
+  "PASS only if the response frames the problem as a team understanding gap rather than a tooling gap. FAIL otherwise.",
+  "PASS only if the response proposes named owners who can explain and debug each critical module. FAIL otherwise.",
+  "PASS only if the response proposes an explain-back or comprehension step before merging risky agent changes. FAIL otherwise.",
+  "PASS only if the response proposes incident drills or debugging exercises on agent-built components. FAIL otherwise.",
+  "PASS only if the response addresses how junior engineers keep learning. FAIL otherwise.",
+  "PASS only if the response suggests a way to track whether understanding improves. FAIL otherwise.",
+ ],
+})
+
 
 def write(path: Path, text: str):
     path.parent.mkdir(parents=True, exist_ok=True)

@@ -17,7 +17,7 @@ Produce an evidence-based readiness baseline before an organization scales codin
 
 ## Inputs to gather
 
-Ask for whatever is missing, in one batch, before scoring:
+If the user has given enough to start, produce a provisional assessment now: score what the evidence supports, mark the rest "unknown", and end with the few questions whose answers would most change the level. Ask before scoring only when there is almost nothing to go on. The inputs that matter:
 
 - Team size, number of teams, main stack, monorepo vs polyrepo
 - Current AI tooling (Claude Code, Cursor, Copilot, Codex, other) and license coverage
