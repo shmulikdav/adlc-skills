@@ -9,7 +9,7 @@ Agent engineering for teams building AI agents and LLM features: architecture pa
 ## Install
 
 ```
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-agent-engineering@adlc-skills
 ```
 

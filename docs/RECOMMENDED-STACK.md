@@ -6,14 +6,14 @@ ADLC Skills is the operating-model layer. Pair it with the best execution and se
 
 | Slot | Install | From |
 |------|---------|------|
-| Operating model, specs, governance | `adlc-foundations`, `adlc-intent`, `adlc-govern` | `braightwave/adlc-skills` |
+| Operating model, specs, governance | `adlc-foundations`, `adlc-intent`, `adlc-govern` | `shmulikdav/adlc-skills` |
 | Execution discipline | `superpowers` | `claude-plugins-official` |
 | PR review | `pr-review-toolkit` + `adlc-verify` (spec alignment, hallucination checks) | official + this repo |
 | Code security | `security-guidance` | `claude-plugins-official` |
 | Context upkeep | `claude-md-management` + `adlc-context` | official + this repo |
 
 ```bash
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-foundations@adlc-skills
 claude plugin install adlc-intent@adlc-skills
 claude plugin install adlc-govern@adlc-skills

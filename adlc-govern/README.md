@@ -9,7 +9,7 @@ Governance and security for agentic development: OWASP Agentic Top 10 threat mod
 ## Install
 
 ```
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-govern@adlc-skills
 ```
 

@@ -2,7 +2,7 @@
 
 > 40 skills, 23 commands, 2 agents, and 48 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, context, governance, release, operations, and agent engineering. Built for Claude Code and Cowork; composes with Superpowers and Anthropic's official plugins.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/braightwave/adlc-skills/actions/workflows/tests.yml/badge.svg)](.github/workflows/tests.yml) [![Evals](https://github.com/braightwave/adlc-skills/actions/workflows/evals.yml/badge.svg)](.github/workflows/evals.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml/badge.svg)](.github/workflows/tests.yml) [![Evals](https://github.com/shmulikdav/adlc-skills/actions/workflows/evals.yml/badge.svg)](.github/workflows/evals.yml)
 
 ## Why this kit exists
 
@@ -75,12 +75,12 @@ flowchart LR
 
 1. Open **Customize** → **Browse plugins** → **Personal** → **+**
 2. Select **Add marketplace from GitHub**
-3. Enter: `braightwave/adlc-skills`, then enable the plugins for your role
+3. Enter: `shmulikdav/adlc-skills`, then enable the plugins for your role
 
 ### Claude Code (CLI)
 
 ```bash
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-foundations@adlc-skills   # repeat for the plugins in your profile
 ```
 
@@ -92,7 +92,7 @@ The `skills/*/SKILL.md` files follow the Agent Skills format. Commands, subagent
 
 | Tool | How |
 |------|-----|
-| Codex CLI | `codex plugin marketplace add braightwave/adlc-skills`, then add plugins |
+| Codex CLI | `codex plugin marketplace add shmulikdav/adlc-skills`, then add plugins |
 | Cursor | Copy skill folders to `.cursor/skills/` |
 | Gemini CLI | Copy skill folders to `.gemini/skills/` |
 | OpenCode | Copy skill folders to `.opencode/skills/` |

@@ -4,7 +4,7 @@ Guidance for agents working in this repository. Single source of truth for struc
 
 ## Project
 
-**ADLC Skills** (`braightwave/adlc-skills`) — a Claude Code / Cowork plugin marketplace of 8 plugins encoding the Agentic Development Lifecycle's operating model: readiness, intent, context, execution stack, verification, governance, operations, and agent engineering. Owner: Shmulik Davar, BrAIght Wave.
+**ADLC Skills** (`shmulikdav/adlc-skills`) — a Claude Code / Cowork plugin marketplace of 8 plugins encoding the Agentic Development Lifecycle's operating model: readiness, intent, context, execution stack, verification, governance, operations, and agent engineering. Owner: Shmulik Davar, BrAIght Wave.
 
 Positioning: this kit is the **operating-model layer**. It composes with execution rails (Superpowers, official `feature-dev`, `pr-review-toolkit`, `code-modernization`, security plugins) instead of duplicating them. Do not add generic coding-workflow skills; see docs/REVIEW.md for the evidence.
 

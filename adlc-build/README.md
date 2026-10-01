@@ -9,7 +9,7 @@ Agentic construction at the system level: choosing and composing execution frame
 ## Install
 
 ```
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-build@adlc-skills
 ```
 

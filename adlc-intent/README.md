@@ -9,7 +9,7 @@ Intent specification for coding agents: Agentic PRDs, spec-driven development (c
 ## Install
 
 ```
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-intent@adlc-skills
 ```
 

@@ -6,7 +6,7 @@
     "email": "shmulik@braightwave.com",
     "url": "https://www.braightwave.com"
   },
-  "repo": "braightwave/adlc-skills",
+  "repo": "shmulikdav/adlc-skills",
   "plugins": [
     {
       "name": "adlc-foundations",

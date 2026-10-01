@@ -9,7 +9,7 @@ Context engineering for coding agents: CLAUDE.md / AGENTS.md authoring and audit
 ## Install
 
 ```
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-context@adlc-skills
 ```
 

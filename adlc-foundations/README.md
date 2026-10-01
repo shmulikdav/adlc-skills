@@ -9,7 +9,7 @@ ADLC foundations: readiness assessment on the DORA AI capabilities, SDLC-to-ADLC
 ## Install
 
 ```
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-foundations@adlc-skills
 ```
 

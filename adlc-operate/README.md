@@ -9,7 +9,7 @@ Operating the ADLC: release gates for agent-built changes, AgentOps observabilit
 ## Install
 
 ```
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-operate@adlc-skills
 ```
 

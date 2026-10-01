@@ -9,7 +9,7 @@ Verification of agent-built software: behavioral testing, tests derived from spe
 ## Install
 
 ```
-claude plugin marketplace add braightwave/adlc-skills
+claude plugin marketplace add shmulikdav/adlc-skills
 claude plugin install adlc-verify@adlc-skills
 ```
 
