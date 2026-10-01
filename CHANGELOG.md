@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Plugins show proper display names in Claude apps ("ADLC Verify" instead of "Adlc verify").
+- README: Cowork install steps match the current Settings → Plugins screen.
+
 ## v2.4.0 — 2026-10-01
 
 Easier to start, and the commands now flow into each other.

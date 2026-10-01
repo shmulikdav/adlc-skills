@@ -1,5 +1,6 @@
 {
   "name": "adlc-operate",
+  "displayName": "ADLC Operate",
   "version": "2.4.0",
   "description": "Operating the ADLC: release gates, Continuous AI background workflows, AgentOps observability, AI cost management, a learning loop from rejected agent work, and blameless agent incident reviews.",
   "author": {

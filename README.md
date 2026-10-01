@@ -130,9 +130,9 @@ flowchart LR
 
 ### Claude Cowork
 
-1. Open **Customize** → **Browse plugins** → **Personal** → **+**
-2. Select **Add marketplace from GitHub**
-3. Enter: `shmulikdav/adlc-skills`, then enable the plugins for your role
+1. In the Claude desktop app, open **Settings → Plugins**
+2. Click **+ Add → Add marketplace** and enter `shmulikdav/adlc-skills`
+3. Open the **Discover** tab and click **Add** on the plugins for your role
 
 ### Claude Code (CLI)
 

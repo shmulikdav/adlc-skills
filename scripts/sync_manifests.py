@@ -52,6 +52,7 @@ def main():
 
         manifest = {
             "name": pl["name"],
+            "displayName": "ADLC " + pl["name"].replace("adlc-", "").replace("-", " ").title(),
             "version": version,
             "description": pl["description"],
             "author": owner,

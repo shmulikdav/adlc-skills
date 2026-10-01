@@ -1,5 +1,6 @@
 {
   "name": "adlc-foundations",
+  "displayName": "ADLC Foundations",
   "version": "2.4.0",
   "description": "ADLC foundations: readiness assessment on the DORA AI capabilities, SDLC-to-ADLC workflow mapping, agent autonomy levels, AI stance policy, ROI metrics, AI champions program, role transitions, and comprehension debt.",
   "author": {

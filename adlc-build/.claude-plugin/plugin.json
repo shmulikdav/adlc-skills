@@ -1,5 +1,6 @@
 {
   "name": "adlc-build",
+  "displayName": "ADLC Build",
   "version": "2.4.0",
   "description": "Agentic construction at the system level: choosing and composing execution frameworks with one owner per slot, long-running and multi-agent work design, small-batch delivery policy, and legacy modernization strategy with behavior parity.",
   "author": {
