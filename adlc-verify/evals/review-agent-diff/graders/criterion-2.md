@@ -2,4 +2,4 @@
 type: llm
 ---
 
-PASS only if the response says to check whether tests were added, modified, weakened, or skipped in the same PR. FAIL otherwise.
+PASS only if the response identifies that the in-memory Map will not work across the 6 instances (the spec requires shared state in Redis). FAIL otherwise.

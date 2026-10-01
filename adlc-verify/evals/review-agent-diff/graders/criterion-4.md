@@ -2,4 +2,4 @@
 type: llm
 ---
 
-PASS only if the response looks for silent failures such as swallowed exceptions, broad catches, or fallbacks that hide errors. FAIL otherwise.
+PASS only if the response identifies that the catch block silently swallows errors and lets the request through (fails open). FAIL otherwise.

@@ -24,9 +24,13 @@ Plausible-but-nonexistent references are a signature failure of generated code. 
 5. **Paths & links:** confirm referenced files exist; confirm documentation URLs resolve.
 6. **Claims in PR text:** "tests pass", "no breaking changes", "performance improved" must be backed by output in the PR.
 
+## The rule this skill must follow itself
+
+Never state that something exists or does not exist unless you checked it in this session. If you cannot reach the registry or docs (no network, no shell), say so plainly, mark the reference **unverified**, and give the exact commands for a human to check it, for example `npm view <package> name version time maintainers repository`, `pip index versions <package>`, or the package page URL. Flagging a name as *suspicious* is fine; declaring it *nonexistent* without evidence is the same failure this skill exists to catch.
+
 ## Instructions
 
-Run what can be run (install, build, type-check, tests). For what can't be run, check against authoritative sources. Report each reference as `verified`, `not found`, or `unverifiable` with the evidence.
+Run what can be run (install, build, type-check, tests). For what can't be run, check against authoritative sources. Report each reference as `verified`, `not found`, or `unverified` with the evidence; `not found` requires an actual lookup.
 
 ## Output
 

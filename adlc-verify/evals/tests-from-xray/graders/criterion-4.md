@@ -2,4 +2,4 @@
 type: llm
 ---
 
-PASS only if the response says a test case counts as verified only after the test has actually been run and passed. FAIL otherwise.
+PASS only if the response notices that the unlabeled promo-code test appears to cover CHK-103 and should be tagged with that ID. FAIL otherwise.

@@ -2,4 +2,4 @@
 type: llm
 ---
 
-PASS only if the response checks the diff against the spec for both scope creep (changes nobody asked for) and omissions (requirements not implemented). FAIL otherwise.
+PASS only if the response identifies that clients are keyed by the X-Forwarded-For header (spoofable, and the spec says per API key). FAIL otherwise.

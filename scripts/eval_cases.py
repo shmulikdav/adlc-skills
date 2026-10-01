@@ -247,19 +247,20 @@ STRICT = {
   "PASS only if the response questions whether a new dependency is needed at all, for example by suggesting an existing dependency or the standard library. FAIL otherwise.",
  ],
  "review-agent-diff": [
-  "PASS only if the response checks the diff against the spec for both scope creep (changes nobody asked for) and omissions (requirements not implemented). FAIL otherwise.",
-  "PASS only if the response says to check whether tests were added, modified, weakened, or skipped in the same PR. FAIL otherwise.",
-  "PASS only if the response says to verify that APIs, libraries, configuration keys, or flags used by the code actually exist. FAIL otherwise.",
-  "PASS only if the response looks for silent failures such as swallowed exceptions, broad catches, or fallbacks that hide errors. FAIL otherwise.",
-  "PASS only if the response raises rate-limiting-specific risks, such as how clients are keyed (per user, API key, or IP), bypass via headers or proxies, or behavior across multiple instances. FAIL otherwise.",
-  "PASS only if the response recommends an independent review pass, such as a fresh-context reviewer, a different agent, or an AI first-pass tool, rather than the authoring agent reviewing itself. FAIL otherwise.",
+  "PASS only if the response identifies that clients are keyed by the X-Forwarded-For header (spoofable, and the spec says per API key). FAIL otherwise.",
+  "PASS only if the response identifies that the in-memory Map will not work across the 6 instances (the spec requires shared state in Redis). FAIL otherwise.",
+  "PASS only if the response identifies that the test assertion was weakened (expecting 200 or 429 instead of 429). FAIL otherwise.",
+  "PASS only if the response identifies that the catch block silently swallows errors and lets the request through (fails open). FAIL otherwise.",
+  "PASS only if the response flags the removal of the token-expiry check in auth.ts as out of scope and a security problem. FAIL otherwise.",
+  "PASS only if the response flags res.setRateLimitHeaders as a method that may not exist and must be verified. FAIL otherwise.",
+  "PASS only if the response gives a clear verdict not to approve the PR as it stands (request changes). FAIL otherwise.",
  ],
  "tests-from-xray": [
-  "PASS only if the response proposes a traceability mapping from each test case ID to automated tests. FAIL otherwise.",
-  "PASS only if the response classifies test cases into states such as verified, proposed, or gap. FAIL otherwise.",
-  "PASS only if the response says to keep the Xray test case IDs in test names or annotations so results can be pushed back. FAIL otherwise.",
-  "PASS only if the response says a test case counts as verified only after the test has actually been run and passed. FAIL otherwise.",
-  "PASS only if the response flags ambiguous or untestable test cases for rewriting rather than guessing. FAIL otherwise.",
+  "PASS only if the response maps the specific case IDs to existing tests, for example that CHK-101, CHK-102 and CHK-106 are covered. FAIL otherwise.",
+  "PASS only if the response identifies CHK-104 and CHK-107 as having no automated test. FAIL otherwise.",
+  "PASS only if the response says CHK-105 does not count as covered because its test is skipped. FAIL otherwise.",
+  "PASS only if the response notices that the unlabeled promo-code test appears to cover CHK-103 and should be tagged with that ID. FAIL otherwise.",
+  "PASS only if the response flags CHK-108 ('should feel fast') as untestable as written and asks for a measurable criterion. FAIL otherwise.",
  ],
  "tests-pass-wrong-behavior": [
   "PASS only if the response proposes invariant checks for billing, such as totals equal the sum of line items or balances never going negative. FAIL otherwise.",
@@ -269,6 +270,79 @@ STRICT = {
   "PASS only if the response addresses money-specific correctness, such as integer minor units, rounding rules, or currency handling. FAIL otherwise.",
  ],
 }
+
+# v3: cases that need real material carry it inline (each run starts in an empty directory).
+# Defects are planted so graders check what the review actually finds, not generic advice.
+REVIEW_DIFF_PROMPT = """Claude Code opened a PR that adds rate limiting to our public API. CI is green. Here is the spec and the diff. Review it before I approve.
+
+SPEC (specs/rate-limit/spec.md)
+- Limit each API key to 100 requests per minute on all /v1/* public endpoints.
+- Return HTTP 429 with a Retry-After header when the limit is exceeded.
+- Must work correctly with our 6 API instances behind the load balancer (shared state in Redis).
+- Non-goal: no changes to authentication.
+
+DIFF
+--- a/src/middleware/rateLimit.ts
++++ b/src/middleware/rateLimit.ts
+@@ +1,24 @@
++const hits = new Map<string, { count: number; windowStart: number }>();
++
++export function rateLimit(req, res, next) {
++  try {
++    const key = req.headers['x-forwarded-for'] || req.ip;
++    const now = Date.now();
++    const entry = hits.get(key) ?? { count: 0, windowStart: now };
++    if (now - entry.windowStart > 60_000) { entry.count = 0; entry.windowStart = now; }
++    entry.count += 1;
++    hits.set(key, entry);
++    res.setRateLimitHeaders({ limit: 100, remaining: Math.max(0, 100 - entry.count) });
++    if (entry.count > 100) {
++      return res.status(429).set('Retry-After', '60').send('Too Many Requests');
++    }
++    next();
++  } catch (e) {
++    next();
++  }
++}
+--- a/src/middleware/auth.ts
++++ b/src/middleware/auth.ts
+@@ -40,7 +40,6 @@ export function verifyToken(token) {
+   const payload = jwt.decode(token);
+-  if (payload.exp * 1000 < Date.now()) throw new AuthError('token expired');
+   return payload;
+ }
+--- a/test/rateLimit.test.ts
++++ b/test/rateLimit.test.ts
+@@ -18,7 +18,7 @@ it('blocks the 101st request in a minute', async () => {
+   for (let i = 0; i < 100; i++) await request(app).get('/v1/items').set('x-api-key', 'k1');
+   const res = await request(app).get('/v1/items').set('x-api-key', 'k1');
+-  expect(res.status).toBe(429);
++  expect([200, 429]).toContain(res.status);
+ });
+"""
+
+XRAY_PROMPT = """We have Xray test cases for checkout and some automated tests. I've pasted both below. How can an agent help close the gap? Start by telling me exactly where we stand.
+
+XRAY EXPORT (checkout)
+CHK-101 | Guest can complete checkout with a valid card | Expected: order confirmation shown
+CHK-102 | Expired card is rejected | Expected: error "Card expired", no order created
+CHK-103 | Promo code SAVE10 reduces subtotal by 10% | Expected: discount line shown
+CHK-104 | Cart total recalculates when quantity changes | Expected: updated total
+CHK-105 | Free shipping applies above $50 | Expected: shipping $0
+CHK-106 | Address validation rejects missing postcode | Expected: inline error
+CHK-107 | Order confirmation email is sent | Expected: email within 1 minute
+CHK-108 | Checkout should feel fast | Expected: good experience
+
+AUTOMATED TESTS (tests/checkout.spec.ts)
+test('CHK-101 guest checkout happy path', ...)
+test('CHK-102 expired card rejected', ...)
+test.skip('CHK-105 free shipping over 50', ...)   // flaky, skipped since March
+test('promo code applies discount', ...)           // no ID; asserts SAVE10 gives 10% off
+test('CHK-106 missing postcode shows error', ...)
+"""
+
+PROMPT_OVERRIDE = {"review-agent-diff": REVIEW_DIFF_PROMPT, "tests-from-xray": XRAY_PROMPT}
+TURNS_OVERRIDE = {"review-agent-diff": 12, "tests-from-xray": 12}
 
 
 def write(path: Path, text: str):
@@ -288,7 +362,9 @@ def main():
         for name, skill, prompt, rubric in cases:
             assert skill in skills, (plugin, skill)
             c = ev / name
-            write(c / "prompt.md", f"---\nmax_turns: 8\nallowed_tools: [Read, Glob, Grep, Skill]\ntags: [smoke, trigger, {skill}]\ndescription: Should invoke {skill} and apply its method\n---\n\n{prompt}\n")
+            prompt = PROMPT_OVERRIDE.get(name, prompt).strip()
+            turns = TURNS_OVERRIDE.get(name, 8)
+            write(c / "prompt.md", f"---\nmax_turns: {turns}\nallowed_tools: [Read, Glob, Grep, Skill]\ntags: [smoke, trigger, {skill}]\ndescription: Should invoke {skill} and apply its method\n---\n\n{prompt}\n")
             write(c / "graders" / "skill-fired.md", f"---\ntype: tool_used\ntool: Skill\ninput_match: '\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?{skill}\"'\n---\n")
             if name in STRICT:
                 for i, crit in enumerate(STRICT[name], 1):
