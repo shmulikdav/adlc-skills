@@ -1,0 +1,24 @@
+name: Tests
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Manifests are in sync
+        run: |
+          python scripts/sync_manifests.py
+          git diff --exit-code -- '*.json' '*/README.md' || (echo "Run: python3 scripts/sync_manifests.py" && exit 1)
+      - name: Plugin validator
+        run: python validate_plugins.py
+      - name: Consistency tests
+        run: python -m unittest discover -s tests -v

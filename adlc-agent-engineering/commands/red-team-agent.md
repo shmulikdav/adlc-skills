@@ -1,0 +1,31 @@
+---
+description: Red-team an agent design or running agent against the OWASP Agentic Top 10 and turn findings into guardrails and eval cases
+argument-hint: "<agent description or design doc>"
+---
+
+# /red-team-agent -- Agent Red Team
+
+## Invocation
+
+```
+/red-team-agent AgentDesign-support-agent.md
+```
+
+## Workflow
+
+Input: $ARGUMENTS
+
+### Step 1: Map the attack surface
+Tools, credentials, untrusted inputs, memory, outputs, other agents.
+
+### Step 2: Generate attack scenarios
+For each relevant OWASP Agentic risk (ASI01–ASI10), write concrete scenarios (e.g., injected instructions in a ticket body asking for a refund to a new account).
+
+### Step 3: Evaluate defenses
+Check each scenario against the current design or behavior; mark blocked / partially blocked / not blocked.
+
+### Step 4: Fix and regress
+Propose controls with **agent-runtime-guardrails**; add each scenario as a regression case via **eval-suite-design**.
+
+### Step 5: Output
+Scenario table with results, control changes, and new eval cases. Only test systems you own or are authorized to test.

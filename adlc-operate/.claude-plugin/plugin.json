@@ -1,0 +1,21 @@
+{
+  "name": "adlc-operate",
+  "version": "1.0.0",
+  "description": "Operating the ADLC: release gates for agent-built changes, AgentOps observability, AI cost management and unit economics, and blameless agent incident reviews that feed durable fixes back into the lifecycle.",
+  "author": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com",
+    "url": "https://www.braightwave.com"
+  },
+  "homepage": "https://github.com/braightwave/adlc-skills",
+  "repository": "https://github.com/braightwave/adlc-skills",
+  "license": "MIT",
+  "keywords": [
+    "adlc",
+    "agentops",
+    "observability",
+    "release",
+    "finops",
+    "postmortem"
+  ]
+}

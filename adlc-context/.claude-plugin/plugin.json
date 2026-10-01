@@ -1,0 +1,21 @@
+{
+  "name": "adlc-context",
+  "version": "1.0.0",
+  "description": "Context engineering for coding agents: CLAUDE.md / AGENTS.md authoring and audits, codebase maps, context-window budgeting, codifying conventions as skills, hooks or tests, and MCP integration planning.",
+  "author": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com",
+    "url": "https://www.braightwave.com"
+  },
+  "homepage": "https://github.com/braightwave/adlc-skills",
+  "repository": "https://github.com/braightwave/adlc-skills",
+  "license": "MIT",
+  "keywords": [
+    "adlc",
+    "context-engineering",
+    "claude-md",
+    "agents-md",
+    "mcp",
+    "skills"
+  ]
+}

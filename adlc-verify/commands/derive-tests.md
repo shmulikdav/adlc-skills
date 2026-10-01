@@ -1,0 +1,30 @@
+---
+description: Build a traceability matrix from specs or test cases and generate the missing tests
+argument-hint: "<spec, acceptance criteria, or exported test cases>"
+---
+
+# /derive-tests -- Tests from Specs
+
+## Invocation
+
+```
+/derive-tests specs/012-audit-export/spec.md
+/derive-tests [attach Xray / TestRail export]
+```
+
+## Workflow
+
+### Step 1: Parse sources
+Read $ARGUMENTS and extract criteria or test cases with IDs.
+
+### Step 2: Traceability
+Apply **tests-from-specs** to inventory existing tests and build the matrix.
+
+### Step 3: Strengthen
+Apply **behavioral-testing** to add invariants, contracts, and permission-matrix tests for high-risk areas.
+
+### Step 4: Generate and run
+Write missing tests in the project's style, run them, and report results.
+
+### Step 5: Output
+Matrix, new tests, results, and criteria to rewrite.

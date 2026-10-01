@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "marketplace": "adlc-skills",
+  "owner": {"name": "Shmulik Davar — BrAIght Wave", "email": "shmulik@braightwave.com", "url": "https://www.braightwave.com"},
+  "repo": "braightwave/adlc-skills",
+  "plugins": [
+    {"name": "adlc-foundations", "phase": "0 · Foundations", "title": "Readiness, operating model & adoption",
+     "description": "ADLC foundations: readiness assessment on the DORA AI capabilities, SDLC-to-ADLC workflow mapping, agent autonomy levels, AI stance policy, ROI metrics, AI champions program, and role transitions.",
+     "keywords": ["adlc", "agentic-development", "ai-readiness", "dora", "ai-transformation", "engineering-leadership"]},
+    {"name": "adlc-intent", "phase": "1 · Intent", "title": "Agent-ready specs",
+     "description": "Intent specification for coding agents: Agentic PRDs, spec-driven development (constitution, spec, plan, tasks), testable acceptance criteria (Given/When/Then, EARS), spec clarification, and task decomposition.",
+     "keywords": ["adlc", "spec-driven-development", "agentic-prd", "acceptance-criteria", "requirements", "spec-kit"]},
+    {"name": "adlc-context", "phase": "2 · Context", "title": "Context engineering",
+     "description": "Context engineering for coding agents: CLAUDE.md / AGENTS.md authoring and audits, codebase maps, context-window budgeting, codifying conventions as skills, hooks or tests, and MCP integration planning.",
+     "keywords": ["adlc", "context-engineering", "claude-md", "agents-md", "mcp", "skills"]},
+    {"name": "adlc-build", "phase": "3 · Build", "title": "Agentic construction",
+     "description": "Agentic construction workflows: explore-plan-implement, test-first development with agents, parallel agents and worktrees, small-batch delivery, and legacy modernization with behavior parity.",
+     "keywords": ["adlc", "claude-code", "agentic-coding", "tdd", "parallel-agents", "modernization"]},
+    {"name": "adlc-verify", "phase": "4 · Verify", "title": "Behavioral validation & review",
+     "description": "Verification of agent-built software: behavioral testing, tests derived from specs, alignment review of agent PRs, hallucination checks for APIs and dependencies, and a Definition of Done for agent work.",
+     "keywords": ["adlc", "testing", "code-review", "verification", "qa", "hallucination"]},
+    {"name": "adlc-govern", "phase": "5 · Govern", "title": "Security, permissions & compliance",
+     "description": "Governance and security for agentic development: OWASP Agentic Top 10 threat modeling, least-privilege agent permissions, guardrail hooks, compliance mapping (ISO 42001, NIST AI RMF, EU AI Act, SOC 2), and extension vetting.",
+     "keywords": ["adlc", "ai-security", "owasp", "governance", "iso-42001", "hooks"]},
+    {"name": "adlc-operate", "phase": "6 · Operate", "title": "Release, observe, learn",
+     "description": "Operating the ADLC: release gates for agent-built changes, AgentOps observability, AI cost management and unit economics, and blameless agent incident reviews that feed durable fixes back into the lifecycle.",
+     "keywords": ["adlc", "agentops", "observability", "release", "finops", "postmortem"]},
+    {"name": "adlc-agent-engineering", "phase": "★ Agent engineering", "title": "Building agents as products",
+     "description": "Agent engineering for teams building AI agents and LLM features: architecture patterns, tool design, eval suites, prompts as versioned code, and runtime guardrails.",
+     "keywords": ["adlc", "agent-development-lifecycle", "evals", "tool-design", "guardrails", "llm-apps"]}
+  ]
+}

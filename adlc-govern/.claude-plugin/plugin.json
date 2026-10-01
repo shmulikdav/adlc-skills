@@ -1,0 +1,21 @@
+{
+  "name": "adlc-govern",
+  "version": "1.0.0",
+  "description": "Governance and security for agentic development: OWASP Agentic Top 10 threat modeling, least-privilege agent permissions, guardrail hooks, compliance mapping (ISO 42001, NIST AI RMF, EU AI Act, SOC 2), and extension vetting.",
+  "author": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com",
+    "url": "https://www.braightwave.com"
+  },
+  "homepage": "https://github.com/braightwave/adlc-skills",
+  "repository": "https://github.com/braightwave/adlc-skills",
+  "license": "MIT",
+  "keywords": [
+    "adlc",
+    "ai-security",
+    "owasp",
+    "governance",
+    "iso-42001",
+    "hooks"
+  ]
+}
