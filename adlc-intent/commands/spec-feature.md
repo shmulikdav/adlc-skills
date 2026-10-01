@@ -15,6 +15,9 @@ argument-hint: "<feature description>"
 
 Input: $ARGUMENTS
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-intent:spec-driven-development`, `adlc-intent:agentic-prd`, `adlc-intent:spec-clarification`, `adlc-intent:acceptance-criteria`, `adlc-intent:architecture-guardrails`, `adlc-intent:task-decomposition`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Detect conventions
 Apply the **spec-driven-development** skill's toolchain detection (Spec Kit, Kiro, AI-DLC, or plain `specs/`). Load or draft the constitution.
 

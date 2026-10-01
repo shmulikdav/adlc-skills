@@ -14,6 +14,9 @@ argument-hint: "<feature idea, ticket text, or existing PRD>"
 
 ## Workflow
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-intent:spec-clarification`, `adlc-intent:agentic-prd`, `adlc-intent:acceptance-criteria`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Understand intent
 Read $ARGUMENTS and attachments. If a repo is available, scan for related code, ADRs, and the context file (CLAUDE.md / AGENTS.md).
 

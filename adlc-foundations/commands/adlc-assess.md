@@ -16,6 +16,9 @@ Baseline where a team stands before scaling coding agents.
 
 ## Workflow
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-foundations:adlc-readiness-assessment`, `adlc-foundations:autonomy-levels`, `adlc-foundations:adlc-metrics`, `adlc-foundations:comprehension-debt`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Collect context
 Read $ARGUMENTS and any attached files. Ask, in a single message, only for the missing inputs listed in the **adlc-readiness-assessment** skill.
 

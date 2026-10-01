@@ -13,6 +13,9 @@ argument-hint: "<PR link, branch, or diff> [spec path]"
 
 ## Workflow
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-verify:agent-code-review`, `adlc-verify:hallucination-checks`, `adlc-verify:definition-of-done`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Gather
 Read $ARGUMENTS: the diff and the spec/ACs. Ask for the spec if missing; without it, review only passes 2–5 and say so.
 

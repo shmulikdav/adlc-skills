@@ -16,6 +16,9 @@ argument-hint: "<path to skills/plugins, or list of installed plugins>"
 
 Input: $ARGUMENTS
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-context:skill-library-management`, `adlc-context:codify-conventions`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Inventory
 List every skill with its description, size, owner if known, and any overlap with installed frameworks.
 

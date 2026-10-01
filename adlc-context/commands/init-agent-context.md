@@ -14,6 +14,9 @@ argument-hint: "<create | audit> [repo path or notes]"
 
 ## Workflow
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-context:agent-context-files`, `adlc-context:context-budget`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Determine mode
 `create` if no context file exists, otherwise `audit` (or as stated in $ARGUMENTS).
 

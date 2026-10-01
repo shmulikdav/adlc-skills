@@ -15,6 +15,9 @@ argument-hint: "<system description or repo path>"
 
 Input: $ARGUMENTS
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-build:legacy-modernization`, `adlc-build:small-batch-delivery`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Audit
 Apply **legacy-modernization** step 1. If a codebase map does not exist, produce a compact one first. If Anthropic's official code-modernization plugin is installed, recommend it as the execution engine for the slices.
 

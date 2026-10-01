@@ -15,6 +15,9 @@ argument-hint: "<agent description or design doc>"
 
 Input: $ARGUMENTS
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-agent-engineering:agent-runtime-guardrails`, `adlc-agent-engineering:eval-suite-design`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Map the attack surface
 Tools, credentials, untrusted inputs, memory, outputs, other agents.
 

@@ -15,6 +15,9 @@ argument-hint: "<organization context, which teams build what, tools in use>"
 
 Input: $ARGUMENTS
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-govern:citizen-builder-governance`, `adlc-govern:extension-vetting`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Inventory and tier
 Apply the **citizen-builder-governance** skill to classify existing tools into tiers.
 

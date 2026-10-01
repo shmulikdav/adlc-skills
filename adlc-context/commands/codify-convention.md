@@ -14,6 +14,9 @@ argument-hint: "<the convention or the mistake the agent keeps making>"
 
 ## Workflow
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-context:codify-conventions`, `adlc-context:agent-context-files`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Gather examples
 From $ARGUMENTS and the repo, collect 2–3 concrete examples of right and wrong behavior.
 

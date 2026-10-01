@@ -13,6 +13,9 @@ argument-hint: "<org/team context, frameworks of interest>"
 
 ## Workflow
 
+### Step 0: Load the method
+Before anything else, load each skill this command uses with the Skill tool: `adlc-govern:agentic-threat-model`, `adlc-govern:agent-permissions`, `adlc-govern:guardrail-hooks`, `adlc-govern:ai-compliance-mapping`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+
 ### Step 1: Context
 Gather tools in use, data sensitivity, regulatory scope, and existing policies from $ARGUMENTS.
 
