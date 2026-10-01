@@ -18,7 +18,7 @@ Ambiguity creates risk and slows adoption. DORA's 2025 research names a clear, c
 ## Instructions
 
 1. Gather: industry and regulatory context, data types handled (PII, PHI, payment, source code of customers), approved vendors and contracts (zero data retention? enterprise tier?), existing security policies.
-2. Draft the policy with these sections, each in plain language, max one page total for the core:
+2. Draft the policy with these sections, in plain language. The policy must fit on one page (about 400 words): cut before you add, and link to existing security standards instead of restating them.
 
 ```
 # AI Stance — [Company] Engineering
@@ -52,8 +52,12 @@ Only from the approved list; request process: ...
 Owner, review cadence, feedback channel.
 ```
 
-3. Add an appendix with a **decision table** for gray areas (e.g., "Can I paste a customer log into the agent?").
-4. Add a one-paragraph **announcement message** leadership can send.
+3. Mark every item that needs legal or compliance review with **[LEGAL]**.
+4. Offer, don't add: after the policy, offer in one line each the gray-area **decision table** (e.g., "Can I paste a customer log into the agent?") and a one-paragraph **announcement message** for leadership. Write them only if asked, so the policy itself stays short.
+
+## Output
+
+The one-page policy in the template above, with **[LEGAL]** markers, followed by a single line offering the decision table and the announcement.
 
 ## Notes
 

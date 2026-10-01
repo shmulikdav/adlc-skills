@@ -32,7 +32,7 @@ Comprehension debt is the gap between the code a team owns and the code it actua
 
 1. **Assess:** for the top 10 critical modules, can a named person explain and debug each without AI? Where did the last incidents take longest to diagnose?
 2. **Identify hot spots:** modules with high agent authorship, low human edits, and no clear owner.
-3. **Choose practices** proportionate to risk; apply the explain-back gate to high-tier changes first.
+3. **Choose practices.** Always start with the ownership map: name a human owner for each critical module who can explain and debug it without the agent. It is the baseline, not an option. Add the other practices in proportion to risk, starting with the explain-back gate for high-tier changes.
 4. **Protect juniors:** set an expectation of conceptual-inquiry use for learning tasks; pair them on review and spec writing.
 5. **Track:** time-to-diagnose incidents, owner coverage of critical modules, and survey-based confidence in explaining owned code.
 

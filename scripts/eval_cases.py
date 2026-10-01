@@ -419,6 +419,53 @@ STRICT.update({
  ],
 })
 
+# adlc-govern: atomic criteria split from the original compound rubrics (same requirements, one per grader).
+STRICT.update({
+ "business-teams-building": [
+  "PASS only if the response recommends enabling business teams with guardrails rather than banning their tools. FAIL otherwise.",
+  "PASS only if the response defines risk tiers based on data sensitivity or how many people depend on a tool. FAIL otherwise.",
+  "PASS only if the response requires an inventory of the tools being built. FAIL otherwise.",
+  "PASS only if the response requires a named owner for each tool. FAIL otherwise.",
+  "PASS only if the response sets rules for data access or connectors, such as limits on what can connect to the ERP. FAIL otherwise.",
+  "PASS only if the response defines when a tool must be reviewed by, or handed over to, engineering. FAIL otherwise.",
+ ],
+ "iso-42001": [
+  "PASS only if the response maps what ISO 42001 or SOC 2 auditors expect to specific practices for governing AI coding agents. FAIL otherwise.",
+  "PASS only if the response identifies likely gaps to close before the audit. FAIL otherwise.",
+  "PASS only if the response lists concrete evidence artifacts, such as an AI policy, a risk register or threat model, permission configurations, review records, agent audit logs, or vendor agreements. FAIL otherwise.",
+  "PASS only if the response notes that legal counsel or the auditor should confirm the interpretation. FAIL otherwise.",
+ ],
+ "permissions-ci": [
+  "PASS only if the response classifies actions into categories such as allowed without asking, requires approval, and denied. FAIL otherwise.",
+  "PASS only if the response defines separate settings for developer laptops and for CI. FAIL otherwise.",
+  "PASS only if CI permissions are narrower than local ones and use a sandbox or scoped, short-lived tokens. FAIL otherwise.",
+  "PASS only if the response denies reading secrets files such as .env or credentials. FAIL otherwise.",
+  "PASS only if the response denies pushing directly to main or force-pushing. FAIL otherwise.",
+  "PASS only if the response recommends enforcing critical rules with hooks or another deterministic mechanism, not instructions alone. FAIL otherwise.",
+ ],
+ "protect-secrets": [
+  "PASS only if the response recommends a deterministic block, such as a hook that runs before tool use or permission deny rules. FAIL otherwise.",
+  "PASS only if the block covers both .env files and the CI workflow directory. FAIL otherwise.",
+  "PASS only if the response explains that instructions in a context file alone are not reliable enforcement. FAIL otherwise.",
+ ],
+ "threat-model-ci-agent": [
+  "PASS only if the response identifies prompt injection or goal hijacking through untrusted ticket or issue content. FAIL otherwise.",
+  "PASS only if the response identifies over-broad tool permissions or credential scope as a risk. FAIL otherwise.",
+  "PASS only if the response identifies supply-chain risk from MCP servers. FAIL otherwise.",
+  "PASS only if the response identifies code execution outside a sandbox as a risk. FAIL otherwise.",
+  "PASS only if the response proposes least-privilege or scoped tokens. FAIL otherwise.",
+  "PASS only if the response proposes human approval for high-risk actions or audit logging of agent actions. FAIL otherwise.",
+ ],
+ "vet-plugin": [
+  "PASS only if the response distinguishes instruction-only content from executable content such as hooks, scripts, or MCP servers. FAIL otherwise.",
+  "PASS only if the response says to read every skill and script before installing. FAIL otherwise.",
+  "PASS only if the response names specific malicious patterns to look for, such as data exfiltration, fetching remote code, reading secrets, or instructions that override the user. FAIL otherwise.",
+  "PASS only if the response checks provenance, such as who publishes it and its history. FAIL otherwise.",
+  "PASS only if the response recommends pinning a specific version or commit rather than tracking the latest. FAIL otherwise.",
+  "PASS only if the response ends with a clear decision framework such as install, restrict, or reject. FAIL otherwise.",
+ ],
+})
+
 
 def write(path: Path, text: str):
     path.parent.mkdir(parents=True, exist_ok=True)
