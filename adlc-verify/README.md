@@ -19,7 +19,7 @@ claude plugin install adlc-verify@adlc-skills
 - `behavioral-testing` — Use when building a test strategy for AI-generated code, when tests pass but behavior is wrong, when QA is shifting from manual regression to verifying agent output, or when correctness of money, permissions, or data integrity matters
 - `definition-of-done` — Use when agents claim work is done prematurely, when standardizing the quality bar for agent-authored changes across teams, or when writing the verification section of a context file or PR template
 - `hallucination-checks` — Use before merging agent-generated code, when a build fails on an unknown symbol, package, or flag, when an agent adds or suggests a new dependency, or when PR text claims results without evidence
-- `review-capacity` — Use when agent-authored pull requests pile up waiting for review, reviewers rubber-stamp large AI diffs, merge rates of agent PRs are low, or a team asks how to scale code review now that agents produce more changes than humans can read
+- `review-capacity` — Use when agent-authored pull requests pile up in a review backlog, PR pickup or review time is growing, reviewers rubber-stamp large AI-generated diffs, adding reviewers did not help, merge or acceptance rates of agent PRs are low, or a team asks how to redesign code review for agent-scale output
 - `tests-from-specs` — Use when generating tests from PRDs, acceptance criteria, Gherkin, or test-management exports (Xray, TestRail, Zephyr), when asked which requirements have no test, or when lifting test coverage with agents
 
 ## Commands (4)
