@@ -14,7 +14,7 @@ argument-hint: "<description of the current dev workflow>"
 ## Workflow
 
 ### Step 0: Load the method
-Before anything else, load each skill this command uses with the Skill tool: `adlc-foundations:sdlc-to-adlc-mapping`, `adlc-foundations:autonomy-levels`, `adlc-foundations:role-transitions`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+Your first action must be a Skill tool call for each of these skills: `adlc-foundations:sdlc-to-adlc-mapping`, `adlc-foundations:autonomy-levels`, `adlc-foundations:role-transitions`. This command file is only an outline: the method, rubrics, templates and defaults live in those skills, so do not answer from the outline or from general knowledge. If a skill fails to load, say so in the first line of the answer.
 
 ### Step 1: Capture the current flow
 From $ARGUMENTS, list every step with owner, input, output artifact, tool, and pain point. Ask for missing steps (especially review, QA, and release).

@@ -14,7 +14,7 @@ argument-hint: "<release, PR list, or change description>"
 ## Workflow
 
 ### Step 0: Load the method
-Before anything else, load each skill this command uses with the Skill tool: `adlc-operate:release-gates`, `adlc-operate:agentops-observability`, `adlc-operate:ai-cost-management`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+Your first action must be a Skill tool call for each of these skills: `adlc-operate:release-gates`, `adlc-operate:agentops-observability`, `adlc-operate:ai-cost-management`. This command file is only an outline: the method, rubrics, templates and defaults live in those skills, so do not answer from the outline or from general knowledge. If a skill fails to load, say so in the first line of the answer.
 
 ### Step 1: Classify
 List changes in $ARGUMENTS and assign change classes per the **release-gates** skill.

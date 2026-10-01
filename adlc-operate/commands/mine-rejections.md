@@ -16,7 +16,7 @@ argument-hint: "<rejected PR list, review comments, or a time window>"
 Input: $ARGUMENTS
 
 ### Step 0: Load the method
-Before anything else, load each skill this command uses with the Skill tool: `adlc-operate:learning-loop`, `adlc-operate:agent-incident-review`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+Your first action must be a Skill tool call for each of these skills: `adlc-operate:learning-loop`, `adlc-operate:agent-incident-review`. This command file is only an outline: the method, rubrics, templates and defaults live in those skills, so do not answer from the outline or from general knowledge. If a skill fails to load, say so in the first line of the answer.
 
 ### Step 1: Collect
 Gather rejected or abandoned agent PRs, repeated review comments, and early reverts.

@@ -16,7 +16,7 @@ argument-hint: "<what the agent should accomplish, users, systems it touches>"
 Input: $ARGUMENTS
 
 ### Step 0: Load the method
-Before anything else, load each skill this command uses with the Skill tool: `adlc-agent-engineering:agent-architecture`, `adlc-agent-engineering:tool-design`, `adlc-agent-engineering:agent-runtime-guardrails`, `adlc-agent-engineering:eval-suite-design`, `adlc-agent-engineering:prompt-versioning`. The answer must follow those skills' rubrics, templates and defaults, not general knowledge. If a skill fails to load, say so in the first line of the answer.
+Your first action must be a Skill tool call for each of these skills: `adlc-agent-engineering:agent-architecture`, `adlc-agent-engineering:tool-design`, `adlc-agent-engineering:agent-runtime-guardrails`, `adlc-agent-engineering:eval-suite-design`, `adlc-agent-engineering:prompt-versioning`. This command file is only an outline: the method, rubrics, templates and defaults live in those skills, so do not answer from the outline or from general knowledge. If a skill fails to load, say so in the first line of the answer.
 
 ### Step 1: Architecture
 Apply **agent-architecture**: choose the simplest pattern on the ladder and justify it.
