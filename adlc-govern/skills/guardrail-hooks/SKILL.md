@@ -1,6 +1,6 @@
 ---
 name: guardrail-hooks
-description: "Design deterministic guardrails for coding agents with lifecycle hooks: block edits to protected files, block dangerous commands, auto-format and lint after edits, run tests before stop, log every tool call for audit. Use when a rule must be enforced every time rather than remembered, when setting up Claude Code hooks, or when instructions in CLAUDE.md are not being followed reliably."
+description: "Use when a rule must be enforced every time rather than remembered, when CLAUDE.md instructions are not followed reliably, when protecting secrets, CI config, or migrations from agent edits, or when setting up Claude Code hooks."
 ---
 
 # Guardrail Hooks

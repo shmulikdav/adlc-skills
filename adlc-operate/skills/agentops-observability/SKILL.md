@@ -1,6 +1,6 @@
 ---
 name: agentops-observability
-description: "Instrument agents and agentic workflows for observability: traces of steps and tool calls, inputs/outputs with redaction, latency, token usage, error and retry rates, human intervention points, and dashboards and alerts. Use when running agents in CI or production, debugging agent behavior after the fact, building an AgentOps practice, or needing an audit trail of what an agent did."
+description: "Use when running agents in CI or production, debugging what an agent did after the fact, needing an audit trail of agent actions, or building an AgentOps or LLM observability practice."
 ---
 
 # AgentOps Observability

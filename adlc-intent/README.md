@@ -15,17 +15,25 @@ claude plugin install adlc-intent@adlc-skills
 
 ## Skills (5)
 
-- `acceptance-criteria` — Write precise, testable acceptance criteria an agent can verify: Given/When/Then scenarios, EARS-style requirements (When/While/If/Where … the system shall …), edge cases, negative paths, and non-functional thresholds, each mapped to a verification method
-- `agentic-prd` — Write an Agentic PRD (Agent Execution Specification): a product spec a coding agent can execute without guessing
-- `spec-clarification` — Stress-test a spec before an agent builds it: find ambiguities, contradictions, missing edge cases, unstated assumptions, and decisions an agent would otherwise make silently; return a prioritized question list with suggested defaults
-- `spec-driven-development` — Run Spec-Driven Development (SDD) for agentic coding: constitution (project principles) → specify (what and why) → clarify → plan (how) → tasks → implement → converge, with each artifact versioned in the repo
-- `task-decomposition` — Break a spec or plan into small, agent-sized tasks: each independently verifiable, ordered by dependency, marked for parallel execution where safe, with explicit inputs, outputs, files touched, and a done check
+- `acceptance-criteria` — Use when writing or fixing acceptance criteria for a feature an agent will build or test, when criteria are vague or untestable, or before generating tests from a spec or user story
+- `agentic-prd` — Use when a PM or engineer is about to hand a feature, ticket, or PRD to a coding agent, asks to make a spec agent-ready, or when an agent built the wrong thing from a vague requirement
+- `spec-clarification` — Use when reviewing a spec, PRD, or ticket before an agent builds it, when the user asks what is missing from a spec or says 'interview me about this feature', or when requirements may hide decisions an agent would make silently
+- `spec-driven-development` — Use when a team wants a spec-first workflow for coding agents, mentions GitHub Spec Kit, Kiro specs, or AWS AI-DLC, wants to move from vibe coding to repeatable delivery, or starts a feature with real ambiguity or risk
+- `task-decomposition` — Use when converting a spec or plan into tasks for coding agents, preparing work for parallel sessions or worktrees, or when an agent keeps failing or drifting on tasks that are too large
 
 ## Commands (3)
 
 - `/clarify-spec` — Hunt for ambiguities, contradictions, and silent decisions in a spec before an agent builds it
 - `/spec-feature` — Run the full spec-driven loop for a feature — constitution check, spec, clarify, plan, tasks — before any code is written
 - `/write-agentic-prd` — Turn a feature idea or ticket into an Agentic PRD a coding agent can execute without guessing
+
+## Evals (6 cases)
+
+Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
+
+```
+claude plugin eval ./adlc-intent
+```
 
 ---
 

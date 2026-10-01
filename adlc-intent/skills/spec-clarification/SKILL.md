@@ -1,6 +1,6 @@
 ---
 name: spec-clarification
-description: "Stress-test a spec before an agent builds it: find ambiguities, contradictions, missing edge cases, unstated assumptions, and decisions an agent would otherwise make silently; return a prioritized question list with suggested defaults. Use when reviewing a PRD or spec for agent-readiness, before planning implementation, or when the user says 'what's missing from this spec' or 'interview me about this feature'."
+description: "Use when reviewing a spec, PRD, or ticket before an agent builds it, when the user asks what is missing from a spec or says 'interview me about this feature', or when requirements may hide decisions an agent would make silently."
 ---
 
 # Spec Clarification (Ambiguity Hunt)

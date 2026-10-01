@@ -1,6 +1,6 @@
 ---
 name: extension-vetting
-description: "Vet third-party agent extensions before installing them: skills, plugins, MCP servers, hooks, and agent rule files. Checks provenance, requested permissions, executable content, network access, prompt-injection payloads in instructions, update policy, and returns install / install-with-restrictions / reject. Use when someone asks 'is this skill/plugin/MCP server safe', before adding a marketplace, or when building an approved-extensions list."
+description: "Use when someone asks whether a skill, plugin, MCP server, hook, or agent rules file is safe to install, before adding a new plugin marketplace, or when building an approved-extensions list for a team."
 ---
 
 # Extension Vetting

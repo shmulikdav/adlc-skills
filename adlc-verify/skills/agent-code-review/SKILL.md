@@ -1,6 +1,6 @@
 ---
 name: agent-code-review
-description: "Review agent-authored code for alignment, not just correctness: does the diff implement the spec and only the spec, follow the repo's constraints, keep tests honest, and avoid the typical failure patterns of AI-generated code (invented APIs, silent scope creep, weakened tests, duplicated logic, swallowed errors, insecure defaults). Use when reviewing a PR written by Claude Code, Cursor, Codex, or Copilot, or setting up an AI-assisted review process."
+description: "Use when reviewing a pull request or diff written by Claude Code, Cursor, Codex, Copilot, or another agent, when setting up a review process for AI-generated code, or before merging agent work into main."
 ---
 
 # Agent Code Review (Alignment Review)
@@ -30,6 +30,19 @@ Reviewing agent output is a different job from reviewing a colleague's code. The
 
 **Pass 5 — Operability**
 - Logging, metrics, error messages, migrations reversible, feature flag present
+
+## Red flags
+
+| Thought | Reality |
+|---------|---------|
+| "It reads well, so it's probably right" | Fluent code is the agent's default output; it says nothing about alignment |
+| "Tests pass" | Check whether the tests were changed in the same PR |
+| "The agent explained its reasoning" | Explanations are generated too; verify against code and spec |
+| "Too big to review properly, approve and watch prod" | Send it back to be split; size is a defect |
+
+## Composition
+
+For general code-quality passes (comments, types, silent failures, simplification), Anthropic's official `pr-review-toolkit` provides specialist reviewers. Use this skill for what those don't check: alignment with the spec and the agent-specific failure patterns.
 
 ## Output
 

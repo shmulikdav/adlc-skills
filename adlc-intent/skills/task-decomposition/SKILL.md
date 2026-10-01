@@ -1,6 +1,6 @@
 ---
 name: task-decomposition
-description: "Break a spec or plan into small, agent-sized tasks: each independently verifiable, ordered by dependency, marked for parallel execution where safe, with explicit inputs, outputs, files touched, and a done check. Use when converting a plan into tasks.md, preparing work for parallel agents or worktrees, or when an agent keeps failing on tasks that are too big."
+description: "Use when converting a spec or plan into tasks for coding agents, preparing work for parallel sessions or worktrees, or when an agent keeps failing or drifting on tasks that are too large."
 ---
 
 # Task Decomposition for Agents

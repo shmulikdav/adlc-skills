@@ -1,41 +1,58 @@
-# ADLC Skills: The Agentic Development Lifecycle, as Skills
+# ADLC Skills: The Operating Model for Agentic Development
 
-> 41 skills, 23 commands, and 2 agents across 8 plugins. Built for Claude Code and Cowork; skills work in any tool that reads the Agent Skills format. From readiness and agent-ready specs to context engineering, agentic build, verification, governance, operations, and agent engineering.
+> 40 skills, 23 commands, 2 agents, and 48 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, context, governance, release, operations, and agent engineering. Built for Claude Code and Cowork; composes with Superpowers and Anthropic's official plugins.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/braightwave/adlc-skills/actions/workflows/tests.yml/badge.svg)](.github/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/braightwave/adlc-skills/actions/workflows/tests.yml/badge.svg)](.github/workflows/tests.yml) [![Evals](https://github.com/braightwave/adlc-skills/actions/workflows/evals.yml/badge.svg)](.github/workflows/evals.yml)
 
-## Start Here
+## Why this kit exists
 
-Are we ready? → `/adlc-assess`
-Where do agents fit in our process? → `/map-to-adlc`
-Turning a ticket into something an agent can execute → `/write-agentic-prd`
-Setting up a repo for agents → `/init-agent-context`
-Reviewing a PR an agent wrote → `/review-agent-pr`
-Locking down agent permissions → `/threat-model`
-Building an agent of your own → `/design-agent`
+Coding agents changed who executes the software lifecycle. They did not change what makes delivery work. DORA's 2025 research calls AI an amplifier of the system it lands in. Teams with clear specs, fast tests, small batches, and real governance get faster. Teams without them get faster at producing rework.
 
-## Why ADLC Skills?
+The execution layer is already well served. Superpowers, Anthropic's `feature-dev` and `pr-review-toolkit`, and spec rails like Spec Kit do planning, TDD, and review inside a session. What no kit covered was the **operating model** around them: whether the org is ready, how much autonomy each task type gets, what an agent-ready spec looks like, how to govern agents that hold real permissions, how releases are gated, and how to prove any of it pays off.
 
-Coding agents changed who executes the software lifecycle. They did not change what makes delivery work. The 2025 DORA research puts it plainly: AI is an amplifier of the system it lands in. Teams with clear specs, fast tests, small batches, and real governance get faster. Teams without them get faster at producing rework.
+AI adoption is an execution problem, not a technology problem. This kit encodes the execution.
 
-AI adoption is an execution problem, not a technology problem. These skills encode the execution: how to specify intent so an agent doesn't guess, how to give it context without drowning it, how to verify output that is plausible but wrong, and how to govern agents that act with real permissions.
+## Built on evidence, measured with evals
 
-Each skill is a structured method, not a prompt. Each command chains skills into an end-to-end workflow with human gates where judgment matters.
+Published benchmarks show that skills are not automatically good. Curated, domain-specific skills raised agent pass rates by 16 points on average in SkillsBench, while 39 of 49 generic software-engineering skills gave zero gain in SWE-Skills-Bench, and skills that induce unnecessary work are the top cause of skill-induced failures. So this kit:
+
+- **Encodes organizational procedure**, the knowledge a model cannot have, instead of restating generic coding advice
+- **Writes descriptions as trigger conditions**, because workflow summaries make agents skip the skill body
+- **Ships a behavioral eval suite** for every skill: `claude plugin eval` runs each case with and without the plugin and reports the Δ
+- **Recommends installing by role**, because focused sets of 2–3 skills outperform large bundles
+
+Run the benchmark yourself: `claude plugin eval ./adlc-govern` (or any plugin). Details in [docs/REVIEW.md](docs/REVIEW.md).
+
+## Install by role
+
+Install the profile that matches your job, not everything.
+
+| You are… | Install | Start with |
+|----------|---------|-----------|
+| CTO / VP Eng / AI transformation lead | `adlc-foundations`, `adlc-operate` | `/adlc-assess`, `/adlc-roadmap` |
+| Product manager | `adlc-intent` | `/write-agentic-prd` |
+| Tech lead / staff engineer | `adlc-context`, `adlc-build`, `adlc-verify` | `/init-agent-context`, `/choose-rail`, `/review-agent-pr` |
+| QA lead | `adlc-verify` | `/derive-tests` |
+| Security / platform | `adlc-govern` | `/threat-model`, `/vet-extension` |
+| Building AI agents or LLM features | `adlc-agent-engineering`, `adlc-operate` | `/design-agent`, `/build-evals` |
+
+**Recommended companion stack:** `superpowers` for execution discipline, `pr-review-toolkit` for code-quality review, `security-guidance` for code security, `claude-md-management` for context upkeep, all from the official marketplace. One owner per slot; see [docs/RECOMMENDED-STACK.md](docs/RECOMMENDED-STACK.md).
 
 ## The Lifecycle
 
 ```mermaid
 flowchart LR
     F[0 · Foundations<br/>readiness · autonomy · metrics] --> I[1 · Intent<br/>agent-ready specs]
-    I --> C[2 · Context<br/>CLAUDE.md · maps · MCP]
-    C --> B[3 · Build<br/>plan → test-first → implement]
-    B --> V[4 · Verify<br/>behavioral tests · alignment review]
+    I --> C[2 · Context<br/>CLAUDE.md · maps · MCP · skills]
+    C --> B[3 · Build<br/>execution rail · small batches]
+    B --> V[4 · Verify<br/>alignment · traceability · DoD]
     V --> O[6 · Operate<br/>gates · observability · cost]
     O -->|incidents & learnings| C
     G[5 · Govern<br/>threat model · permissions · hooks] -.-> B
     G -.-> V
     G -.-> O
     AE[★ Agent Engineering<br/>architecture · tools · evals] -.-> I
+    R[(Superpowers · feature-dev ·<br/>Spec Kit · GSD)] -.executes.-> B
 ```
 
 | | SDLC | ADLC |
@@ -46,17 +63,11 @@ flowchart LR
 | What governs | Linters, PR review, CI | Context files, permissions, hooks, evals, gates |
 | Bottleneck | Writing code | Specifying intent and verifying output |
 
-A note on the name: "ADLC" is used in two senses. Most of this marketplace covers the **agentic** development lifecycle, software delivery executed by agents. The `adlc-agent-engineering` plugin covers the other sense, the **agent** development lifecycle, for teams building agents as products.
+"ADLC" is used in two senses. Most of this kit covers the **agentic** development lifecycle, software delivery executed by agents. `adlc-agent-engineering` covers the **agent** development lifecycle, building agents as products.
 
 ## How It Works
 
-**Skills** are the building blocks. Each gives the agent a method for one ADLC task, with a template and a quality bar. Skills load automatically when the conversation matches their description; force one with `/plugin-name:skill-name`.
-
-**Commands** are user-triggered workflows (`/command-name`) that chain skills, pause at human gates, and suggest the next step.
-
-**Agents** are subagents for work that benefits from a fresh, independent context: `agent-output-reviewer` and `security-reviewer`.
-
-**Plugins** group skills, commands, and agents by lifecycle phase. Install all eight or only what you need; plugins never hard-depend on each other.
+**Skills** are methods Claude loads automatically when a situation matches their trigger conditions; force one with `/plugin-name:skill-name`. **Commands** (`/command-name`) chain skills into workflows that pause at human gates. **Agents** run independent reviews in a fresh context (`agent-output-reviewer`, `security-reviewer`). **Evals** under each plugin's `evals/` measure whether every skill triggers on natural phrasing and improves the output over no plugin.
 
 ## Installation
 
@@ -64,26 +75,20 @@ A note on the name: "ADLC" is used in two senses. Most of this marketplace cover
 
 1. Open **Customize** → **Browse plugins** → **Personal** → **+**
 2. Select **Add marketplace from GitHub**
-3. Enter: `braightwave/adlc-skills`
+3. Enter: `braightwave/adlc-skills`, then enable the plugins for your role
 
 ### Claude Code (CLI)
 
 ```bash
 claude plugin marketplace add braightwave/adlc-skills
-
-claude plugin install adlc-foundations@adlc-skills
-claude plugin install adlc-intent@adlc-skills
-claude plugin install adlc-context@adlc-skills
-claude plugin install adlc-build@adlc-skills
-claude plugin install adlc-verify@adlc-skills
-claude plugin install adlc-govern@adlc-skills
-claude plugin install adlc-operate@adlc-skills
-claude plugin install adlc-agent-engineering@adlc-skills
+claude plugin install adlc-foundations@adlc-skills   # repeat for the plugins in your profile
 ```
+
+All eight: `adlc-foundations`, `adlc-intent`, `adlc-context`, `adlc-build`, `adlc-verify`, `adlc-govern`, `adlc-operate`, `adlc-agent-engineering`.
 
 ### Codex CLI and other agents (skills only)
 
-The `skills/*/SKILL.md` files follow the Agent Skills format. Slash commands and subagents are Claude Code features; elsewhere, describe the workflow in plain language and the skills will load.
+The `skills/*/SKILL.md` files follow the Agent Skills format. Commands, subagents, and evals are Claude Code features.
 
 | Tool | How |
 |------|-----|
@@ -91,11 +96,6 @@ The `skills/*/SKILL.md` files follow the Agent Skills format. Slash commands and
 | Cursor | Copy skill folders to `.cursor/skills/` |
 | Gemini CLI | Copy skill folders to `.gemini/skills/` |
 | OpenCode | Copy skill folders to `.opencode/skills/` |
-
-```bash
-# Example: copy all skills into a project for Cursor
-for plugin in adlc-*/; do mkdir -p .cursor/skills && cp -r "$plugin/skills/"* .cursor/skills/ 2>/dev/null; done
-```
 
 ---
 
@@ -127,31 +127,32 @@ Commands: `/write-agentic-prd` · `/spec-feature` · `/clarify-spec`
 
 Examples: `/write-agentic-prd Let admins export audit logs as CSV` · `/clarify-spec interview me — bulk user import`
 
-**3. adlc-context — Context engineering (5 skills, 3 commands)**
+**3. adlc-context — Context engineering (6 skills, 4 commands)**
 
 - `agent-context-files` — Write or audit CLAUDE.md / AGENTS.md: the smallest file that prevents the most expensive mistakes
 - `codebase-map` — Modules, core flows, change recipes, and a risk register for agents and humans
 - `context-budget` — What to load always, on demand, or in subagents; session handoff with plan/progress files
 - `codify-conventions` — Decide whether know-how becomes a context line, skill, hook, or test, then write it
 - `mcp-integration-plan` — Make internal data agent-accessible with least privilege and injection awareness
+- `skill-library-management` — Keep, fix, or cut skills by measured Δ; description and load-budget standards from the benchmarks
 
-Commands: `/init-agent-context` · `/map-codebase` · `/codify-convention`
+Commands: `/init-agent-context` · `/map-codebase` · `/codify-convention` · `/audit-skills`
 
-**4. adlc-build — Agentic construction (5 skills, 3 commands)**
+**4. adlc-build — Execution stack & delivery shape (3 skills, 2 commands)**
 
-- `explore-plan-implement` — The core loop: read-only exploration, reviewable plan, verified implementation, traceable commit
-- `agentic-tdd` — Tests first from acceptance criteria; implement without touching the tests
-- `parallel-agents` — Worktrees, writer/reviewer pairs, competing hypotheses; concurrency capped by review capacity
+This plugin does not ship its own coding workflow. It picks and wires the best one.
+
+- `execution-rail-selection` — One owner per slot across Superpowers, Spec Kit, GSD, BMAD, gstack, and built-in plan mode
 - `small-batch-delivery` — PR budgets, stacked PRs, flags, trunk-based integration, rollback readiness
-- `legacy-modernization` — Characterize behavior first, extract the implicit spec, migrate in parity-checked slices
+- `legacy-modernization` — Characterize behavior first, extract the implicit spec, migrate in parity-checked slices (pairs with the official `code-modernization` plugin)
 
-Commands: `/plan-feature` · `/build-feature` · `/modernize`
+Commands: `/choose-rail` · `/modernize`
 
 **5. adlc-verify — Behavioral validation & review (5 skills, 3 commands, 1 agent)**
 
 - `behavioral-testing` — Properties, invariants, contracts, state transitions, permission matrices
 - `tests-from-specs` — Traceability matrix from ACs or Xray/TestRail/Gherkin; generate the missing tests
-- `agent-code-review` — Five-pass alignment review tuned to AI failure patterns
+- `agent-code-review` — Spec-alignment review tuned to AI failure patterns (composes with `pr-review-toolkit`)
 - `hallucination-checks` — Verify packages, APIs, config keys, flags, paths, and PR claims actually exist
 - `definition-of-done` — Evidence an agent must attach before "done", and the human gates that remain
 
@@ -192,6 +193,7 @@ Commands: `/design-agent` · `/build-evals` · `/red-team-agent`
 
 The skills synthesize public research and practice. Full notes and sources: [docs/ADLC-RESEARCH.md](docs/ADLC-RESEARCH.md).
 
+- SkillsBench, SWE-Skills-Bench, and *Agent Skills Can Be Harmful* — what makes skills help or hurt
 - DORA — *State of AI-assisted Software Development* (2025) and the *DORA AI Capabilities Model*
 - METR — randomized trial on AI and experienced open-source developer productivity (2025)
 - Anthropic — Claude Code best practices; *Building effective agents*; *Writing effective tools for agents*; *Effective context engineering*; *Demystifying evals for AI agents*
@@ -204,11 +206,11 @@ The skills synthesize public research and practice. Full notes and sources: [doc
 
 Curated by Shmulik Davar, Founder & CEO of [BrAIght Wave](https://www.braightwave.com) (AI Strategy & Applied Solutions), AI lecturer at Reichman University. The methodology behind it: Map → Prioritize → Build → Scale.
 
-Inspired by the structure of [phuryn/pm-skills](https://github.com/phuryn/pm-skills).
+Structure inspired by [phuryn/pm-skills](https://github.com/phuryn/pm-skills); skill-writing standards informed by [Superpowers](https://github.com/obra/superpowers).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Run `python3 scripts/sync_manifests.py`, `python3 validate_plugins.py`, and `python3 -m unittest discover -s tests` before opening a PR.
+See [CONTRIBUTING.md](CONTRIBUTING.md). New skills must include eval cases and show a positive Δ. Run `python3 scripts/eval_cases.py`, `python3 scripts/sync_manifests.py`, `python3 validate_plugins.py`, and `python3 -m unittest discover -s tests` before opening a PR.
 
 ## License
 

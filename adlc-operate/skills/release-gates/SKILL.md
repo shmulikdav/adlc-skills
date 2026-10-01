@@ -1,6 +1,6 @@
 ---
 name: release-gates
-description: "Define human approval gates and automated checks for releasing agent-built changes: what must be true before merge, before staging, before production, and who signs off, with progressive delivery (flags, canaries) and rollback triggers. Use when agents produce changes faster than the release process can absorb, when designing a CI/CD gate policy for AI-generated code, or before a go/no-go decision."
+description: "Use when agents produce changes faster than the release process can absorb, when designing CI/CD gates for AI-generated code, before a go/no-go decision, or when deciding which changes still need human approval."
 ---
 
 # Release Gates for Agentic Delivery
@@ -25,6 +25,14 @@ Agents compress the build phase; risk concentrates at release. Gates put human j
 3. Define **progressive delivery**: feature flag default off, percentage rollout, canary duration, success metrics.
 4. Define **rollback triggers** (error rate, latency, business KPI) and who can pull them without a meeting.
 5. Produce a go/no-go checklist for a specific release when one is provided.
+
+## Red flags
+
+| Thought | Reality |
+|---------|---------|
+| "CI is green, ship it" | CI proves what the tests check; the gate exists for what they don't |
+| "The agent already reviewed it" | Self-review by the author agent is not a gate |
+| "Rollback is easy, skip the canary" | Data migrations and external side effects don't roll back |
 
 ## Output
 

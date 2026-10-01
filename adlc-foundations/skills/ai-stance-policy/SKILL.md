@@ -1,6 +1,6 @@
 ---
 name: ai-stance-policy
-description: "Draft a clear, communicated AI stance for an engineering organization: approved tools, data classification rules for prompts, what agents may and may not do, code ownership and review expectations, IP and licensing, and how the policy evolves. Use when a company needs an AI usage policy for developers, an acceptable-use policy for coding agents, or when teams are unsure what is allowed."
+description: "Use when an engineering organization needs an AI usage or acceptable-use policy for developers and coding agents, when teams are unsure which tools or data are allowed, or before announcing an AI rollout."
 ---
 
 # AI Stance & Usage Policy (Engineering)

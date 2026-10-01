@@ -1,6 +1,6 @@
 ---
 name: mcp-integration-plan
-description: "Plan which internal systems agents should reach through MCP servers (issue tracker, docs/wiki, design files, observability, databases, CI), with access scope, read vs write permissions, data sensitivity, and rollout order. Use when making internal data AI-accessible, choosing MCP servers for a team, or when agents lack the context that lives outside the repo."
+description: "Use when deciding which internal systems coding agents should access through MCP servers (tickets, docs, designs, logs, databases, CI), when making internal data AI-accessible, or when agents lack context that lives outside the repository."
 ---
 
 # MCP Integration Plan

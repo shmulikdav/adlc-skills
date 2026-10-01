@@ -4,45 +4,49 @@ Guidance for agents working in this repository. Single source of truth for struc
 
 ## Project
 
-**ADLC Skills** (`braightwave/adlc-skills`) — a Claude Code / Cowork plugin marketplace of 8 plugins that encode the Agentic Development Lifecycle as skills, commands, and agents. Owner: Shmulik Davar, BrAIght Wave — shmulik@braightwave.com.
+**ADLC Skills** (`braightwave/adlc-skills`) — a Claude Code / Cowork plugin marketplace of 8 plugins encoding the Agentic Development Lifecycle's operating model: readiness, intent, context, execution stack, verification, governance, operations, and agent engineering. Owner: Shmulik Davar, BrAIght Wave.
+
+Positioning: this kit is the **operating-model layer**. It composes with execution rails (Superpowers, official `feature-dev`, `pr-review-toolkit`, `code-modernization`, security plugins) instead of duplicating them. Do not add generic coding-workflow skills; see docs/REVIEW.md for the evidence.
 
 ## Structure
 
 ```
-.claude-plugin/marketplace.json   <- generated; lists all plugins
-scripts/plugins_meta.json         <- SOURCE for plugin names, descriptions, keywords, version, owner
+.claude-plugin/marketplace.json   <- generated
+scripts/plugins_meta.json         <- SOURCE: plugin names, descriptions, keywords, version, owner
 scripts/sync_manifests.py         <- regenerates plugin.json files, plugin READMEs, marketplace.json
-validate_plugins.py               <- structural validator
-tests/                            <- consistency tests (counts, versions, sync)
+scripts/eval_cases.py             <- SOURCE: eval cases; regenerates every plugin's evals/
+validate_plugins.py               <- structural + style validator
+tests/                            <- consistency tests
 templates/                        <- opt-in hooks and file templates (never auto-activated)
-docs/ADLC-RESEARCH.md             <- research notes and sources behind the skills
+docs/                             <- research, review, recommended stack
 adlc-<name>/
-  .claude-plugin/plugin.json      <- generated; only this file belongs in .claude-plugin/
-  skills/<skill>/SKILL.md         <- one folder per skill; name == folder
-  commands/<command>.md           <- workflows chaining skills in the same plugin
-  agents/<agent>.md               <- optional subagents
+  .claude-plugin/plugin.json      <- generated
+  skills/<skill>/SKILL.md
+  commands/<command>.md
+  agents/<agent>.md               <- optional
+  evals/<case>/prompt.md + graders/*.md   <- generated; claude plugin eval format
   README.md                       <- generated
 ```
 
-## Design rules
+## Skill authoring rules
 
-- **Skills are methods (nouns); commands are workflows (verbs).**
-- **No cross-plugin hard references.** A command may only reference skills in its own plugin by name (`**skill-name**`). Mention other plugins' capabilities in natural language only. The validator enforces this.
-- Skill frontmatter: `name` (matches folder, kebab-case) and `description` (what + when, with trigger phrases, ≤1024 chars). Keep bodies well under 500 lines.
-- Command frontmatter: `description` and `argument-hint`; use `$ARGUMENTS` once.
-- Agents: `name` (matches file), `description`, `tools`. Reviewer agents are read-only.
-- Every skill ends with `### Further Reading` linking primary sources only (no promotional links).
-- Templates and hooks are opt-in. Never ship active hooks inside a plugin without an explicit decision recorded in CHANGELOG.
-- Voice: practitioner, direct, no hype words. Numbers over adjectives.
+- **Description = trigger conditions only.** Start with "Use when / before / after…", third person, list situations and symptoms, ≤500 chars. Never summarize the workflow in the description (agents act on the summary and skip the body). Enforced by the validator.
+- **Org-specific over generic.** Encode procedures, templates, thresholds and decision rules a model can't know. If a skill restates what a strong model already does, it doesn't belong (SWE-Skills-Bench: 39/49 generic SWE skills had zero gain).
+- **No unnecessary work.** Every instruction must change an outcome.
+- **Red flags table** for discipline rules agents tend to rationalize away.
+- **Every skill has ≥1 eval case** with natural phrasing (never naming the skill) and a rubric rewarding the skill's method; every plugin has ≥1 negative case.
+- Commands reference only skills in their own plugin (`**skill-name**`). Validator enforces.
+- `### Further Reading` links primary sources only.
 
 ## After any change
 
-1. Edit `scripts/plugins_meta.json` if a plugin's description/keywords changed.
-2. `python3 scripts/sync_manifests.py`
-3. Update counts in `README.md` (headline and per-plugin headers) if skills/commands were added or removed.
+1. Edit `scripts/plugins_meta.json` and/or `scripts/eval_cases.py` as needed.
+2. `python3 scripts/sync_manifests.py && python3 scripts/eval_cases.py`
+3. Update counts in `README.md` if skills/commands changed.
 4. `python3 validate_plugins.py && python3 -m unittest discover -s tests`
-5. Add a bullet under `## Unreleased` in `CHANGELOG.md`.
+5. Behavior check (costs model usage): `claude plugin eval ./adlc-<plugin>`. A skill change must not make Δ negative.
+6. CHANGELOG bullet under `## Unreleased`.
 
 ## Releases
 
-Version lives in `scripts/plugins_meta.json` and must equal the newest `## vX.Y.Z` heading in `CHANGELOG.md` (tested). Semver: new skills/commands = minor; fixes/docs = patch; renames/removals = major.
+Version lives in `scripts/plugins_meta.json` and must equal the newest `## vX.Y.Z` heading in `CHANGELOG.md` (tested). New skills = minor; fixes/docs = patch; removals/renames = major.

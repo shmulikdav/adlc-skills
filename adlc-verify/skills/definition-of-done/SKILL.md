@@ -1,6 +1,6 @@
 ---
 name: definition-of-done
-description: "Define and enforce a Definition of Done for agent-authored work: the checks an agent must run and evidence it must attach before claiming completion, plus the human gates that remain. Use when agents claim 'done' prematurely, when standardizing agent output quality across teams, or when writing the verification section of a context file."
+description: "Use when agents claim work is done prematurely, when standardizing the quality bar for agent-authored changes across teams, or when writing the verification section of a context file or PR template."
 ---
 
 # Definition of Done for Agent Work
@@ -8,6 +8,15 @@ description: "Define and enforce a Definition of Done for agent-authored work: t
 ## Purpose
 
 "Done" must mean verified, with evidence, not "the agent stopped". A written DoD gives agents a checklist they can execute and reviewers a standard they can enforce.
+
+## Red flags
+
+| Claim or thought | Reality |
+|------------------|---------|
+| "Tests should pass now" | Run them. A claim without fresh output is not evidence |
+| "The agent reported success" | Check the diff and run the checks independently |
+| "Linter is clean, so it builds" | Linting is not compiling, and compiling is not behavior |
+| "It's a small change, skip the checklist" | Small changes to auth, money, or data are where incidents start |
 
 ## Template
 

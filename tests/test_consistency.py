@@ -45,6 +45,17 @@ class TestConsistency(unittest.TestCase):
         self.assertIn(f"{len(MP['plugins'])} plugins", readme)
         self.assertIn(f"{s} skills", MP["description"])
 
+    def test_readme_eval_count(self):
+        n = sum(len(list((ROOT / e["name"]).glob("evals/*/prompt.md"))) for e in MP["plugins"])
+        self.assertIn(f"{n} eval cases", (ROOT / "README.md").read_text(encoding="utf-8"))
+
+    def test_every_skill_has_eval_case(self):
+        for e in MP["plugins"]:
+            d = ROOT / e["name"]
+            graders = "".join(g.read_text(encoding="utf-8") for g in d.glob("evals/*/graders/*.md"))
+            for sk in d.glob("skills/*/SKILL.md"):
+                self.assertIn(sk.parent.name, graders, f"{e['name']}:{sk.parent.name} has no eval case")
+
     def test_readme_per_plugin_counts(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         for e in MP["plugins"]:

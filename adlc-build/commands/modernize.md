@@ -16,7 +16,7 @@ argument-hint: "<system description or repo path>"
 Input: $ARGUMENTS
 
 ### Step 1: Audit
-Apply **legacy-modernization** step 1. If a codebase map does not exist, produce a compact one first.
+Apply **legacy-modernization** step 1. If a codebase map does not exist, produce a compact one first. If Anthropic's official code-modernization plugin is installed, recommend it as the execution engine for the slices.
 
 ### Step 2: Characterize
 Propose characterization tests and recording strategy for the top critical paths.

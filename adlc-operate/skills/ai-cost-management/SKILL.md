@@ -1,6 +1,6 @@
 ---
 name: ai-cost-management
-description: "Measure and control the cost of agentic development and AI features: cost per merged change, per ticket, per run, and per customer; budgets and alerts; model routing; caching; context trimming; and unit-economics stress tests. Use when AI/token spend is growing or unpredictable, when building an AI cost dashboard, pricing an AI feature, or checking whether an agent workflow is economically viable."
+description: "Use when token or AI spend is growing or unpredictable, when building an AI cost dashboard, pricing an AI feature, or checking whether an agent workflow or feature is economically viable."
 ---
 
 # AI Cost Management

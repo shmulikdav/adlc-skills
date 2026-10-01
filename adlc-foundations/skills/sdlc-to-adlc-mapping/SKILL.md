@@ -1,6 +1,6 @@
 ---
 name: sdlc-to-adlc-mapping
-description: "Map a team's current SDLC workflow, step by step, to its Agentic Development Lifecycle (ADLC) equivalent: who executes each step (human, agent, or both), what artifact changes, what gate a human keeps, and what new failure mode appears. Use when redesigning a dev process for coding agents, explaining SDLC vs ADLC to managers, or planning where agents should enter the workflow first."
+description: "Use when redesigning a development process around coding agents, explaining SDLC vs ADLC to managers, deciding where agents should enter an existing workflow first, or when a team asks what changes in each lifecycle stage when agents do the work."
 ---
 
 # SDLC → ADLC Mapping

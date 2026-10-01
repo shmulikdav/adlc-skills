@@ -1,10 +1,10 @@
-# adlc-build — Agentic construction
+# adlc-build — Execution stack & delivery shape
 
 **ADLC phase:** 3 · Build
 
 ## Overview
 
-Agentic construction workflows: explore-plan-implement, test-first development with agents, parallel agents and worktrees, small-batch delivery, and legacy modernization with behavior parity.
+Agentic construction at the system level: choosing and composing execution frameworks (Superpowers, Spec Kit, GSD, BMAD, built-in plan mode) with one owner per slot, small-batch delivery policy, and legacy modernization strategy with behavior parity.
 
 ## Install
 
@@ -13,19 +13,24 @@ claude plugin marketplace add braightwave/adlc-skills
 claude plugin install adlc-build@adlc-skills
 ```
 
-## Skills (5)
+## Skills (3)
 
-- `agentic-tdd` — Test-driven development with coding agents: write failing tests from acceptance criteria first, confirm they fail for the right reason, commit them, then have the agent implement until green without modifying the tests
-- `explore-plan-implement` — Run the core agentic coding loop: explore the relevant code read-only, write a reviewable plan, implement against the plan with verification after each step, then commit with a traceable message
-- `legacy-modernization` — Modernize or rebuild a legacy system with coding agents: characterize current behavior first (golden tests, recorded I/O), extract an implicit spec from code, choose strangler-fig vs rewrite, migrate in verified slices, and keep behavior parity
-- `parallel-agents` — Run multiple coding agents in parallel safely: split work into independent streams, isolate each in a git worktree or separate session, assign roles (implementer, test writer, reviewer), coordinate through files and PRs, and merge without conflicts
-- `small-batch-delivery` — Keep agent-generated changes small and shippable: PR size limits, feature flags, trunk-based integration, stacked PRs, and rollback readiness
+- `execution-rail-selection` — Use when choosing or combining agentic coding frameworks such as Superpowers, GSD, Spec Kit, BMAD, gstack, or Claude Code's built-in plan mode, when two installed frameworks conflict, or when a team asks which workflow plugin to standardize on
+- `legacy-modernization` — Use when planning a rebuild, rewrite, framework or language migration of a legacy system with coding agents, auditing a legacy codebase before a rewrite, or deciding between strangler-fig migration and a full rewrite
+- `small-batch-delivery` — Use when agent-generated pull requests are too large to review, review time is ballooning, a team asks how to keep AI-assisted delivery stable, or when writing PR policies for agent-authored changes
 
-## Commands (3)
+## Commands (2)
 
-- `/build-feature` — Implement an approved plan test-first, verifying after each step and producing small, reviewable PRs
+- `/choose-rail` — Pick and wire the agentic execution framework stack (Superpowers, Spec Kit, GSD, BMAD, built-in) with one owner per slot
 - `/modernize` — Plan a legacy system modernization or rebuild with behavior characterization, strategy choice, and verified migration slices
-- `/plan-feature` — Explore the codebase read-only and produce a reviewable implementation plan before any code changes
+
+## Evals (4 cases)
+
+Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
+
+```
+claude plugin eval ./adlc-build
+```
 
 ---
 

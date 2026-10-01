@@ -1,0 +1,60 @@
+name: Plugin evals
+
+# Behavioral benchmark: runs every plugin's eval suite with and without the plugin
+# (claude plugin eval) and reports WITH / W/OUT / Δ per case.
+# Costs real model usage. Runs on demand and weekly; requires the ANTHROPIC_API_KEY secret.
+
+on:
+  workflow_dispatch:
+    inputs:
+      plugin:
+        description: "Plugin directory to evaluate (or 'all')"
+        default: "all"
+      runs:
+        description: "Runs per case per arm"
+        default: "3"
+  schedule:
+    - cron: "0 5 * * 1"
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    strategy:
+      fail-fast: false
+      matrix:
+        plugin: [adlc-foundations, adlc-intent, adlc-context, adlc-build, adlc-verify, adlc-govern, adlc-operate, adlc-agent-engineering]
+    steps:
+      - name: Decide whether to run
+        id: gate
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then echo "No ANTHROPIC_API_KEY secret; skipping."; echo "run=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          sel="${{ inputs.plugin }}"
+          if [ -n "$sel" ] && [ "$sel" != "all" ] && [ "$sel" != "${{ matrix.plugin }}" ]; then echo "run=false" >> "$GITHUB_OUTPUT"; else echo "run=true" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.run == 'true'
+        with:
+          node-version: "22"
+      - run: npm install -g @anthropic-ai/claude-code
+        if: steps.gate.outputs.run == 'true'
+      - name: Run eval suite
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          claude plugin eval ./${{ matrix.plugin }} \
+            --trust-plugin \
+            --runs ${{ inputs.runs || '3' }} \
+            --threshold 0.7 \
+            --judge-model sonnet \
+            --no-publish \
+            --max-cost-usd 15 \
+            --json results-${{ matrix.plugin }}.json
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.gate.outputs.run == 'true'
+        with:
+          name: eval-${{ matrix.plugin }}
+          path: |
+            results-${{ matrix.plugin }}.json
+            ${{ matrix.plugin }}/evals/results/

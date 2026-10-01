@@ -1,6 +1,6 @@
 ---
 name: agentic-threat-model
-description: "Threat-model an agentic development setup or an AI agent product using the OWASP Top 10 for Agentic Applications (ASI01–ASI10): goal hijack, tool misuse, identity and privilege abuse, supply chain, unexpected code execution, memory and context poisoning, inter-agent communication, cascading failures, human-agent trust exploitation, rogue agents. Use when assessing security of coding agents, MCP connections, or an agent being built, or preparing a security review."
+description: "Use when assessing the security of coding agents, MCP connections, CI agents, or an AI agent being built, preparing a security review of an agentic setup, or when a team asks what could go wrong if an agent is manipulated."
 ---
 
 # Agentic Threat Model

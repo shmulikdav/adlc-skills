@@ -1,7 +1,7 @@
 {
   "name": "adlc-build",
-  "version": "1.0.0",
-  "description": "Agentic construction workflows: explore-plan-implement, test-first development with agents, parallel agents and worktrees, small-batch delivery, and legacy modernization with behavior parity.",
+  "version": "2.0.0",
+  "description": "Agentic construction at the system level: choosing and composing execution frameworks (Superpowers, Spec Kit, GSD, BMAD, built-in plan mode) with one owner per slot, small-batch delivery policy, and legacy modernization strategy with behavior parity.",
   "author": {
     "name": "Shmulik Davar — BrAIght Wave",
     "email": "shmulik@braightwave.com",
@@ -12,10 +12,10 @@
   "license": "MIT",
   "keywords": [
     "adlc",
-    "claude-code",
-    "agentic-coding",
-    "tdd",
-    "parallel-agents",
+    "execution-framework",
+    "superpowers",
+    "spec-kit",
+    "small-batches",
     "modernization"
   ]
 }

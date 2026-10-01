@@ -1,6 +1,6 @@
 ---
 name: adlc-readiness-assessment
-description: "Assess how ready an engineering organization is to move from SDLC to an Agentic Development Lifecycle (ADLC). Scores the seven DORA AI capabilities plus agent-specific readiness (context, verification, governance) and returns a maturity level, gaps, and first moves. Use when someone asks 'are we ready for agentic development', wants an AI-readiness baseline, is starting an AI transformation of R&D, or says AI tools are not delivering the expected productivity."
+description: "Use when an organization asks whether it is ready for agentic development or coding agents at scale, wants an AI-readiness or maturity baseline for R&D, is starting an AI transformation of engineering, or reports that AI coding tools are not delivering the expected productivity."
 ---
 
 # ADLC Readiness Assessment

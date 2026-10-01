@@ -15,17 +15,25 @@ claude plugin install adlc-agent-engineering@adlc-skills
 
 ## Skills (5)
 
-- `agent-architecture` — Choose the right architecture for an AI agent product: single LLM call, workflow (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer), or autonomous agent loop, and define autonomy boundaries, tools, memory, human checkpoints, and failure handling
-- `agent-runtime-guardrails` — Design runtime guardrails for an agent product: input validation and injection defenses, provenance labeling of untrusted content, tool allow-lists and argument validation, output checks, human approval for high-impact actions, rate/cost/step limits, and a kill switch
-- `eval-suite-design` — Design an evaluation suite for an AI agent or LLM feature: tasks with success criteria, code-based, model-based, and human graders, capability vs regression evals, multiple trials for non-determinism, and how evals gate releases
-- `prompt-versioning` — Treat prompts, system instructions, tool descriptions, and model choices as versioned code: store in the repo, review in PRs, tie every change to eval results, roll out with flags, and keep rollback paths
-- `tool-design` — Design tools (functions, MCP tools) that agents use reliably: clear names and descriptions, minimal well-typed parameters, meaningful errors that suggest a fix, token-efficient responses, pagination, idempotency, and safe defaults for side effects
+- `agent-architecture` — Use when designing a new AI agent or LLM feature, when someone asks whether something should be an agent, or when an existing agent is too unreliable, slow, or expensive
+- `agent-runtime-guardrails` — Use when shipping an agent to users or connecting it to real systems, after a red-team or prompt-injection finding, or when mapping an agent's controls to the OWASP Agentic Top 10
+- `eval-suite-design` — Use when building evals for an agent or LLM feature, before changing models or prompts, when moving an agent from demo to production, or when asked how to know the agent got better or worse
+- `prompt-versioning` — Use when prompts or model settings live in dashboards or chats without history, when a prompt or model change broke production behavior, or when setting up a change process for LLM features
+- `tool-design` — Use when building function-calling tools or an MCP server for agents, when an agent misuses, ignores, or loops on a tool, or when reviewing an agent's tool set
 
 ## Commands (3)
 
 - `/build-evals` — Create an eval suite for an agent or LLM feature with tasks, graders, thresholds, and CI wiring
 - `/design-agent` — Design an AI agent or LLM feature — pick the simplest working pattern, tools, guardrails, and eval plan
 - `/red-team-agent` — Red-team an agent design or running agent against the OWASP Agentic Top 10 and turn findings into guardrails and eval cases
+
+## Evals (6 cases)
+
+Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
+
+```
+claude plugin eval ./adlc-agent-engineering
+```
 
 ---
 

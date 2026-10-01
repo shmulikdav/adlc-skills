@@ -15,19 +15,27 @@ claude plugin install adlc-foundations@adlc-skills
 
 ## Skills (7)
 
-- `adlc-metrics` — Design a measurement framework for agentic development: delivery metrics (DORA four keys), agent-specific metrics (rework rate, PR acceptance, review time, escaped defects, cost per merged change), and a method to separate perceived from actual productivity
-- `adlc-readiness-assessment` — Assess how ready an engineering organization is to move from SDLC to an Agentic Development Lifecycle (ADLC)
-- `ai-champions-program` — Design an internal AI Champions / AI Enablers program (train-the-trainer) that spreads agentic development practices across engineering teams: champion selection, enablement curriculum, office hours, shared skills library, cadence, and success metrics
-- `ai-stance-policy` — Draft a clear, communicated AI stance for an engineering organization: approved tools, data classification rules for prompts, what agents may and may not do, code ownership and review expectations, IP and licensing, and how the policy evolves
-- `autonomy-levels` — Decide how much autonomy to give a coding agent for a given type of task, using a five-level delegation ladder (suggest → draft → execute-with-review → execute-with-gate → autonomous) based on blast radius, reversibility, and verifiability
-- `role-transitions` — Describe how each engineering role changes in an Agentic Development Lifecycle (developer, PM, QA, tech lead, engineering manager, designer): what they stop doing, start doing, new skills required, and how to evaluate performance
-- `sdlc-to-adlc-mapping` — Map a team's current SDLC workflow, step by step, to its Agentic Development Lifecycle (ADLC) equivalent: who executes each step (human, agent, or both), what artifact changes, what gate a human keeps, and what new failure mode appears
+- `adlc-metrics` — Use when someone asks how to measure the ROI or productivity impact of coding agents (Claude Code, Cursor, Copilot, Codex), wants an AI engineering dashboard, needs a baseline before a rollout, or is about to report self-reported speedups as results
+- `adlc-readiness-assessment` — Use when an organization asks whether it is ready for agentic development or coding agents at scale, wants an AI-readiness or maturity baseline for R&D, is starting an AI transformation of engineering, or reports that AI coding tools are not delivering the expected productivity
+- `ai-champions-program` — Use when a company wants to spread agentic development practices beyond early adopters, build an AI champions or AI enablers community, set up train-the-trainer for engineering teams, or adoption has stalled after licenses were bought
+- `ai-stance-policy` — Use when an engineering organization needs an AI usage or acceptable-use policy for developers and coding agents, when teams are unsure which tools or data are allowed, or before announcing an AI rollout
+- `autonomy-levels` — Use when someone asks whether an agent can do a task on its own, when setting agent permissions or approval requirements per repo or task type, when writing an agent delegation policy, or after an agent did more than it should have
+- `role-transitions` — Use when leaders ask how developer, PM, QA, tech lead, manager, or designer roles change with coding agents, when updating career ladders or job descriptions for agentic development, or when people worry what their job becomes
+- `sdlc-to-adlc-mapping` — Use when redesigning a development process around coding agents, explaining SDLC vs ADLC to managers, deciding where agents should enter an existing workflow first, or when a team asks what changes in each lifecycle stage when agents do the work
 
 ## Commands (3)
 
 - `/adlc-assess` — Assess a team's readiness for the Agentic Development Lifecycle and get a maturity level, gaps, and first moves
 - `/adlc-roadmap` — Build a phased 90-day ADLC adoption roadmap (Map → Prioritize → Build → Scale) for an engineering organization
 - `/map-to-adlc` — Map your current SDLC workflow to the Agentic Development Lifecycle and pick where agents should enter first
+
+## Evals (8 cases)
+
+Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
+
+```
+claude plugin eval ./adlc-foundations
+```
 
 ---
 

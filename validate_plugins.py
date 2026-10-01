@@ -85,8 +85,13 @@ def main():
                 err(f"{rel}: name '{d.get('name')}' must match directory '{sk.parent.name}'")
             if not KEBAB.match(sk.parent.name):
                 err(f"{rel}: skill directory must be kebab-case")
-            if len(d.get("description", "")) > 1024:
+            desc = d.get("description", "")
+            if len(desc) > 1024:
                 err(f"{rel}: description exceeds 1024 characters")
+            if not re.match(r"^Use (when|before|after) ", desc):
+                err(f"{rel}: description must start with 'Use when/before/after' (trigger conditions, not a workflow summary)")
+            if len(desc) > 500:
+                warnings.append(f"{rel}: description over 500 characters")
             if len(body.splitlines()) > 500:
                 warnings.append(f"{rel}: body over 500 lines; consider references/")
             if sk.parent.name in all_skill_names:
@@ -108,6 +113,41 @@ def main():
             for ref in re.findall(r"\*\*([a-z0-9-]+)\*\*", body):
                 if KEBAB.match(ref) and "-" in ref and ref not in skills and ref in all_skill_names:
                     err(f"{rel}: references skill '{ref}' from another plugin ({all_skill_names[ref]})")
+
+        # eval suite (claude plugin eval format)
+        ev = pdir / "evals"
+        cases = [c for c in ev.glob("*/prompt.md")] if ev.is_dir() else []
+        if not cases:
+            warnings.append(f"{name}: no eval suite under evals/")
+        tested = set()
+        negative = False
+        for pm in cases:
+            d, body = fm(pm)
+            rel = pm.relative_to(ROOT)
+            if d is None or not body.strip():
+                err(f"{rel}: prompt.md needs frontmatter and a prompt body")
+                continue
+            graders = list((pm.parent / "graders").glob("*.md"))
+            if not graders:
+                err(f"{rel}: case has no graders")
+            for g in graders:
+                gd, _ = fm(g)
+                if not gd or gd.get("type") not in {"regex", "tool_used", "tool_order", "file_exists", "llm", "baseline"}:
+                    err(f"{g.relative_to(ROOT)}: grader needs a valid type")
+                elif gd.get("type") == "tool_used" and gd.get("max") == "0":
+                    negative = True
+                elif gd.get("type") == "tool_used":
+                    mm = re.search(r"\?\)\?([a-z0-9-]+)\\?\"", gd.get("input_match", ""))
+                    for s in skills:
+                        if s in gd.get("input_match", ""):
+                            tested.add(s)
+            if re.search(r"\b(" + "|".join(map(re.escape, skills)) + r")\b", body) if skills else False:
+                err(f"{rel}: prompt names a skill; use natural phrasing so triggering is actually tested")
+        if cases and not negative:
+            warnings.append(f"{name}: eval suite has no negative (must-not-trigger) case")
+        for s in sorted(skills - tested):
+            if cases:
+                warnings.append(f"{name}: skill '{s}' has no eval case")
 
         for ag in sorted(pdir.glob("agents/*.md")):
             d, _ = fm(ag)

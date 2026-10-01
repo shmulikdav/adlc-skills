@@ -4,7 +4,7 @@
 
 ## Overview
 
-Context engineering for coding agents: CLAUDE.md / AGENTS.md authoring and audits, codebase maps, context-window budgeting, codifying conventions as skills, hooks or tests, and MCP integration planning.
+Context engineering for coding agents: CLAUDE.md / AGENTS.md authoring and audits, codebase maps, context-window budgeting, codifying conventions as skills, hooks or tests, MCP integration planning, and evidence-based skill library management.
 
 ## Install
 
@@ -13,19 +13,29 @@ claude plugin marketplace add braightwave/adlc-skills
 claude plugin install adlc-context@adlc-skills
 ```
 
-## Skills (5)
+## Skills (6)
 
-- `agent-context-files` — Write or audit agent context files (CLAUDE.md, AGENTS.md, .cursor/rules, Copilot instructions) so coding agents get the project knowledge they cannot infer from code: commands, conventions that differ from defaults, architecture boundaries, gotchas, and where to look
-- `codebase-map` — Produce an agent-oriented map of a codebase: modules and their responsibilities, entry points, data flow, dependencies, test layout, risky areas, and 'start here' paths for common change types
-- `codify-conventions` — Turn tribal knowledge into reusable agent instructions: decide whether a convention belongs in a context file, a skill, a rule file, a hook, or a test, then write it
-- `context-budget` — Manage an agent's context window as a scarce budget: what to load always vs on demand, when to clear or compact, when to delegate exploration to subagents, and how to hand off state between sessions with plan/progress files
-- `mcp-integration-plan` — Plan which internal systems agents should reach through MCP servers (issue tracker, docs/wiki, design files, observability, databases, CI), with access scope, read vs write permissions, data sensitivity, and rollout order
+- `agent-context-files` — Use when setting up or auditing CLAUDE.md, AGENTS.md, .cursor/rules, or Copilot instructions for a repository, when an agent keeps repeating the same project-specific mistake, or when a context file has grown long and is being ignored
+- `codebase-map` — Use when onboarding an agent or a person to an unfamiliar or legacy repository, before a large refactor, rebuild, or migration, or when asked to audit or explain how a codebase is structured
+- `codify-conventions` — Use when someone says the agent keeps doing something wrong, describes a team convention ('we always do it this way'), asks to make something a skill, rule, or hook, or wants to package team know-how for agents
+- `context-budget` — Use when agent quality drops during long sessions, sessions run out of context, work must continue across sessions, or when deciding what belongs in CLAUDE.md vs a skill vs a subagent vs a linked document
+- `mcp-integration-plan` — Use when deciding which internal systems coding agents should access through MCP servers (tickets, docs, designs, logs, databases, CI), when making internal data AI-accessible, or when agents lack context that lives outside the repository
+- `skill-library-management` — Use when a team is building, curating, or pruning an internal library of agent skills or plugins, when deciding whether a skill is worth keeping, when skills are not triggering or are slowing agents down, or before publishing skills to other teams
 
-## Commands (3)
+## Commands (4)
 
+- `/audit-skills` — Audit an internal skills or plugin library — triggering, measured value, overlap, and what to keep, fix, or cut
 - `/codify-convention` — Turn a recurring agent mistake or team convention into the right artifact — context line, skill, hook, or test
 - `/init-agent-context` — Create or audit the agent context file (CLAUDE.md / AGENTS.md) for a repository
 - `/map-codebase` — Generate an agent-oriented codebase map with modules, core flows, change recipes, and a risk register
+
+## Evals (7 cases)
+
+Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
+
+```
+claude plugin eval ./adlc-context
+```
 
 ---
 

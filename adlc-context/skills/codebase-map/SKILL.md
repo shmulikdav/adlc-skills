@@ -1,6 +1,6 @@
 ---
 name: codebase-map
-description: "Produce an agent-oriented map of a codebase: modules and their responsibilities, entry points, data flow, dependencies, test layout, risky areas, and 'start here' paths for common change types. Use when onboarding an agent or a person to an unfamiliar or legacy repo, before a large refactor or rebuild, or when the user asks to audit or understand a codebase."
+description: "Use when onboarding an agent or a person to an unfamiliar or legacy repository, before a large refactor, rebuild, or migration, or when asked to audit or explain how a codebase is structured."
 ---
 
 # Codebase Map

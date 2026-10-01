@@ -1,6 +1,6 @@
 ---
 name: agent-context-files
-description: "Write or audit agent context files (CLAUDE.md, AGENTS.md, .cursor/rules, Copilot instructions) so coding agents get the project knowledge they cannot infer from code: commands, conventions that differ from defaults, architecture boundaries, gotchas, and where to look. Use when setting up a repo for Claude Code / Cursor / Codex, when an agent keeps repeating the same mistake, or when a CLAUDE.md has grown long and is being ignored."
+description: "Use when setting up or auditing CLAUDE.md, AGENTS.md, .cursor/rules, or Copilot instructions for a repository, when an agent keeps repeating the same project-specific mistake, or when a context file has grown long and is being ignored."
 ---
 
 # Agent Context Files
@@ -54,6 +54,7 @@ Target: under ~150 lines for the root file. Use nested files in subdirectories f
 ## Notes
 
 - Treat the context file like code: review it in PRs, prune it, test changes by observing whether agent behavior shifts.
+- For capturing session learnings into CLAUDE.md over time, Anthropic's official `claude-md-management` plugin complements this skill.
 - When an agent makes the same mistake twice, the fix belongs in the context file or a skill, not in the next prompt.
 
 ---

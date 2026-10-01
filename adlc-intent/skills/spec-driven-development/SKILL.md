@@ -1,6 +1,6 @@
 ---
 name: spec-driven-development
-description: "Run Spec-Driven Development (SDD) for agentic coding: constitution (project principles) → specify (what and why) → clarify → plan (how) → tasks → implement → converge, with each artifact versioned in the repo. Use when a team wants a structured spec-first workflow for coding agents, mentions GitHub Spec Kit, Kiro specs, or AWS AI-DLC, or wants to move from vibe coding to repeatable delivery."
+description: "Use when a team wants a spec-first workflow for coding agents, mentions GitHub Spec Kit, Kiro specs, or AWS AI-DLC, wants to move from vibe coding to repeatable delivery, or starts a feature with real ambiguity or risk."
 ---
 
 # Spec-Driven Development (SDD)

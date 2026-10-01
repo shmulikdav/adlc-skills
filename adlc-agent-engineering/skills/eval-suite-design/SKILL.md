@@ -1,6 +1,6 @@
 ---
 name: eval-suite-design
-description: "Design an evaluation suite for an AI agent or LLM feature: tasks with success criteria, code-based, model-based, and human graders, capability vs regression evals, multiple trials for non-determinism, and how evals gate releases. Use when building evals, when someone asks 'how do we know the agent got better (or worse)', before changing models or prompts, or when moving an agent from demo to production."
+description: "Use when building evals for an agent or LLM feature, before changing models or prompts, when moving an agent from demo to production, or when asked how to know the agent got better or worse."
 ---
 
 # Eval Suite Design

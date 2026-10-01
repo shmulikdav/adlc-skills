@@ -1,6 +1,6 @@
 ---
 name: agent-permissions
-description: "Design least-privilege permission configurations for coding agents: allow/ask/deny rules for tools and shell commands, file and directory boundaries, network access, sandboxing, secrets handling, and per-environment profiles (local, CI, headless). Use when configuring Claude Code settings or permissions, deciding what an agent may run without asking, setting up agents in CI, or after a near-miss with an agent action."
+description: "Use when configuring what a coding agent may read, edit, or run (Claude Code settings, permissions, sandboxing), deciding what runs without approval, setting up agents in CI or headless mode, or after a near-miss with an agent action."
 ---
 
 # Agent Permissions (Least Privilege)
@@ -20,6 +20,14 @@ Permission prompts that fire constantly get approved blindly. Permissions that a
 4. **Profiles:** local interactive (more ask), CI/headless (no ask possible → narrow allow-list, sandboxed container, scoped token), and review-only (read-only).
 5. **Secrets:** inject at runtime through environment or secret managers the agent cannot read back; never paste them into prompts or context files.
 6. **Back it with enforcement:** where a rule must never be broken, add a hook or CI check in addition to the permission rule.
+
+## Red flags
+
+| Thought | Reality |
+|---------|---------|
+| "Approve-all is faster" | Blanket approval removes the only check between a bad step and real damage |
+| "It's only the dev environment" | Dev machines hold credentials, SSH keys, and tokens to production systems |
+| "The instruction in CLAUDE.md says not to" | Instructions are probabilistic; deny rules and hooks are not |
 
 ## Output
 

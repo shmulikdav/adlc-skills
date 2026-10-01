@@ -1,6 +1,6 @@
 ---
 name: behavioral-testing
-description: "Design behavioral validation for agent-built software: test what the system does across the input range (properties, invariants, contracts, state transitions) rather than matching the agent's own implementation. Use when building a test strategy for AI-generated code, when tests pass but behavior is wrong, or when QA needs to shift from manual regression to verifying agent output."
+description: "Use when building a test strategy for AI-generated code, when tests pass but behavior is wrong, when QA is shifting from manual regression to verifying agent output, or when correctness of money, permissions, or data integrity matters."
 ---
 
 # Behavioral Testing

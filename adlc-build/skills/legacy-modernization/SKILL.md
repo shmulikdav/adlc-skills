@@ -1,11 +1,13 @@
 ---
 name: legacy-modernization
-description: "Modernize or rebuild a legacy system with coding agents: characterize current behavior first (golden tests, recorded I/O), extract an implicit spec from code, choose strangler-fig vs rewrite, migrate in verified slices, and keep behavior parity. Use when rebuilding an old system from scratch, migrating frameworks or languages, or auditing a legacy codebase before a rewrite."
+description: "Use when planning a rebuild, rewrite, framework or language migration of a legacy system with coding agents, auditing a legacy codebase before a rewrite, or deciding between strangler-fig migration and a full rewrite."
 ---
 
 # Legacy Modernization with Agents
 
 ## Purpose
+
+This skill owns the *strategy*: what to keep, what to change, how to slice, and how to prove parity. For execution, pair it with Anthropic's official `code-modernization` plugin (assessment, business-rule extraction, transform, verify agents) rather than re-implementing those steps.
 
 Agents are good at reading and translating code, and that is exactly the trap: they will faithfully reproduce behavior nobody wants, or "improve" behavior somebody depends on. Modernization succeeds when current behavior is captured before anything changes.
 
@@ -25,7 +27,21 @@ Agents are good at reading and translating code, and that is exactly the trap: t
 
 Audit summary, behavior spec with keep/change/drop decisions, strategy rationale, slice plan, and parity-testing approach.
 
+## Red flags
+
+| Thought | Reality |
+|---------|---------|
+| "The new code is cleaner, so it's better" | Cleaner code with different behavior is a regression until an owner says otherwise |
+| "We'll write tests after the port" | Without characterization tests first, there is nothing to compare against |
+| "The agent read the code, it knows the rules" | Code shows what happens, not what was intended. Confirm money, permissions, and retention rules with an owner |
+
 ## Notes
 
 - Never let the agent infer intent from code alone for money, permissions, or data retention logic. Confirm with an owner.
 - Keep secrets and production data out of the agent's context during the audit; use sanitized samples.
+
+---
+
+### Further Reading
+
+- [Anthropic official code-modernization plugin](https://github.com/anthropics/claude-plugins-official)

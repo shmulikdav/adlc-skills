@@ -1,6 +1,6 @@
 ---
 name: acceptance-criteria
-description: "Write precise, testable acceptance criteria an agent can verify: Given/When/Then scenarios, EARS-style requirements (When/While/If/Where … the system shall …), edge cases, negative paths, and non-functional thresholds, each mapped to a verification method. Use when turning a feature idea or user story into criteria for a coding agent, when ACs are vague, or before generating tests from a spec."
+description: "Use when writing or fixing acceptance criteria for a feature an agent will build or test, when criteria are vague or untestable, or before generating tests from a spec or user story."
 ---
 
 # Acceptance Criteria for Agents

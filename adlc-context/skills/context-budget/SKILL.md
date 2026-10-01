@@ -1,6 +1,6 @@
 ---
 name: context-budget
-description: "Manage an agent's context window as a scarce budget: what to load always vs on demand, when to clear or compact, when to delegate exploration to subagents, and how to hand off state between sessions with plan/progress files. Use when agent quality drops in long sessions, when sessions run out of context, when designing long-running agent work, or when deciding between CLAUDE.md, skills, and subagents."
+description: "Use when agent quality drops during long sessions, sessions run out of context, work must continue across sessions, or when deciding what belongs in CLAUDE.md vs a skill vs a subagent vs a linked document."
 ---
 
 # Context Budget Management

@@ -1,6 +1,6 @@
 ---
 name: agentic-prd
-description: "Write an Agentic PRD (Agent Execution Specification): a product spec a coding agent can execute without guessing. Covers business intent, scope and non-goals, constraints and guardrails, repo context pointers, interfaces, acceptance tests, and stop conditions. Use when a PM or engineer wants a PRD for Claude Code / Cursor / Codex, says 'make this spec agent-ready', or hands an agent a vague ticket."
+description: "Use when a PM or engineer is about to hand a feature, ticket, or PRD to a coding agent, asks to make a spec agent-ready, or when an agent built the wrong thing from a vague requirement."
 ---
 
 # Agentic PRD (Agent Execution Specification)

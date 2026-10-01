@@ -69,9 +69,11 @@ def main():
         lines += [f"- `{n}` — {first_sentence(fm.get('description', ''))}" for n, fm in skills]
         lines += ["", f"## Commands ({len(commands)})", ""]
         lines += [f"- `/{n}` — {fm.get('description', '')}" for n, fm in commands]
+        n_evals = len(list(pdir.glob("evals/*/prompt.md")))
         if agents:
             lines += ["", f"## Agents ({len(agents)})", ""]
             lines += [f"- `{n}` — {first_sentence(fm.get('description', ''))}" for n, fm in agents]
+        lines += ["", f"## Evals ({n_evals} cases)", "", "Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.", "", "```", f"claude plugin eval ./{pl['name']}", "```"]
         lines += ["", "---", "", "Part of [ADLC Skills](../README.md). MIT licensed.", ""]
         (pdir / "README.md").write_text("\n".join(lines), encoding="utf-8")
 

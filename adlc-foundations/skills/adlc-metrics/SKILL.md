@@ -1,6 +1,6 @@
 ---
 name: adlc-metrics
-description: "Design a measurement framework for agentic development: delivery metrics (DORA four keys), agent-specific metrics (rework rate, PR acceptance, review time, escaped defects, cost per merged change), and a method to separate perceived from actual productivity. Use when someone asks how to measure ROI of Claude Code / Cursor / coding agents, wants an AI productivity dashboard, or needs a baseline before a rollout."
+description: "Use when someone asks how to measure the ROI or productivity impact of coding agents (Claude Code, Cursor, Copilot, Codex), wants an AI engineering dashboard, needs a baseline before a rollout, or is about to report self-reported speedups as results."
 ---
 
 # ADLC Metrics & ROI Measurement

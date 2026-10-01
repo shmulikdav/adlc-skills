@@ -38,9 +38,19 @@ The common thread: the stages stay recognizable; the executor changes, the artif
 
 **METR (July 2025) randomized controlled trial.** 16 experienced open-source developers, 246 real tasks in large mature repos they knew well. With AI allowed, tasks took about 19% longer on average, while developers believed they had been sped up by roughly 20%. METR notes the setting (expert developers, complex familiar codebases, early-2025 tools) limits generalization. Lesson for the ADLC: perceived productivity is not a metric; measure with baselines and comparisons. → `adlc-metrics`.
 
+### Follow-up note on METR
+METR's July 2025 trial (16 developers, 246 tasks) found a 19% slowdown alongside a self-perceived ~20% speedup. Reporting on METR's 2026 follow-up indicates METR considered its new estimate unreliable because many developers declined the no-AI condition. The durable lesson is the perception gap: measure, don't survey.
+
+### Evidence on skills themselves
+- **SkillsBench** (arXiv 2602.12670): curated skills +16.2 pp on average across 7 agent-model configurations; self-generated −1.3 pp; focused 2–3 skill sets outperform larger bundles; software engineering gains smallest (+4.5 pp).
+- **SWE-Skills-Bench** (arXiv 2603.15401): 39 of 49 public SWE skills gave zero gain; average +1.2%.
+- **Agent Skills Can Be Harmful** (arXiv 2608.11888): 307 confirmed skill-induced failures; the largest class is skills inducing unnecessary work.
+- **Claude Code plugin evals** (`claude plugin eval`): runs each case with and without the plugin and reports Δ, the right instrument for proving a skill helps.
+See docs/REVIEW.md for how these shaped v2.
+
 ## 3. Practice sources
 
-**Anthropic — Claude Code best practices.** Most practices follow from one constraint: context fills fast and performance degrades as it fills. Explore → plan → implement → commit; give the agent verification criteria; keep CLAUDE.md short (bloated files get ignored); treat CLAUDE.md like code; use subagents for exploration and independent review. → `explore-plan-implement`, `agent-context-files`, `context-budget`, `agentic-tdd`.
+**Anthropic — Claude Code best practices.** Most practices follow from one constraint: context fills fast and performance degrades as it fills. Explore → plan → implement → commit; give the agent verification criteria; keep CLAUDE.md short (bloated files get ignored); treat CLAUDE.md like code; use subagents for exploration and independent review. → `agent-context-files`, `context-budget`, `definition-of-done`; execution itself is delegated to rails (see `execution-rail-selection`).
 
 **Anthropic — Building effective agents.** Prefer the simplest solution; workflows (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer) before autonomous agents. → `agent-architecture`.
 
@@ -52,7 +62,7 @@ The common thread: the stages stay recognizable; the executor changes, the artif
 
 **GitHub Spec Kit.** Constitution once per project; specify → plan → tasks → implement → converge per feature; the constitution check grounds plans in non-negotiable principles. → `spec-driven-development`.
 
-**AWS AI-DLC workflows.** Methodology over tool; human approval required to move between phases; documentation first; runs as steering rules in many IDEs and agents. → `spec-driven-development`, `release-gates`.
+**AWS AI-DLC workflows.** Methodology over tool; human approval required to move between phases; documentation first; runs as steering rules in many IDEs and agents. → `spec-driven-development`, `release-gates`, `execution-rail-selection`.
 
 ## 4. Security and governance
 
@@ -106,4 +116,11 @@ The common thread: the stages stay recognizable; the executor changes, the artif
 - NIST AI RMF: https://www.nist.gov/itl/ai-risk-management-framework
 - ISO/IEC 42001: https://www.iso.org/standard/81230.html
 - EU AI Act: https://artificialintelligenceact.eu/
+- SkillsBench: https://arxiv.org/abs/2602.12670
+- SWE-Skills-Bench: https://arxiv.org/abs/2603.15401
+- Agent Skills Can Be Harmful: https://arxiv.org/abs/2608.11888
+- Claude Code plugin evals: https://code.claude.com/docs/en/plugin-evals
+- Superpowers: https://github.com/obra/superpowers
+- Anthropic official plugins: https://github.com/anthropics/claude-plugins-official
+- Trail of Bits skills: https://github.com/trailofbits/skills
 - Reference structure: https://github.com/phuryn/pm-skills

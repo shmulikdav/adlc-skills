@@ -15,15 +15,23 @@ claude plugin install adlc-operate@adlc-skills
 
 ## Skills (4)
 
-- `agent-incident-review` — Run a blameless post-incident review for failures caused or amplified by AI agents: reconstruct the agent's trajectory from transcripts and logs, identify which control failed (spec, context, permissions, verification, gate), and turn findings into durable fixes in context files, skills, hooks, tests, or evals
-- `agentops-observability` — Instrument agents and agentic workflows for observability: traces of steps and tool calls, inputs/outputs with redaction, latency, token usage, error and retry rates, human intervention points, and dashboards and alerts
-- `ai-cost-management` — Measure and control the cost of agentic development and AI features: cost per merged change, per ticket, per run, and per customer; budgets and alerts; model routing; caching; context trimming; and unit-economics stress tests
-- `release-gates` — Define human approval gates and automated checks for releasing agent-built changes: what must be true before merge, before staging, before production, and who signs off, with progressive delivery (flags, canaries) and rollback triggers
+- `agent-incident-review` — Use after a bug, outage, data issue, security event, or near-miss caused or amplified by a coding agent or AI feature, or when asked for a postmortem involving Claude Code, Cursor, or an agent
+- `agentops-observability` — Use when running agents in CI or production, debugging what an agent did after the fact, needing an audit trail of agent actions, or building an AgentOps or LLM observability practice
+- `ai-cost-management` — Use when token or AI spend is growing or unpredictable, when building an AI cost dashboard, pricing an AI feature, or checking whether an agent workflow or feature is economically viable
+- `release-gates` — Use when agents produce changes faster than the release process can absorb, when designing CI/CD gates for AI-generated code, before a go/no-go decision, or when deciding which changes still need human approval
 
 ## Commands (2)
 
 - `/agent-postmortem` — Blameless post-incident review for agent-caused failures that turns findings into durable fixes
 - `/release-check` — Run a go/no-go release check for agent-built changes with gate evidence and rollback readiness
+
+## Evals (5 cases)
+
+Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
+
+```
+claude plugin eval ./adlc-operate
+```
 
 ---
 

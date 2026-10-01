@@ -1,6 +1,6 @@
 ---
 name: tool-design
-description: "Design tools (functions, MCP tools) that agents use reliably: clear names and descriptions, minimal well-typed parameters, meaningful errors that suggest a fix, token-efficient responses, pagination, idempotency, and safe defaults for side effects. Use when building an MCP server or function-calling tools, when an agent misuses or ignores a tool, or when reviewing an agent's tool set."
+description: "Use when building function-calling tools or an MCP server for agents, when an agent misuses, ignores, or loops on a tool, or when reviewing an agent's tool set."
 ---
 
 # Tool Design for Agents

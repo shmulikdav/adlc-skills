@@ -1,6 +1,6 @@
 ---
 name: ai-champions-program
-description: "Design an internal AI Champions / AI Enablers program (train-the-trainer) that spreads agentic development practices across engineering teams: champion selection, enablement curriculum, office hours, shared skills library, cadence, and success metrics. Use when a company wants to scale Claude Code or Cursor adoption beyond early adopters, build an AI enablers community, or set up train-the-trainer for ADLC."
+description: "Use when a company wants to spread agentic development practices beyond early adopters, build an AI champions or AI enablers community, set up train-the-trainer for engineering teams, or adoption has stalled after licenses were bought."
 ---
 
 # AI Champions Program

@@ -1,6 +1,6 @@
 ---
 name: role-transitions
-description: "Describe how each engineering role changes in an Agentic Development Lifecycle (developer, PM, QA, tech lead, engineering manager, designer): what they stop doing, start doing, new skills required, and how to evaluate performance. Use when leaders ask how roles change with coding agents, when updating career ladders or job descriptions for ADLC, or when preparing teams for the shift."
+description: "Use when leaders ask how developer, PM, QA, tech lead, manager, or designer roles change with coding agents, when updating career ladders or job descriptions for agentic development, or when people worry what their job becomes."
 ---
 
 # Role Transitions in the ADLC

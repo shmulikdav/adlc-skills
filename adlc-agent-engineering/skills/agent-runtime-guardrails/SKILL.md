@@ -1,6 +1,6 @@
 ---
 name: agent-runtime-guardrails
-description: "Design runtime guardrails for an agent product: input validation and injection defenses, provenance labeling of untrusted content, tool allow-lists and argument validation, output checks, human approval for high-impact actions, rate/cost/step limits, and a kill switch. Use when shipping an agent to users or connecting it to real systems, after a red-team finding, or when mapping agent controls to the OWASP Agentic Top 10."
+description: "Use when shipping an agent to users or connecting it to real systems, after a red-team or prompt-injection finding, or when mapping an agent's controls to the OWASP Agentic Top 10."
 ---
 
 # Agent Runtime Guardrails

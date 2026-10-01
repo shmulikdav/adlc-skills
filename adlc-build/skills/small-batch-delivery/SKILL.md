@@ -1,6 +1,6 @@
 ---
 name: small-batch-delivery
-description: "Keep agent-generated changes small and shippable: PR size limits, feature flags, trunk-based integration, stacked PRs, and rollback readiness. Use when agent PRs are too large to review, when review time is ballooning, when the team asks how to keep AI-assisted delivery stable, or when designing PR policies for coding agents."
+description: "Use when agent-generated pull requests are too large to review, review time is ballooning, a team asks how to keep AI-assisted delivery stable, or when writing PR policies for agent-authored changes."
 ---
 
 # Small-Batch Delivery

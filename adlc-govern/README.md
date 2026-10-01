@@ -15,11 +15,11 @@ claude plugin install adlc-govern@adlc-skills
 
 ## Skills (5)
 
-- `agent-permissions` — Design least-privilege permission configurations for coding agents: allow/ask/deny rules for tools and shell commands, file and directory boundaries, network access, sandboxing, secrets handling, and per-environment profiles (local, CI, headless)
-- `agentic-threat-model` — Threat-model an agentic development setup or an AI agent product using the OWASP Top 10 for Agentic Applications (ASI01–ASI10): goal hijack, tool misuse, identity and privilege abuse, supply chain, unexpected code execution, memory and context poisoning, inter-agent communication, cascading failures, human-agent trust exploitation, rogue agents
-- `ai-compliance-mapping` — Map an organization's agentic development practices and AI features to governance frameworks (ISO/IEC 42001 AI management system, NIST AI RMF, EU AI Act, SOC 2) and produce a control gap list with evidence to collect
-- `extension-vetting` — Vet third-party agent extensions before installing them: skills, plugins, MCP servers, hooks, and agent rule files
-- `guardrail-hooks` — Design deterministic guardrails for coding agents with lifecycle hooks: block edits to protected files, block dangerous commands, auto-format and lint after edits, run tests before stop, log every tool call for audit
+- `agent-permissions` — Use when configuring what a coding agent may read, edit, or run (Claude Code settings, permissions, sandboxing), deciding what runs without approval, setting up agents in CI or headless mode, or after a near-miss with an agent action
+- `agentic-threat-model` — Use when assessing the security of coding agents, MCP connections, CI agents, or an AI agent being built, preparing a security review of an agentic setup, or when a team asks what could go wrong if an agent is manipulated
+- `ai-compliance-mapping` — Use when preparing for an AI audit or certification (ISO/IEC 42001, SOC 2), answering customer security questionnaires about AI use in development, or aligning agentic development practices with NIST AI RMF or the EU AI Act
+- `extension-vetting` — Use when someone asks whether a skill, plugin, MCP server, hook, or agent rules file is safe to install, before adding a new plugin marketplace, or when building an approved-extensions list for a team
+- `guardrail-hooks` — Use when a rule must be enforced every time rather than remembered, when CLAUDE.md instructions are not followed reliably, when protecting secrets, CI config, or migrations from agent edits, or when setting up Claude Code hooks
 
 ## Commands (3)
 
@@ -30,6 +30,14 @@ claude plugin install adlc-govern@adlc-skills
 ## Agents (1)
 
 - `security-reviewer` — Security-focused reviewer for agentic setups and agent-authored changes
+
+## Evals (6 cases)
+
+Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
+
+```
+claude plugin eval ./adlc-govern
+```
 
 ---
 

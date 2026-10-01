@@ -1,6 +1,6 @@
 ---
 name: ai-compliance-mapping
-description: "Map an organization's agentic development practices and AI features to governance frameworks (ISO/IEC 42001 AI management system, NIST AI RMF, EU AI Act, SOC 2) and produce a control gap list with evidence to collect. Use when preparing for an AI audit or certification, answering customer security questionnaires about AI use in development, or aligning ADLC practices with regulatory expectations."
+description: "Use when preparing for an AI audit or certification (ISO/IEC 42001, SOC 2), answering customer security questionnaires about AI use in development, or aligning agentic development practices with NIST AI RMF or the EU AI Act."
 ---
 
 # AI Compliance Mapping

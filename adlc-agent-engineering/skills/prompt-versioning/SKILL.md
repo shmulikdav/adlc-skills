@@ -1,6 +1,6 @@
 ---
 name: prompt-versioning
-description: "Treat prompts, system instructions, tool descriptions, and model choices as versioned code: store in the repo, review in PRs, tie every change to eval results, roll out with flags, and keep rollback paths. Use when prompts live in dashboards or chats with no history, when a prompt change broke production behavior, or when setting up a change process for LLM features."
+description: "Use when prompts or model settings live in dashboards or chats without history, when a prompt or model change broke production behavior, or when setting up a change process for LLM features."
 ---
 
 # Prompt Versioning (Prompts as Code)

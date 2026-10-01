@@ -1,6 +1,6 @@
 ---
 name: agent-incident-review
-description: "Run a blameless post-incident review for failures caused or amplified by AI agents: reconstruct the agent's trajectory from transcripts and logs, identify which control failed (spec, context, permissions, verification, gate), and turn findings into durable fixes in context files, skills, hooks, tests, or evals. Use after an agent-caused bug, outage, data issue, or near-miss, or when the user asks for a postmortem involving Claude Code, Cursor, or an agent feature."
+description: "Use after a bug, outage, data issue, security event, or near-miss caused or amplified by a coding agent or AI feature, or when asked for a postmortem involving Claude Code, Cursor, or an agent."
 ---
 
 # Agent Incident Review

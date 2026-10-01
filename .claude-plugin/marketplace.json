@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "adlc-skills",
-  "version": "1.0.0",
-  "description": "ADLC Skills: the Agentic Development Lifecycle as 41 skills, 23 commands and 2 agents across 8 plugins — from readiness and agent-ready specs to context engineering, agentic build, verification, governance, operations, and agent engineering.",
+  "version": "2.0.0",
+  "description": "ADLC Skills: the Agentic Development Lifecycle as 40 skills, 23 commands and 2 agents across 8 plugins — from readiness and agent-ready specs to context engineering, agentic build, verification, governance, operations, and agent engineering.",
   "owner": {
     "name": "Shmulik Davar — BrAIght Wave",
     "email": "shmulik@braightwave.com",
@@ -23,13 +23,13 @@
     },
     {
       "name": "adlc-context",
-      "description": "Context engineering for coding agents: CLAUDE.md / AGENTS.md authoring and audits, codebase maps, context-window budgeting, codifying conventions as skills, hooks or tests, and MCP integration planning.",
+      "description": "Context engineering for coding agents: CLAUDE.md / AGENTS.md authoring and audits, codebase maps, context-window budgeting, codifying conventions as skills, hooks or tests, MCP integration planning, and evidence-based skill library management.",
       "source": "./adlc-context",
       "category": "development"
     },
     {
       "name": "adlc-build",
-      "description": "Agentic construction workflows: explore-plan-implement, test-first development with agents, parallel agents and worktrees, small-batch delivery, and legacy modernization with behavior parity.",
+      "description": "Agentic construction at the system level: choosing and composing execution frameworks (Superpowers, Spec Kit, GSD, BMAD, built-in plan mode) with one owner per slot, small-batch delivery policy, and legacy modernization strategy with behavior parity.",
       "source": "./adlc-build",
       "category": "development"
     },

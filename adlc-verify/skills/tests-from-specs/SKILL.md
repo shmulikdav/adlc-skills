@@ -1,6 +1,6 @@
 ---
 name: tests-from-specs
-description: "Derive a traceable test suite from a spec or test-management system: map every acceptance criterion to tests, classify existing vs proposed vs unverified, and generate test code or test cases (including from Xray, TestRail, or Gherkin feature files). Use when generating tests from PRDs or acceptance criteria, lifting coverage with agents, or answering 'which requirements have no test'."
+description: "Use when generating tests from PRDs, acceptance criteria, Gherkin, or test-management exports (Xray, TestRail, Zephyr), when asked which requirements have no test, or when lifting test coverage with agents."
 ---
 
 # Tests from Specs

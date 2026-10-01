@@ -1,6 +1,6 @@
 ---
 name: hallucination-checks
-description: "Verify that what an agent referenced actually exists and behaves as claimed: packages and versions, imports, API methods, config keys, CLI flags, environment variables, file paths, and documentation links; detect typosquatted or nonexistent dependencies. Use before merging agent-generated code, when a build fails on an unknown symbol, or when adding dependencies an agent suggested."
+description: "Use before merging agent-generated code, when a build fails on an unknown symbol, package, or flag, when an agent adds or suggests a new dependency, or when PR text claims results without evidence."
 ---
 
 # Hallucination Checks

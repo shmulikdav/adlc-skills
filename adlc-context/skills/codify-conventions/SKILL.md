@@ -1,6 +1,6 @@
 ---
 name: codify-conventions
-description: "Turn tribal knowledge into reusable agent instructions: decide whether a convention belongs in a context file, a skill, a rule file, a hook, or a test, then write it. Includes writing a SKILL.md with a strong trigger description. Use when someone says 'the agent keeps doing X wrong', 'we always do it this way', 'make this a skill', or wants to package team know-how for agents."
+description: "Use when someone says the agent keeps doing something wrong, describes a team convention ('we always do it this way'), asks to make something a skill, rule, or hook, or wants to package team know-how for agents."
 ---
 
 # Codify Conventions

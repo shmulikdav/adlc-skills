@@ -1,6 +1,6 @@
 ---
 name: agent-architecture
-description: "Choose the right architecture for an AI agent product: single LLM call, workflow (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer), or autonomous agent loop, and define autonomy boundaries, tools, memory, human checkpoints, and failure handling. Use when designing a new agent or AI feature, when someone asks 'should this be an agent', or when an agent is too unreliable or expensive."
+description: "Use when designing a new AI agent or LLM feature, when someone asks whether something should be an agent, or when an existing agent is too unreliable, slow, or expensive."
 ---
 
 # Agent Architecture

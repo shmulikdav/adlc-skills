@@ -1,6 +1,6 @@
 ---
 name: autonomy-levels
-description: "Decide how much autonomy to give a coding agent for a given type of task, using a five-level delegation ladder (suggest → draft → execute-with-review → execute-with-gate → autonomous) based on blast radius, reversibility, and verifiability. Use when someone asks 'can we let the agent do X on its own', when setting agent permissions per repo or task type, or when writing an agent delegation policy."
+description: "Use when someone asks whether an agent can do a task on its own, when setting agent permissions or approval requirements per repo or task type, when writing an agent delegation policy, or after an agent did more than it should have."
 ---
 
 # Agent Autonomy Levels
@@ -42,6 +42,14 @@ Total 4–6 → up to L3–L4. 7–9 → L2. 10–12 → L0–L1.
 ```
 | Task type | Blast | Revers. | Verif. | Clarity | Total | Level | Permissions | Promote when | Demote when |
 ```
+
+## Red flags
+
+| Thought | Reality |
+|---------|---------|
+| "It's worked fine for a week, let's go autonomous" | Promotion needs a defined evidence threshold, not a good week |
+| "Senior engineers can give their agents L4" | Autonomy attaches to task types, not to people |
+| "We'll add the gate after the pilot" | Gates removed without replacement verification rarely come back |
 
 ## Notes
 
