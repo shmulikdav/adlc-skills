@@ -1,6 +1,6 @@
 ---
 name: write-agentic-prd
-description: "Run the ADLC write-agentic-prd workflow: turn a feature idea or ticket into an Agentic PRD a coding agent can execute without guessing. Use when the user invokes $write-agentic-prd or asks for this workflow end to end."
+description: "Use when the user invokes $write-agentic-prd, or asks to run the Agent Execution Spec workflow from the adlc-intent plugin end to end."
 ---
 
 > Generated from the Claude Code command `/write-agentic-prd` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

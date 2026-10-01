@@ -29,7 +29,7 @@ claude plugin install adlc-context@adlc-skills
 - `/init-agent-context` — Create or audit the agent context file (CLAUDE.md / AGENTS.md) for a repository
 - `/map-codebase` — Generate an agent-oriented codebase map with modules, core flows, change recipes, and a risk register
 
-## Evals (7 cases)
+## Evals (8 cases)
 
 Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
 

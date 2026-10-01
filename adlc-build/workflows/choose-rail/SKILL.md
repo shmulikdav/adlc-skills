@@ -1,6 +1,6 @@
 ---
 name: choose-rail
-description: "Run the ADLC choose-rail workflow: pick and wire the agentic execution framework stack (Superpowers, Spec Kit, GSD, BMAD, built-in) with one owner per slot. Use when the user invokes $choose-rail or asks for this workflow end to end."
+description: "Use when the user invokes $choose-rail, or asks to run the Execution Stack Decision workflow from the adlc-build plugin end to end."
 ---
 
 > Generated from the Claude Code command `/choose-rail` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

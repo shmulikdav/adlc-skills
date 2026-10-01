@@ -1,6 +1,6 @@
 ---
 name: derive-tests
-description: "Run the ADLC derive-tests workflow: build a traceability matrix from specs or test cases and generate the missing tests. Use when the user invokes $derive-tests or asks for this workflow end to end."
+description: "Use when the user invokes $derive-tests, or asks to run the Tests from Specs workflow from the adlc-verify plugin end to end."
 ---
 
 > Generated from the Claude Code command `/derive-tests` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

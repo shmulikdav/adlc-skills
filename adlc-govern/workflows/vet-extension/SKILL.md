@@ -1,6 +1,6 @@
 ---
 name: vet-extension
-description: "Run the ADLC vet-extension workflow: security-vet a third-party skill, plugin, MCP server, or hook before installing it. Use when the user invokes $vet-extension or asks for this workflow end to end."
+description: "Use when the user invokes $vet-extension, or asks to run the Extension Vetting workflow from the adlc-govern plugin end to end."
 ---
 
 > Generated from the Claude Code command `/vet-extension` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

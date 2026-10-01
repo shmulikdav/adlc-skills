@@ -1,6 +1,6 @@
 ---
 name: agent-postmortem
-description: "Run the ADLC agent-postmortem workflow: blameless post-incident review for agent-caused failures that turns findings into durable fixes. Use when the user invokes $agent-postmortem or asks for this workflow end to end."
+description: "Use when the user invokes $agent-postmortem, or asks to run the Agent Incident Review workflow from the adlc-operate plugin end to end."
 ---
 
 > Generated from the Claude Code command `/agent-postmortem` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

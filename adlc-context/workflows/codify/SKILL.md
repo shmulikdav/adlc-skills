@@ -1,6 +1,6 @@
 ---
 name: codify
-description: "Run the ADLC codify workflow: turn a recurring agent mistake or team convention into the right artifact — context line, skill, hook, or test. Use when the user invokes $codify or asks for this workflow end to end."
+description: "Use when the user invokes $codify, or asks to run the Codify Team Knowledge workflow from the adlc-context plugin end to end."
 ---
 
 > Generated from the Claude Code command `/codify` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

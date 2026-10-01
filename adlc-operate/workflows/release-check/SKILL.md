@@ -1,6 +1,6 @@
 ---
 name: release-check
-description: "Run the ADLC release-check workflow: run a go/no-go release check for agent-built changes with gate evidence and rollback readiness. Use when the user invokes $release-check or asks for this workflow end to end."
+description: "Use when the user invokes $release-check, or asks to run the Go/No-Go for Agentic Changes workflow from the adlc-operate plugin end to end."
 ---
 
 > Generated from the Claude Code command `/release-check` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

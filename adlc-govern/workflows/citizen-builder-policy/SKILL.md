@@ -1,6 +1,6 @@
 ---
 name: citizen-builder-policy
-description: "Run the ADLC citizen-builder-policy workflow: create a paved-road policy for non-engineers building tools and apps with AI — tiers, data rules, inventory, promotion to engineering. Use when the user invokes $citizen-builder-policy or asks for this workflow end to end."
+description: "Use when the user invokes $citizen-builder-policy, or asks to run the Business-Team Builder Governance workflow from the adlc-govern plugin end to end."
 ---
 
 > Generated from the Claude Code command `/citizen-builder-policy` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

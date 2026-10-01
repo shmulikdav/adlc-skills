@@ -1,6 +1,6 @@
 ---
 name: red-team-agent
-description: "Run the ADLC red-team-agent workflow: red-team an agent design or running agent against the OWASP Agentic Top 10 and turn findings into guardrails and eval cases. Use when the user invokes $red-team-agent or asks for this workflow end to end."
+description: "Use when the user invokes $red-team-agent, or asks to run the Agent Red Team workflow from the adlc-agent-engineering plugin end to end."
 ---
 
 > Generated from the Claude Code command `/red-team-agent` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

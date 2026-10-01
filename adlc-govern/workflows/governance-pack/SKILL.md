@@ -1,6 +1,6 @@
 ---
 name: governance-pack
-description: "Run the ADLC governance-pack workflow: produce an ADLC governance pack — permissions, hooks, threat model, and compliance mapping — for a team or org. Use when the user invokes $governance-pack or asks for this workflow end to end."
+description: "Use when the user invokes $governance-pack, or asks to run the ADLC Governance Pack workflow from the adlc-govern plugin end to end."
 ---
 
 > Generated from the Claude Code command `/governance-pack` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

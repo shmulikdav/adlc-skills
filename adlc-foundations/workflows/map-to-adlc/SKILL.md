@@ -1,6 +1,6 @@
 ---
 name: map-to-adlc
-description: "Run the ADLC map-to-adlc workflow: map your current SDLC workflow to the Agentic Development Lifecycle and pick where agents should enter first. Use when the user invokes $map-to-adlc or asks for this workflow end to end."
+description: "Use when the user invokes $map-to-adlc, or asks to run the SDLC → ADLC Workflow Mapping workflow from the adlc-foundations plugin end to end."
 ---
 
 > Generated from the Claude Code command `/map-to-adlc` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

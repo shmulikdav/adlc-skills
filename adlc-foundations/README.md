@@ -30,7 +30,7 @@ claude plugin install adlc-foundations@adlc-skills
 - `/adlc-roadmap` — Build a phased 90-day ADLC adoption roadmap (Map → Prioritize → Build → Scale) for an engineering organization
 - `/map-to-adlc` — Map your current SDLC workflow to the Agentic Development Lifecycle and pick where agents should enter first
 
-## Evals (9 cases)
+## Evals (10 cases)
 
 Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
 

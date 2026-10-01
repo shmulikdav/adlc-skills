@@ -27,7 +27,7 @@ claude plugin install adlc-agent-engineering@adlc-skills
 - `/design-agent` — Design an AI agent or LLM feature — pick the simplest working pattern, tools, guardrails, and eval plan
 - `/red-team-agent` — Red-team an agent design or running agent against the OWASP Agentic Top 10 and turn findings into guardrails and eval cases
 
-## Evals (6 cases)
+## Evals (7 cases)
 
 Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
 

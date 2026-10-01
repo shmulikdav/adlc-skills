@@ -1,6 +1,6 @@
 ---
 name: fix-review-queue
-description: "Run the ADLC fix-review-queue workflow: diagnose and redesign code review when agent PRs pile up — risk tiers, machine first pass, ownership, WIP limits. Use when the user invokes $fix-review-queue or asks for this workflow end to end."
+description: "Use when the user invokes $fix-review-queue, or asks to run the Review Capacity Redesign workflow from the adlc-verify plugin end to end."
 ---
 
 > Generated from the Claude Code command `/fix-review-queue` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

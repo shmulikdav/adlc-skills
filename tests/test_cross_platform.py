@@ -41,7 +41,10 @@ class CrossPlatform(unittest.TestCase):
             wfs = {p.parent.name for p in (pdir / "workflows").glob("*/SKILL.md")}
             self.assertEqual(cmds, wfs, pl["name"])
             for wf in (pdir / "workflows").glob("*/SKILL.md"):
-                self.assertNotIn("Skill tool call", wf.read_text(), f"{wf}: Claude-specific Step 0 left in Codex workflow")
+                text = wf.read_text()
+                self.assertNotIn("Skill tool call", text, f"{wf}: Claude-specific Step 0 left in Codex workflow")
+                desc = re.search(r'^description: "?(.*?)"?$', text, re.M).group(1)
+                self.assertTrue(desc.startswith("Use when"), f"{wf}: workflow description must be trigger-only")
 
     def test_cursor_frontmatter(self):
         for pl in META["plugins"]:
@@ -72,7 +75,7 @@ if __name__ == "__main__":
 class DocsReferenceRealCommands(unittest.TestCase):
     def test_every_documented_command_exists(self):
         commands = {p.stem for p in ROOT.glob("adlc-*/commands/*.md")}
-        docs = [ROOT / "README.md", ROOT / "docs" / "USE-CASES.md", ROOT / "docs" / "TRY-IT.md"]
+        docs = [ROOT / "README.md"] + [ROOT / "docs" / n for n in ("USE-CASES.md", "TRY-IT.md", "TROUBLESHOOTING.md", "COMPATIBILITY.md")]
         for doc in docs:
             text = doc.read_text(encoding="utf-8")
             for name in re.findall(r"`[/$]([a-z][a-z0-9-]+)(?:[ `])", text):

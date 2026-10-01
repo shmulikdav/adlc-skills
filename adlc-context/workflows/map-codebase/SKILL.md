@@ -1,6 +1,6 @@
 ---
 name: map-codebase
-description: "Run the ADLC map-codebase workflow: generate an agent-oriented codebase map with modules, core flows, change recipes, and a risk register. Use when the user invokes $map-codebase or asks for this workflow end to end."
+description: "Use when the user invokes $map-codebase, or asks to run the Codebase Map workflow from the adlc-context plugin end to end."
 ---
 
 > Generated from the Claude Code command `/map-codebase` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

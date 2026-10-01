@@ -1,6 +1,6 @@
 ---
 name: modernize
-description: "Run the ADLC modernize workflow: plan a legacy system modernization or rebuild with behavior characterization, strategy choice, and verified migration slices. Use when the user invokes $modernize or asks for this workflow end to end."
+description: "Use when the user invokes $modernize, or asks to run the Legacy Modernization Plan workflow from the adlc-build plugin end to end."
 ---
 
 > Generated from the Claude Code command `/modernize` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

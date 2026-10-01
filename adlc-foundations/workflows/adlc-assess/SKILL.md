@@ -1,6 +1,6 @@
 ---
 name: adlc-assess
-description: "Run the ADLC adlc-assess workflow: assess a team's readiness for the Agentic Development Lifecycle and get a maturity level, gaps, and first moves. Use when the user invokes $adlc-assess or asks for this workflow end to end."
+description: "Use when the user invokes $adlc-assess, or asks to run the ADLC Readiness Assessment workflow from the adlc-foundations plugin end to end."
 ---
 
 > Generated from the Claude Code command `/adlc-assess` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

@@ -1,6 +1,6 @@
 ---
 name: audit-skills
-description: "Run the ADLC audit-skills workflow: audit an internal skills or plugin library — triggering, measured value, overlap, and what to keep, fix, or cut. Use when the user invokes $audit-skills or asks for this workflow end to end."
+description: "Use when the user invokes $audit-skills, or asks to run the Skill Library Audit workflow from the adlc-context plugin end to end."
 ---
 
 > Generated from the Claude Code command `/audit-skills` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

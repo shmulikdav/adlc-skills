@@ -1,6 +1,6 @@
 ---
 name: plan-long-run
-description: "Run the ADLC plan-long-run workflow: plan multi-hour or multi-day agent work — decomposition, state files, checkpoints, budgets, abort criteria, review shape. Use when the user invokes $plan-long-run or asks for this workflow end to end."
+description: "Use when the user invokes $plan-long-run, or asks to run the Long-Running Agent Work workflow from the adlc-build plugin end to end."
 ---
 
 > Generated from the Claude Code command `/plan-long-run` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

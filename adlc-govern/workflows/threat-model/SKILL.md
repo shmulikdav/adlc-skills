@@ -1,6 +1,6 @@
 ---
 name: threat-model
-description: "Run the ADLC threat-model workflow: threat-model an agentic development setup or an agent product against the OWASP Agentic Top 10. Use when the user invokes $threat-model or asks for this workflow end to end."
+description: "Use when the user invokes $threat-model, or asks to run the Agentic Threat Model workflow from the adlc-govern plugin end to end."
 ---
 
 > Generated from the Claude Code command `/threat-model` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

@@ -1,6 +1,6 @@
 ---
 name: verify-change
-description: "Run the ADLC verify-change workflow: verify a change meets the Definition of Done with evidence before it is called done. Use when the user invokes $verify-change or asks for this workflow end to end."
+description: "Use when the user invokes $verify-change, or asks to run the Definition of Done Check workflow from the adlc-verify plugin end to end."
 ---
 
 > Generated from the Claude Code command `/verify-change` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

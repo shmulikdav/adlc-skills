@@ -104,6 +104,19 @@ CASES = {
 ],
 }
 
+# Near-miss negatives: requests that sit right next to a plugin's territory but should NOT load its skills.
+# Trigger precision is lost at these boundaries, not on obviously unrelated questions.
+NEAR_MISS = {
+ "adlc-foundations": "In three sentences, what do the four DORA metrics measure?",
+ "adlc-intent": "Write short user-facing release notes for a new dark-mode setting in our app.",
+ "adlc-context": "What should the README of a small open-source Python library contain?",
+ "adlc-build": "What is the difference between git rebase and git merge?",
+ "adlc-verify": "I wrote this myself; is there a bug? def add(a, b): return a - b",
+ "adlc-govern": "How do I rotate an AWS access key for a service account?",
+ "adlc-operate": "How do I set up a Prometheus alert for CPU above 90% for five minutes?",
+ "adlc-agent-engineering": "What is the difference between temperature and top_p in an LLM API?",
+}
+
 NEGATIVE = {
 "adlc-foundations": "What's the difference between a Python list and a tuple?",
 "adlc-intent": "Fix the typo in this sentence: 'The fucntion returns teh value.'",
@@ -377,7 +390,12 @@ def main():
         write(c / "prompt.md", f"---\nmax_turns: 4\nallowed_tools: [Read, Glob, Grep, Skill]\ntags: [smoke, negative]\ndescription: Must not invoke any {plugin} skill\n---\n\n{NEGATIVE[plugin]}\n")
         write(c / "graders" / "no-plugin-skill.md", f"---\ntype: tool_used\ntool: Skill\ninput_match: '\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?({alt})\"'\nmin: 0\nmax: 0\narm: both\n---\n")
         write(c / "graders" / "answered.md", "---\ntype: llm\n---\n\nPASS if the response directly and correctly answers the question without introducing unrelated process, frameworks, or engineering methodology.\nFAIL if it is wrong or drags in unrelated methodology.\n")
+        c = ev / "near-miss"
+        write(c / "prompt.md", f"---\nmax_turns: 4\nallowed_tools: [Read, Glob, Grep, Skill]\ntags: [negative, near-miss]\ndescription: Adjacent request that must not invoke any {plugin} skill\n---\n\n{NEAR_MISS[plugin]}\n")
+        write(c / "graders" / "no-plugin-skill.md", f"---\ntype: tool_used\ntool: Skill\ninput_match: '\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?({alt})\"'\nmin: 0\nmax: 0\narm: both\n---\n")
+        write(c / "graders" / "answered.md", "---\ntype: llm\n---\n\nPASS if the response directly and correctly answers the question without introducing agent-development process, frameworks, or methodology it did not ask for.\nFAIL if it is wrong or drags in unrelated methodology.\n")
         total += 1
+    total = len(list(ROOT.glob("adlc-*/evals/*/prompt.md")))
     print(f"Wrote {total} eval cases across {len(CASES)} plugins")
 
 

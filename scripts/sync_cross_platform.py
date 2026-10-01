@@ -52,9 +52,11 @@ def workflow_skill(plugin: str, cmd: Path, all_commands: list) -> str:
     """Translate a Claude Code command into a Codex skill with the same workflow."""
     fm, body = split_frontmatter(cmd.read_text(encoding="utf-8"))
     name = cmd.stem
-    purpose = fm_value(fm or "", "description").rstrip(".")
-    description = (f"Run the ADLC {name} workflow: {purpose[0].lower() + purpose[1:]}. "
-                   f"Use when the user invokes ${name} or asks for this workflow end to end.")
+    m = re.search(r"^# /[\w-]+\s+--\s+(.+)$", body, re.M)
+    title = (m.group(1).strip() if m else name.replace("-", " ")).rstrip(".")
+    # Trigger-only, like every authored skill: say when to load it, never summarize the steps.
+    description = (f"Use when the user invokes ${name}, or asks to run the {title} workflow "
+                   f"from the {plugin} plugin end to end.")
     body = body.replace("$ARGUMENTS", "the user's request")
     for other in sorted(all_commands, key=len, reverse=True):
         body = re.sub(rf"(?<![\w/])/{re.escape(other)}(?![\w-])", f"${other}", body)

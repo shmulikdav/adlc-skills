@@ -1,6 +1,6 @@
 ---
 name: init-agent-context
-description: "Run the ADLC init-agent-context workflow: create or audit the agent context file (CLAUDE.md / AGENTS.md) for a repository. Use when the user invokes $init-agent-context or asks for this workflow end to end."
+description: "Use when the user invokes $init-agent-context, or asks to run the Agent Context Setup workflow from the adlc-context plugin end to end."
 ---
 
 > Generated from the Claude Code command `/init-agent-context` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

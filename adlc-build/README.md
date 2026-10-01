@@ -26,7 +26,7 @@ claude plugin install adlc-build@adlc-skills
 - `/modernize` — Plan a legacy system modernization or rebuild with behavior characterization, strategy choice, and verified migration slices
 - `/plan-long-run` — Plan multi-hour or multi-day agent work — decomposition, state files, checkpoints, budgets, abort criteria, review shape
 
-## Evals (5 cases)
+## Evals (6 cases)
 
 Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
 

@@ -29,7 +29,7 @@ claude plugin install adlc-operate@adlc-skills
 - `/plan-continuous-ai` — Choose and guardrail background agent workflows (triage, CI failure investigation, docs, test gaps, cleanup) for a repository
 - `/release-check` — Run a go/no-go release check for agent-built changes with gate evidence and rollback readiness
 
-## Evals (7 cases)
+## Evals (8 cases)
 
 Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
 

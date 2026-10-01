@@ -28,7 +28,7 @@ claude plugin install adlc-intent@adlc-skills
 - `/spec-feature` — Run the full spec-driven loop for a feature — constitution check, spec, clarify, plan, tasks — before any code is written
 - `/write-agentic-prd` — Turn a feature idea or ticket into an Agentic PRD a coding agent can execute without guessing
 
-## Evals (7 cases)
+## Evals (8 cases)
 
 Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
 

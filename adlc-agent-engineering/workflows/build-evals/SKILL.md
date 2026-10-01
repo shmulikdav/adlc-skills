@@ -1,6 +1,6 @@
 ---
 name: build-evals
-description: "Run the ADLC build-evals workflow: create an eval suite for an agent or LLM feature with tasks, graders, thresholds, and CI wiring. Use when the user invokes $build-evals or asks for this workflow end to end."
+description: "Use when the user invokes $build-evals, or asks to run the Eval Suite workflow from the adlc-agent-engineering plugin end to end."
 ---
 
 > Generated from the Claude Code command `/build-evals` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

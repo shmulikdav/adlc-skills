@@ -2,7 +2,7 @@
 
 # ADLC Skills: The Operating Model for Agentic Development
 
-> 47 skills, 28 commands, 2 agents, and 55 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, architecture guardrails, context, review capacity, governance, Continuous AI, and agent engineering. Runs in Claude Code, OpenAI Codex and Cursor; composes with Superpowers and Anthropic's official plugins.
+> 47 skills, 28 commands, 2 agents, and 63 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, architecture guardrails, context, review capacity, governance, Continuous AI, and agent engineering. Runs in Claude Code, OpenAI Codex and Cursor; composes with Superpowers and Anthropic's official plugins.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml/badge.svg)](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml) [![Release](https://img.shields.io/github/v/release/shmulikdav/adlc-skills)](https://github.com/shmulikdav/adlc-skills/releases) [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-7B61FF)](#installation) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -173,6 +173,8 @@ Validated against Cursor's official plugin schema and validator, and tested in t
 ### Other tools that read Agent Skills
 
 The `skills/*/SKILL.md` files follow the open Agent Skills format. Gemini CLI, OpenCode and similar tools should be able to load them from their skills directory, but we haven't tested those.
+
+What has been verified on each platform, and how: [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md). Something not working? [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
 
 ---
 

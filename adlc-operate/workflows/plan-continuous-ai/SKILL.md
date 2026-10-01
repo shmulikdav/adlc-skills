@@ -1,6 +1,6 @@
 ---
 name: plan-continuous-ai
-description: "Run the ADLC plan-continuous-ai workflow: choose and guardrail background agent workflows (triage, CI failure investigation, docs, test gaps, cleanup) for a repository. Use when the user invokes $plan-continuous-ai or asks for this workflow end to end."
+description: "Use when the user invokes $plan-continuous-ai, or asks to run the Background Agent Workflows workflow from the adlc-operate plugin end to end."
 ---
 
 > Generated from the Claude Code command `/plan-continuous-ai` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

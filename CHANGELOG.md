@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+Hardening after an external review.
+
+- **Supply chain:** GitHub Actions pinned to full commit SHAs (Dependabot keeps them current), Claude Code version pinned in the eval workflow, CODEOWNERS added, release split into a read-only verify job and a write-only publish job, and a warning when a release changes skills without an `Evals:` line in its notes.
+- **Evals:** one near-miss negative case per plugin, checking that requests right next to a plugin's territory don't trigger it (63 cases total).
+- **Codex:** workflow skill descriptions are now trigger-only, like every authored skill; a test enforces it.
+- **Docs:** `docs/COMPATIBILITY.md` (what is verified on each platform and how), `docs/TROUBLESHOOTING.md`, `SECURITY.md` now covers the Cursor installer, stale "not yet measured" statements removed, social preview no longer shows a count that goes stale.
 - Plugins show proper display names in Claude apps ("ADLC Verify" instead of "Adlc verify").
 - README: Cowork install steps match the current Settings → Plugins screen.
 

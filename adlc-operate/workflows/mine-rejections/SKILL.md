@@ -1,6 +1,6 @@
 ---
 name: mine-rejections
-description: "Run the ADLC mine-rejections workflow: turn rejected agent PRs and repeated review comments into durable fixes — context, skills, hooks, tests, evals. Use when the user invokes $mine-rejections or asks for this workflow end to end."
+description: "Use when the user invokes $mine-rejections, or asks to run the Learning Loop workflow from the adlc-operate plugin end to end."
 ---
 
 > Generated from the Claude Code command `/mine-rejections` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

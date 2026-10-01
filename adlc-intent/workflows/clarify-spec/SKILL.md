@@ -1,6 +1,6 @@
 ---
 name: clarify-spec
-description: "Run the ADLC clarify-spec workflow: hunt for ambiguities, contradictions, and silent decisions in a spec before an agent builds it. Use when the user invokes $clarify-spec or asks for this workflow end to end."
+description: "Use when the user invokes $clarify-spec, or asks to run the Spec Ambiguity Hunt workflow from the adlc-intent plugin end to end."
 ---
 
 > Generated from the Claude Code command `/clarify-spec` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

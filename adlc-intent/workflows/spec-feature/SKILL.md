@@ -1,6 +1,6 @@
 ---
 name: spec-feature
-description: "Run the ADLC spec-feature workflow: run the full spec-driven loop for a feature — constitution check, spec, clarify, plan, tasks — before any code is written. Use when the user invokes $spec-feature or asks for this workflow end to end."
+description: "Use when the user invokes $spec-feature, or asks to run the Spec-Driven Feature Kickoff workflow from the adlc-intent plugin end to end."
 ---
 
 > Generated from the Claude Code command `/spec-feature` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

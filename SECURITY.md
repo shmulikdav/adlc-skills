@@ -2,7 +2,7 @@
 
 ## What this repository contains
 
-ADLC Skills is mostly instructions (Markdown skills, commands, and agent definitions). Installing a plugin does **not** activate any executable code: there are no plugin hooks, MCP servers, or binaries in the plugins. The only script meant to run in your environment is the opt-in hook template under `templates/hooks/`, which you copy and wire up yourself.
+ADLC Skills is mostly instructions (Markdown skills, commands, and agent definitions). Installing a plugin does **not** activate any executable code: there are no plugin hooks, MCP servers, or binaries in the plugins. Two scripts are meant to run in your environment, both opt-in: the hook template under `templates/hooks/`, which you copy and wire up yourself, and `scripts/install-cursor.sh`, which copies plugin folders into `~/.cursor/plugins/local` for Cursor users (read it before running; it only copies files). The other files in `scripts/` are maintainer tools for regenerating manifests and running tests.
 
 Still, skills shape what an agent does, so we treat malicious or unsafe instructions as security issues.
 

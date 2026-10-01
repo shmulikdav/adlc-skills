@@ -1,6 +1,6 @@
 ---
 name: design-agent
-description: "Run the ADLC design-agent workflow: design an AI agent or LLM feature — pick the simplest working pattern, tools, guardrails, and eval plan. Use when the user invokes $design-agent or asks for this workflow end to end."
+description: "Use when the user invokes $design-agent, or asks to run the Agent Design workflow from the adlc-agent-engineering plugin end to end."
 ---
 
 > Generated from the Claude Code command `/design-agent` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

@@ -1,6 +1,6 @@
 ---
 name: adlc-roadmap
-description: "Run the ADLC adlc-roadmap workflow: build a phased 90-day ADLC adoption roadmap (Map → Prioritize → Build → Scale) for an engineering organization. Use when the user invokes $adlc-roadmap or asks for this workflow end to end."
+description: "Use when the user invokes $adlc-roadmap, or asks to run the 90-Day ADLC Adoption Roadmap workflow from the adlc-foundations plugin end to end."
 ---
 
 > Generated from the Claude Code command `/adlc-roadmap` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

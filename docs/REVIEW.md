@@ -40,4 +40,4 @@ Review date: October 2026. Scope: v1.0.0 (8 plugins, 41 skills, 23 commands, 2 a
 
 ## 4. What is still unproven
 
-The eval suites exist and load, but the Δ numbers have not been run yet (they require model credentials). Until then, treat every skill as a hypothesis. Run the suite, cut or fix any skill with Δ ≤ 0, and publish the table in the README.
+The first plugin is measured: adlc-verify results are in [EVAL-RESULTS.md](EVAL-RESULTS.md). The other seven are not yet; treat their skills as hypotheses until they are. Rule for all of them: cut or fix any skill with Δ ≤ 0, and publish the table. *(Updated 1 October 2026.)*

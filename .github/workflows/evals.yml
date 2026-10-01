@@ -32,13 +32,13 @@ jobs:
           if [ -z "$ANTHROPIC_API_KEY" ]; then echo "No ANTHROPIC_API_KEY secret; skipping."; echo "run=false" >> "$GITHUB_OUTPUT"; exit 0; fi
           sel="${{ inputs.plugin }}"
           if [ -n "$sel" ] && [ "$sel" != "all" ] && [ "$sel" != "${{ matrix.plugin }}" ]; then echo "run=false" >> "$GITHUB_OUTPUT"; else echo "run=true" >> "$GITHUB_OUTPUT"; fi
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         if: steps.gate.outputs.run == 'true'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         if: steps.gate.outputs.run == 'true'
         with:
           node-version: "22"
-      - run: npm install -g @anthropic-ai/claude-code
+      - run: npm install -g @anthropic-ai/claude-code@2.1.286
         if: steps.gate.outputs.run == 'true'
       - name: Run eval suite
         if: steps.gate.outputs.run == 'true'
@@ -51,7 +51,7 @@ jobs:
             --no-publish \
             --max-cost-usd 15 \
             --json results-${{ matrix.plugin }}.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always() && steps.gate.outputs.run == 'true'
         with:
           name: eval-${{ matrix.plugin }}

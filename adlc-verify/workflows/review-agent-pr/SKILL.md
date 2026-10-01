@@ -1,6 +1,6 @@
 ---
 name: review-agent-pr
-description: "Run the ADLC review-agent-pr workflow: run an alignment review of an agent-authored PR or diff against its spec, with evidence-backed findings. Use when the user invokes $review-agent-pr or asks for this workflow end to end."
+description: "Use when the user invokes $review-agent-pr, or asks to run the Alignment Review workflow from the adlc-verify plugin end to end."
 ---
 
 > Generated from the Claude Code command `/review-agent-pr` by scripts/sync_cross_platform.py. Do not edit; edit the command instead.

@@ -33,7 +33,7 @@ claude plugin install adlc-verify@adlc-skills
 
 - `agent-output-reviewer` — Independent reviewer for agent-authored changes
 
-## Evals (7 cases)
+## Evals (8 cases)
 
 Behavioral benchmark in `evals/` (Claude Code `claude plugin eval` format). Each skill has a natural-phrasing trigger case with a method rubric; one negative case must not trigger the plugin.
 
