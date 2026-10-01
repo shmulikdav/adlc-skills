@@ -55,6 +55,8 @@ Don't stop to ask for the link. Give the checklist below and the install / restr
 
 ## Output
 
+Whenever stars, downloads, or popularity come up, say explicitly that they are not evidence of safety: rankings can be bot-inflated, as the ClawHavoc campaign showed.
+
 ```
 ## Extension Review: [name@version]
 Verdict:

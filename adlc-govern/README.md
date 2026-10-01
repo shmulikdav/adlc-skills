@@ -27,7 +27,7 @@ claude plugin install adlc-govern@adlc-skills
 - `/citizen-builder-policy` — Create a paved-road policy for non-engineers building tools and apps with AI — tiers, data rules, inventory, promotion to engineering
 - `/governance-pack` — Produce an ADLC governance pack — permissions, hooks, threat model, and compliance mapping — for a team or org
 - `/threat-model` — Threat-model an agentic development setup or an agent product against the OWASP Agentic Top 10
-- `/vet-extension` — Security-vet a third-party skill, plugin, MCP server, or hook before installing it
+- `/vet-extension` — Security-vet a specific third-party skill, plugin, MCP server, or hook from its link or files. For a general safety question with no link, answer with the checklist directly instead of waiting for one.
 
 ## Agents (1)
 

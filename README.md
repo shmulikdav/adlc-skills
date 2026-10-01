@@ -77,7 +77,7 @@ Measured with `claude plugin eval`: Claude Haiku answering, Claude Sonnet judgin
 | govern | agentic-threat-model | 5/5 | 1.00 | 0.63 | **+0.37** |
 | govern | ai-compliance-mapping | 5/5 | 0.95 | 0.55 | **+0.40** |
 | govern | guardrail-hooks | 0/5 | 0.67 | 0.67 | 0.00 |
-| govern | extension-vetting | 0/5 | 0.00 | 0.23 | −0.23, being fixed |
+| govern | extension-vetting | 2/5 | 0.30 | 0.33 | −0.03 (helps when it loads; loads too rarely) |
 | verify | definition-of-done | 3/3 | 0.87 | 0.07 | **+0.80** |
 | verify | review-capacity | 3/3 | 0.57 | 0.05 | **+0.52** |
 | verify | hallucination-checks | 3/3 | 0.60 | 0.40 | **+0.20** |

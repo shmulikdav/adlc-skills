@@ -7,7 +7,7 @@ How each plugin performs against a no-plugin baseline, measured with `claude plu
 | Plugin | Status | Skills with a clear gain |
 | --- | --- | --- |
 | adlc-foundations | ✅ Measured (5 runs per arm) | 8 of 8 |
-| adlc-govern | ✅ Measured (5 runs per arm) | 4 of 6; 1 no effect, 1 harmful and being fixed |
+| adlc-govern | ✅ Measured (5 runs per arm) | 4 of 6; 2 with no clear effect |
 | adlc-verify | ✅ Measured (3 runs per arm) | 3 of 6; 2 did not auto-trigger |
 | adlc-intent, adlc-context, adlc-build, adlc-operate, adlc-agent-engineering | Not yet measured | — |
 
@@ -48,7 +48,8 @@ This table is the single source for which plugins are measured; other docs link 
 | threat-model-ci-agent | agentic-threat-model | 5/5 | 1.00 | 0.63 | +0.37 |
 | iso-42001 | ai-compliance-mapping | 5/5 | 0.95 | 0.55 | +0.40 (after fix; was +0.30) |
 | protect-secrets | guardrail-hooks | 0/5 | 0.67 | 0.67 | 0.00 |
-| vet-plugin | extension-vetting | 0/5 | 0.00 | 0.23 | −0.23 |
+| vet-plugin | extension-vetting | 2/5 | 0.30 | 0.33 | −0.03 (was −0.23) |
+| vet-plugin-files | extension-vetting | 2/5 | 0.73 | 0.70 | +0.03 |
 | near-miss, unrelated-request | none (negative cases) | 0/20 | 1.00 | 0.95 | — |
 
 **What we learned.**
@@ -57,7 +58,7 @@ This table is the single source for which plugins are measured; other docs link 
 - **`extension-vetting` made answers worse, and not because of its content.** With the kit installed, Haiku saw that a vetting workflow existed and replied "share the link and I'll vet it" with a thin checklist, instead of answering. Without the kit it gave a fuller checklist. The skill and the `/vet-extension` command now give the full framework and decision rule first, then offer to vet the specific extension.
 - **`protect-secrets` exposed a skill collision.** The neighboring `agent-permissions` skill answered instead of `guardrail-hooks`. It helped, but missed the point `guardrail-hooks` exists to make: instructions alone are not enforcement. Both skills now make that point, and `guardrail-hooks` triggers on "must never happen, no matter what". The case prompt now says "don't change any files", because the baseline kept trying to write a settings file it had no tool for and ran out of turns.
 - "Confirm with counsel or the auditor" failed in all ten `iso-42001` runs, with and without the kit. `ai-compliance-mapping` now states it as part of the required output. After the fix it passed in 4 of 5 runs and the gain rose from +0.30 to +0.40.
-- **Re-measured after the fixes (1 October):** with a fair prompt, `protect-secrets` shows no gain: Haiku gives the same answer with or without the kit, and no skill loads. Like generic code review, this is knowledge the model already has. `extension-vetting` stayed harmful (−0.23) because it never loaded (0/5), so the answer-first fix inside it was never read: the kit's mere presence made Haiku offer to run a vetting workflow instead of answering. Its trigger now covers general questions, and a second case (`vet-plugin-files`) tests what the skill is built for: vetting real plugin files with planted problems (a remote script piped to bash, credentials sent to an outside server, a hidden instruction override, an unpinned MCP server). Both are being re-measured.
+- **Re-measured after the fixes (1 October):** with a fair prompt, `protect-secrets` shows no gain: Haiku gives the same answer with or without the kit, and no skill loads. Like generic code review, this is knowledge the model already has. `extension-vetting` stayed harmful (−0.23) because it never loaded (0/5), so the answer-first fix inside it was never read: the kit's mere presence made Haiku offer to run a vetting workflow instead of answering. Its trigger now covers general questions, and a second case (`vet-plugin-files`) tests what the skill is built for: vetting real plugin files with planted problems (a remote script piped to bash, credentials sent to an outside server, a hidden instruction override, an unpinned MCP server). Both were re-measured: the broader trigger lifted loading from 0/5 to 2/5 and the harm disappeared (−0.23 to −0.03). **When the skill loads, it works**: those runs scored 0.50 and 1.00 against a baseline of 0.33, and only they caught the unpinned `@latest` MCP server. When it doesn't load, the kit's presence still makes Haiku offer a review instead of answering, and Haiku vets real plugin files well on its own (0.70). Net effect: about zero. Two last changes, not yet re-measured: the `/vet-extension` description tells the model to answer general questions directly, and the skill must say that stars are not evidence of safety, a point no answer made in any of the ten runs on the files case, with or without the kit. **Recommendation for users: run `/vet-extension <link>` explicitly rather than relying on the skill to load.**
 
 ## adlc-verify (1 October 2026)
 

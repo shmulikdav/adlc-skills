@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **extension-vetting re-measured:** loading rose from 0/5 to 2/5 and the harm disappeared (Δ −0.23 to −0.03); when it loads it helps, but it loads too rarely to show a net gain. `/vet-extension` now says to answer general questions directly, and the skill must say that stars are not evidence of safety. Recommended use: run `/vet-extension <link>` explicitly.
+
 - **Govern re-measured:** `ai-compliance-mapping` rose to +0.40 after its fix; `guardrail-hooks` shows no gain with a fair prompt; `extension-vetting` is still harmful (−0.23) because it never loaded.
 - **extension-vetting** trigger covers general questions asked before a specific extension is shared.
 - New eval case **vet-plugin-files**: a plugin's files inline with four planted problems, so the vetting skill is measured on real vetting (64 cases).
