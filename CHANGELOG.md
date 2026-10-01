@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Atomic criteria for every remaining eval case** (intent, context, build, operate, agent-engineering): 27 compound rubrics split one-for-one into 131 single-requirement graders, with no requirements added or removed. Every positive case in the kit is now scored as the fraction of criteria met.
+
 - **extension-vetting re-measured:** loading rose from 0/5 to 2/5 and the harm disappeared (Δ −0.23 to −0.03); when it loads it helps, but it loads too rarely to show a net gain. `/vet-extension` now says to answer general questions directly, and the skill must say that stars are not evidence of safety. Recommended use: run `/vet-extension <link>` explicitly.
 
 - **Govern re-measured:** `ai-compliance-mapping` rose to +0.40 after its fix; `guardrail-hooks` shows no gain with a fair prompt; `extension-vetting` is still harmful (−0.23) because it never loaded.
