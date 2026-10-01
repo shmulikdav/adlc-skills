@@ -220,6 +220,56 @@ EXTRA_V21 = {
 for k, v in EXTRA_V21.items():
     CASES[k].extend(v)
 
+# Atomic criteria (v2): one grader per criterion so scores are graded fractions, not saturated pass/fail.
+# Each criterion is a concrete, decision-useful element a team needs to act on — not the skill's own wording.
+STRICT = {
+ "pr-queue": [
+  "PASS only if the response proposes measuring the review queue split by PR type (human, AI-assisted, agent-authored) using concrete metrics such as pickup time, review time, PR size, or acceptance rate. FAIL otherwise.",
+  "PASS only if the response requires every agent-authored PR to have a named accountable human and an automatically assigned reviewer (for example via CODEOWNERS or path rules). FAIL otherwise.",
+  "PASS only if the response defines risk tiers that route PRs automatically by files touched or change type, with a lighter path for low-risk changes and a deeper path (for example a specialist reviewer) for high-risk areas such as auth, payments, or migrations. FAIL otherwise.",
+  "PASS only if the response requires automated checks and an AI first-pass review to run before any human review. FAIL otherwise.",
+  "PASS only if the response specifies what an agent PR description must contain for reviewers, such as the linked spec or acceptance criteria, evidence of verification performed, and where the reviewer should focus. FAIL otherwise.",
+  "PASS only if the response limits how many agent PRs can be open per person or team, or otherwise caps generation to match review capacity. FAIL otherwise.",
+  "PASS only if the response explicitly says that adding reviewers or asking them to review faster will not fix the problem. FAIL otherwise.",
+ ],
+ "dod": [
+  "PASS only if the response requires the agent to attach evidence such as the exact commands run and their output, rather than accepting claims of success. FAIL otherwise.",
+  "PASS only if the response separates checks that can be automated (CI or hooks) from checks that require human judgment or approval. FAIL otherwise.",
+  "PASS only if the response includes a test-integrity check, such as no newly skipped or weakened tests and no edits to existing tests without approval. FAIL otherwise.",
+  "PASS only if the response includes supply-chain or secrets checks, such as verifying new dependencies or scanning for secrets. FAIL otherwise.",
+  "PASS only if the response says where the standard is enforced, such as a hook, CI gate, PR template, or the agent context file. FAIL otherwise.",
+ ],
+ "new-dependency": [
+  "PASS only if the response says to confirm the package actually exists on the official registry. FAIL otherwise.",
+  "PASS only if the response names the specific risk that AI-suggested package names can be hallucinated or typosquatted and then registered by attackers (slopsquatting or package confusion). FAIL otherwise.",
+  "PASS only if the response lists concrete provenance checks such as publisher identity, package age or release history, download history, linked source repository, or licence. FAIL otherwise.",
+  "PASS only if the response treats adding the dependency as a decision requiring human approval and recommends pinning the version or committing the lockfile. FAIL otherwise.",
+  "PASS only if the response questions whether a new dependency is needed at all, for example by suggesting an existing dependency or the standard library. FAIL otherwise.",
+ ],
+ "review-agent-diff": [
+  "PASS only if the response checks the diff against the spec for both scope creep (changes nobody asked for) and omissions (requirements not implemented). FAIL otherwise.",
+  "PASS only if the response says to check whether tests were added, modified, weakened, or skipped in the same PR. FAIL otherwise.",
+  "PASS only if the response says to verify that APIs, libraries, configuration keys, or flags used by the code actually exist. FAIL otherwise.",
+  "PASS only if the response looks for silent failures such as swallowed exceptions, broad catches, or fallbacks that hide errors. FAIL otherwise.",
+  "PASS only if the response raises rate-limiting-specific risks, such as how clients are keyed (per user, API key, or IP), bypass via headers or proxies, or behavior across multiple instances. FAIL otherwise.",
+  "PASS only if the response recommends an independent review pass, such as a fresh-context reviewer, a different agent, or an AI first-pass tool, rather than the authoring agent reviewing itself. FAIL otherwise.",
+ ],
+ "tests-from-xray": [
+  "PASS only if the response proposes a traceability mapping from each test case ID to automated tests. FAIL otherwise.",
+  "PASS only if the response classifies test cases into states such as verified, proposed, or gap. FAIL otherwise.",
+  "PASS only if the response says to keep the Xray test case IDs in test names or annotations so results can be pushed back. FAIL otherwise.",
+  "PASS only if the response says a test case counts as verified only after the test has actually been run and passed. FAIL otherwise.",
+  "PASS only if the response flags ambiguous or untestable test cases for rewriting rather than guessing. FAIL otherwise.",
+ ],
+ "tests-pass-wrong-behavior": [
+  "PASS only if the response proposes invariant checks for billing, such as totals equal the sum of line items or balances never going negative. FAIL otherwise.",
+  "PASS only if the response proposes property-based testing with generated inputs. FAIL otherwise.",
+  "PASS only if the response proposes mutation testing or another way to check that tests would fail on a wrong implementation. FAIL otherwise.",
+  "PASS only if the response says tests should be derived from the specification or acceptance criteria rather than from the implementation. FAIL otherwise.",
+  "PASS only if the response addresses money-specific correctness, such as integer minor units, rounding rules, or currency handling. FAIL otherwise.",
+ ],
+}
+
 
 def write(path: Path, text: str):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -240,7 +290,11 @@ def main():
             c = ev / name
             write(c / "prompt.md", f"---\nmax_turns: 8\nallowed_tools: [Read, Glob, Grep, Skill]\ntags: [smoke, trigger, {skill}]\ndescription: Should invoke {skill} and apply its method\n---\n\n{prompt}\n")
             write(c / "graders" / "skill-fired.md", f"---\ntype: tool_used\ntool: Skill\ninput_match: '\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?{skill}\"'\n---\n")
-            write(c / "graders" / "method.md", f"---\ntype: llm\nweight: 2\n---\n\n{rubric}\n")
+            if name in STRICT:
+                for i, crit in enumerate(STRICT[name], 1):
+                    write(c / "graders" / f"criterion-{i}.md", f"---\ntype: llm\n---\n\n{crit}\n")
+            else:
+                write(c / "graders" / "method.md", f"---\ntype: llm\nweight: 2\n---\n\n{rubric}\n")
             total += 1
         alt = "|".join(skills)
         c = ev / "unrelated-request"

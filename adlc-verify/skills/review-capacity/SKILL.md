@@ -1,6 +1,6 @@
 ---
 name: review-capacity
-description: "Use when agent-authored pull requests pile up waiting for review, reviewers rubber-stamp large AI diffs, merge rates of agent PRs are low, or a team asks how to scale code review now that agents produce more changes than humans can read."
+description: "Use when agent-authored pull requests pile up in a review backlog, PR pickup or review time is growing, reviewers rubber-stamp large AI-generated diffs, adding reviewers did not help, merge or acceptance rates of agent PRs are low, or a team asks how to redesign code review for agent-scale output."
 ---
 
 # Review Capacity Design
