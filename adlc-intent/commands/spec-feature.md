@@ -1,4 +1,5 @@
 ---
+name: spec-feature
 description: Run the full spec-driven loop for a feature — constitution check, spec, clarify, plan, tasks — before any code is written
 argument-hint: "<feature description>"
 ---

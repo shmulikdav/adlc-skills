@@ -1,4 +1,5 @@
 ---
+name: adlc-assess
 description: Assess a team's readiness for the Agentic Development Lifecycle and get a maturity level, gaps, and first moves
 argument-hint: "<team or org description, current tools, delivery metrics>"
 ---

@@ -1,4 +1,5 @@
 ---
+name: modernize
 description: Plan a legacy system modernization or rebuild with behavior characterization, strategy choice, and verified migration slices
 argument-hint: "<system description or repo path>"
 ---

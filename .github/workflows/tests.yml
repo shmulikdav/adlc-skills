@@ -17,7 +17,7 @@ jobs:
       - name: Manifests are in sync
         run: |
           python scripts/sync_manifests.py
-          git diff --exit-code -- '*.json' '*/README.md' || (echo "Run: python3 scripts/sync_manifests.py" && exit 1)
+          if [ -n "$(git status --porcelain)" ]; then git status --porcelain; echo "Generated files are out of date. Run: python3 scripts/sync_manifests.py"; exit 1; fi
       - name: Plugin validator
         run: python validate_plugins.py
       - name: Consistency tests

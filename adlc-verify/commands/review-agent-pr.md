@@ -1,4 +1,5 @@
 ---
+name: review-agent-pr
 description: Run an alignment review of an agent-authored PR or diff against its spec, with evidence-backed findings
 argument-hint: "<PR link, branch, or diff> [spec path]"
 ---

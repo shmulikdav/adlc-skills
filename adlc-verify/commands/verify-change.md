@@ -1,4 +1,5 @@
 ---
+name: verify-change
 description: Verify a change meets the Definition of Done with evidence before it is called done
 argument-hint: "[branch or task ID]"
 ---

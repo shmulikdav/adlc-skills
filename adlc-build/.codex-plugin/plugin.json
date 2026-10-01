@@ -1,0 +1,42 @@
+{
+  "name": "adlc-build",
+  "version": "2.3.0",
+  "description": "Agentic construction at the system level: choosing and composing execution frameworks with one owner per slot, long-running and multi-agent work design, small-batch delivery policy, and legacy modernization strategy with behavior parity.",
+  "author": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com",
+    "url": "https://www.braightwave.com"
+  },
+  "homepage": "https://braightwave.com/adlc",
+  "repository": "https://github.com/shmulikdav/adlc-skills",
+  "license": "MIT",
+  "keywords": [
+    "adlc",
+    "execution-framework",
+    "superpowers",
+    "spec-kit",
+    "small-batches",
+    "modernization"
+  ],
+  "skills": [
+    "./skills/",
+    "./workflows/"
+  ],
+  "interface": {
+    "displayName": "ADLC Build",
+    "shortDescription": "Execution stack & delivery shape",
+    "longDescription": "Agentic construction at the system level: choosing and composing execution frameworks with one owner per slot, long-running and multi-agent work design, small-batch delivery policy, and legacy modernization strategy with behavior parity.",
+    "developerName": "BrAIght Wave",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://braightwave.com/adlc",
+    "defaultPrompt": [
+      "Run $choose-rail",
+      "Run $modernize",
+      "Run $plan-long-run"
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 ---
+name: derive-tests
 description: Build a traceability matrix from specs or test cases and generate the missing tests
 argument-hint: "<spec, acceptance criteria, or exported test cases>"
 ---

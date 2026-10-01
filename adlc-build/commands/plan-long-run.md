@@ -1,4 +1,5 @@
 ---
+name: plan-long-run
 description: Plan multi-hour or multi-day agent work — decomposition, state files, checkpoints, budgets, abort criteria, review shape
 argument-hint: "<the large task, e.g., migration or backlog burn-down>"
 ---

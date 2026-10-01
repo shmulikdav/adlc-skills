@@ -1,4 +1,5 @@
 ---
+name: threat-model
 description: Threat-model an agentic development setup or an agent product against the OWASP Agentic Top 10
 argument-hint: "<system description: agents, tools/MCP servers, credentials, data sources, outputs>"
 ---

@@ -1,4 +1,5 @@
 ---
+name: agent-postmortem
 description: Blameless post-incident review for agent-caused failures that turns findings into durable fixes
 argument-hint: "<incident description, transcripts, logs>"
 ---

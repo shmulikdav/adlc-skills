@@ -1,4 +1,5 @@
 ---
+name: plan-continuous-ai
 description: Choose and guardrail background agent workflows (triage, CI failure investigation, docs, test gaps, cleanup) for a repository
 argument-hint: "<repo or team context, current toil>"
 ---

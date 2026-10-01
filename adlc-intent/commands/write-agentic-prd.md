@@ -1,4 +1,5 @@
 ---
+name: write-agentic-prd
 description: Turn a feature idea or ticket into an Agentic PRD a coding agent can execute without guessing
 argument-hint: "<feature idea, ticket text, or existing PRD>"
 ---

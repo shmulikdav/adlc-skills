@@ -1,4 +1,5 @@
 ---
+name: init-agent-context
 description: Create or audit the agent context file (CLAUDE.md / AGENTS.md) for a repository
 argument-hint: "<create | audit> [repo path or notes]"
 ---

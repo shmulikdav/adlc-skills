@@ -1,4 +1,5 @@
 ---
+name: audit-skills
 description: Audit an internal skills or plugin library — triggering, measured value, overlap, and what to keep, fix, or cut
 argument-hint: "<path to skills/plugins, or list of installed plugins>"
 ---

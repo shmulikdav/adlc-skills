@@ -1,4 +1,5 @@
 ---
+name: clarify-spec
 description: Hunt for ambiguities, contradictions, and silent decisions in a spec before an agent builds it
 argument-hint: "<spec, PRD, or ticket>"
 ---

@@ -1,4 +1,5 @@
 ---
+name: fix-review-queue
 description: Diagnose and redesign code review when agent PRs pile up — risk tiers, machine first pass, ownership, WIP limits
 argument-hint: "<team context, PR volume, current review process or metrics>"
 ---

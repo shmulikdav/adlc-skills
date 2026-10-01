@@ -1,4 +1,5 @@
 ---
+name: vet-extension
 description: Security-vet a third-party skill, plugin, MCP server, or hook before installing it
 argument-hint: "<repo URL, local path, or package name>"
 ---

@@ -1,4 +1,5 @@
 ---
+name: design-agent
 description: Design an AI agent or LLM feature — pick the simplest working pattern, tools, guardrails, and eval plan
 argument-hint: "<what the agent should accomplish, users, systems it touches>"
 ---

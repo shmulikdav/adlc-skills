@@ -1,4 +1,5 @@
 ---
+name: choose-rail
 description: Pick and wire the agentic execution framework stack (Superpowers, Spec Kit, GSD, BMAD, built-in) with one owner per slot
 argument-hint: "<team context, tools installed, main delivery problem>"
 ---

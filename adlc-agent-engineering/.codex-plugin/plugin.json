@@ -1,0 +1,42 @@
+{
+  "name": "adlc-agent-engineering",
+  "version": "2.3.0",
+  "description": "Agent engineering for teams building AI agents and LLM features: architecture patterns, tool design, eval suites, prompts as versioned code, and runtime guardrails.",
+  "author": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com",
+    "url": "https://www.braightwave.com"
+  },
+  "homepage": "https://braightwave.com/adlc",
+  "repository": "https://github.com/shmulikdav/adlc-skills",
+  "license": "MIT",
+  "keywords": [
+    "adlc",
+    "agent-development-lifecycle",
+    "evals",
+    "tool-design",
+    "guardrails",
+    "llm-apps"
+  ],
+  "skills": [
+    "./skills/",
+    "./workflows/"
+  ],
+  "interface": {
+    "displayName": "ADLC Agent Engineering",
+    "shortDescription": "Building agents as products",
+    "longDescription": "Agent engineering for teams building AI agents and LLM features: architecture patterns, tool design, eval suites, prompts as versioned code, and runtime guardrails.",
+    "developerName": "BrAIght Wave",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://braightwave.com/adlc",
+    "defaultPrompt": [
+      "Run $build-evals",
+      "Run $design-agent",
+      "Run $red-team-agent"
+    ]
+  }
+}

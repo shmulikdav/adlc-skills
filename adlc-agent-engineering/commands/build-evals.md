@@ -1,4 +1,5 @@
 ---
+name: build-evals
 description: Create an eval suite for an agent or LLM feature with tasks, graders, thresholds, and CI wiring
 argument-hint: "<agent/feature description, sample transcripts, or failure cases>"
 ---

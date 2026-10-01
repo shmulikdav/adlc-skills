@@ -1,4 +1,5 @@
 ---
+name: codify
 description: Turn a recurring agent mistake or team convention into the right artifact — context line, skill, hook, or test
 argument-hint: "<the convention or the mistake the agent keeps making>"
 ---

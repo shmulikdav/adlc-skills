@@ -1,4 +1,5 @@
 ---
+name: red-team-agent
 description: Red-team an agent design or running agent against the OWASP Agentic Top 10 and turn findings into guardrails and eval cases
 argument-hint: "<agent description or design doc>"
 ---

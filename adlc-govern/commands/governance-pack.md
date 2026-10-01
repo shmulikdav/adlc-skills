@@ -1,4 +1,5 @@
 ---
+name: governance-pack
 description: Produce an ADLC governance pack — permissions, hooks, threat model, and compliance mapping — for a team or org
 argument-hint: "<org/team context, frameworks of interest>"
 ---

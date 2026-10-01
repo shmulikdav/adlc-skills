@@ -1,0 +1,42 @@
+{
+  "name": "adlc-verify",
+  "version": "2.3.0",
+  "description": "Verification of agent-built software: review capacity design for the agent-PR bottleneck, behavioral testing, tests derived from specs, alignment review of agent PRs, hallucination checks, and a Definition of Done for agent work.",
+  "author": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com",
+    "url": "https://www.braightwave.com"
+  },
+  "homepage": "https://braightwave.com/adlc",
+  "repository": "https://github.com/shmulikdav/adlc-skills",
+  "license": "MIT",
+  "keywords": [
+    "adlc",
+    "testing",
+    "code-review",
+    "verification",
+    "qa",
+    "hallucination"
+  ],
+  "skills": [
+    "./skills/",
+    "./workflows/"
+  ],
+  "interface": {
+    "displayName": "ADLC Verify",
+    "shortDescription": "Behavioral validation & review",
+    "longDescription": "Verification of agent-built software: review capacity design for the agent-PR bottleneck, behavioral testing, tests derived from specs, alignment review of agent PRs, hallucination checks, and a Definition of Done for agent work.",
+    "developerName": "BrAIght Wave",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://braightwave.com/adlc",
+    "defaultPrompt": [
+      "Run $derive-tests",
+      "Run $fix-review-queue",
+      "Run $review-agent-pr"
+    ]
+  }
+}

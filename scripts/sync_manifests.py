@@ -91,6 +91,8 @@ def main():
     }
     (ROOT / ".claude-plugin" / "marketplace.json").write_text(json.dumps(marketplace, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Synced {len(entries)} plugins: {totals}")
+    import sync_cross_platform
+    sync_cross_platform.main()
 
 
 if __name__ == "__main__":

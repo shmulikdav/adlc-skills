@@ -1,4 +1,5 @@
 ---
+name: mine-rejections
 description: Turn rejected agent PRs and repeated review comments into durable fixes — context, skills, hooks, tests, evals
 argument-hint: "<rejected PR list, review comments, or a time window>"
 ---

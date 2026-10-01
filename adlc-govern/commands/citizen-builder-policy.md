@@ -1,4 +1,5 @@
 ---
+name: citizen-builder-policy
 description: Create a paved-road policy for non-engineers building tools and apps with AI — tiers, data rules, inventory, promotion to engineering
 argument-hint: "<organization context, which teams build what, tools in use>"
 ---

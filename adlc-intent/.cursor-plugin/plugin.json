@@ -1,0 +1,21 @@
+{
+  "name": "adlc-intent",
+  "displayName": "ADLC Intent",
+  "version": "2.3.0",
+  "description": "Intent specification for coding agents: Agentic PRDs, spec-driven development, testable acceptance criteria (Given/When/Then, EARS), spec clarification, task decomposition, and architecture guardrails (ADRs, invariants, dependency rules).",
+  "author": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com"
+  },
+  "homepage": "https://braightwave.com/adlc",
+  "repository": "https://github.com/shmulikdav/adlc-skills",
+  "license": "MIT",
+  "keywords": [
+    "adlc",
+    "spec-driven-development",
+    "agentic-prd",
+    "acceptance-criteria",
+    "requirements",
+    "spec-kit"
+  ]
+}

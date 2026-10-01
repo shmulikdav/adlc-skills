@@ -128,16 +128,36 @@ claude plugin install adlc-foundations@adlc-skills   # repeat for the plugins in
 
 All eight: `adlc-foundations`, `adlc-intent`, `adlc-context`, `adlc-build`, `adlc-verify`, `adlc-govern`, `adlc-operate`, `adlc-agent-engineering`.
 
-### Codex CLI and other agents (skills only)
+### OpenAI Codex (CLI, app, IDE)
 
-The `skills/*/SKILL.md` files follow the Agent Skills format. Commands, subagents, and evals are Claude Code features.
+```bash
+codex plugin marketplace add shmulikdav/adlc-skills
+codex plugin add adlc-foundations@adlc-skills
+```
 
-| Tool | How |
-|------|-----|
-| Codex CLI | `codex plugin marketplace add shmulikdav/adlc-skills`, then add plugins |
-| Cursor | Copy skill folders to `.cursor/skills/` |
-| Gemini CLI | Copy skill folders to `.gemini/skills/` |
-| OpenCode | Copy skill folders to `.opencode/skills/` |
+Or run `/plugins` inside Codex and install from the ADLC Skills marketplace. Start a new session afterwards. Codex plugins have no slash commands, so each command ships as a workflow skill: type `$adlc-assess` where Claude Code users type `/adlc-assess`. The two review agents are Claude Code and Cursor only.
+
+Verified with Codex CLI 0.159.3: all 8 plugins install, and all 47 skills and 28 workflows load into the model's context.
+
+### Cursor
+
+**Teams and Enterprise:** an admin adds the repo as a team marketplace: **Dashboard → Plugins & MCPs → Team Marketplaces → Add Marketplace → Import from Repo**, then pastes `https://github.com/shmulikdav/adlc-skills`. Teammates install plugins from **Customize**.
+
+**Individuals:** install as local plugins.
+
+```bash
+git clone https://github.com/shmulikdav/adlc-skills
+cd adlc-skills
+bash scripts/install-cursor.sh adlc-foundations adlc-verify   # or: all
+```
+
+Then run **Developer: Reload Window** and confirm the plugin in **Customize**. Commands work as `/adlc-assess`, as in Claude Code. To update, `git pull` and run the script again.
+
+Validated against Cursor's official plugin schema and validator. Not yet tested in the Cursor app itself; please report results in [Discussions](https://github.com/shmulikdav/adlc-skills/discussions).
+
+### Other tools that read Agent Skills
+
+The `skills/*/SKILL.md` files follow the open Agent Skills format. Gemini CLI, OpenCode and similar tools should be able to load them from their skills directory, but we haven't tested those.
 
 ---
 
@@ -250,7 +270,7 @@ Those run the work inside a session: planning, TDD, review. ADLC Skills covers w
 No. Benchmarks show focused skill sets beat large bundles. Install the profile for your role.
 
 **Does it work outside Claude Code?**
-Skills follow the Agent Skills format and work in Cowork, Codex, Cursor, Gemini CLI, and OpenCode. Slash commands, subagents, and evals are Claude Code features.
+Yes. It installs natively in Claude Code, Cowork, OpenAI Codex and Cursor (see Installation). In Codex, commands run as `$command` workflow skills. Evals run only in Claude Code.
 
 **Can I use it with clients or inside my company?**
 Yes. MIT licensed: use, fork, and adapt it, including commercially. Keep the license notice.

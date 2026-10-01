@@ -1,6 +1,6 @@
 {
   "name": "adlc-context",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Context engineering for coding agents: CLAUDE.md / AGENTS.md authoring and audits, codebase maps, context-window budgeting, codifying conventions as skills, hooks or tests, MCP integration planning, and evidence-based skill library management.",
   "author": {
     "name": "Shmulik Davar — BrAIght Wave",

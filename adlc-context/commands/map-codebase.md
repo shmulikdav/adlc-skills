@@ -1,4 +1,5 @@
 ---
+name: map-codebase
 description: Generate an agent-oriented codebase map with modules, core flows, change recipes, and a risk register
 argument-hint: "[repo path or area to focus on]"
 ---

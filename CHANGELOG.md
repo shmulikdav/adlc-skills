@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v2.3.0 — 2026-10-01
+
+Now installable in OpenAI Codex and Cursor, alongside Claude Code and Cowork, plus the first published eval results.
+
+- **Codex:** native Codex manifests and marketplace (`.codex-plugin/`, `.agents/plugins/marketplace.json`). Each of the 28 commands also ships as a Codex workflow skill (`$adlc-assess`), because Codex plugins have no slash commands. Verified with Codex CLI 0.159.3: all 8 plugins install and all 47 skills and 28 workflows load.
+- **Cursor:** native Cursor manifests and marketplace (`.cursor-plugin/`), `name` added to command and agent frontmatter, and `scripts/install-cursor.sh` for local installs. Validated against Cursor's official schema and validator.
+- Codex and Cursor packaging is generated from the Claude Code plugins by `scripts/sync_cross_platform.py`; CI fails if any generated file is out of date, and new tests check all three platforms stay consistent.
 - Renamed `/codify-convention` to `/codify`: the old name was one letter from its skill (`codify-conventions`), and the model skipped loading the skill.
 - Every command now loads its skills first (Step 0); the smoke test (`scripts/smoke_commands.sh`) verifies this per command.
 - First published eval results for adlc-verify (`docs/EVAL-RESULTS.md`, README).

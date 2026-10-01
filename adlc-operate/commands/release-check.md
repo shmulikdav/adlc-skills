@@ -1,4 +1,5 @@
 ---
+name: release-check
 description: Run a go/no-go release check for agent-built changes with gate evidence and rollback readiness
 argument-hint: "<release, PR list, or change description>"
 ---

@@ -1,4 +1,5 @@
 ---
+name: map-to-adlc
 description: Map your current SDLC workflow to the Agentic Development Lifecycle and pick where agents should enter first
 argument-hint: "<description of the current dev workflow>"
 ---

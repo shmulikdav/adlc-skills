@@ -1,0 +1,21 @@
+{
+  "name": "adlc-foundations",
+  "displayName": "ADLC Foundations",
+  "version": "2.3.0",
+  "description": "ADLC foundations: readiness assessment on the DORA AI capabilities, SDLC-to-ADLC workflow mapping, agent autonomy levels, AI stance policy, ROI metrics, AI champions program, role transitions, and comprehension debt.",
+  "author": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com"
+  },
+  "homepage": "https://braightwave.com/adlc",
+  "repository": "https://github.com/shmulikdav/adlc-skills",
+  "license": "MIT",
+  "keywords": [
+    "adlc",
+    "agentic-development",
+    "ai-readiness",
+    "dora",
+    "ai-transformation",
+    "engineering-leadership"
+  ]
+}

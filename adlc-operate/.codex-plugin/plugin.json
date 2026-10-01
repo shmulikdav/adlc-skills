@@ -1,0 +1,43 @@
+{
+  "name": "adlc-operate",
+  "version": "2.3.0",
+  "description": "Operating the ADLC: release gates, Continuous AI background workflows, AgentOps observability, AI cost management, a learning loop from rejected agent work, and blameless agent incident reviews.",
+  "author": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com",
+    "url": "https://www.braightwave.com"
+  },
+  "homepage": "https://braightwave.com/adlc",
+  "repository": "https://github.com/shmulikdav/adlc-skills",
+  "license": "MIT",
+  "keywords": [
+    "adlc",
+    "agentops",
+    "observability",
+    "release",
+    "finops",
+    "postmortem",
+    "continuous-ai"
+  ],
+  "skills": [
+    "./skills/",
+    "./workflows/"
+  ],
+  "interface": {
+    "displayName": "ADLC Operate",
+    "shortDescription": "Release, observe, learn",
+    "longDescription": "Operating the ADLC: release gates, Continuous AI background workflows, AgentOps observability, AI cost management, a learning loop from rejected agent work, and blameless agent incident reviews.",
+    "developerName": "BrAIght Wave",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://braightwave.com/adlc",
+    "defaultPrompt": [
+      "Run $agent-postmortem",
+      "Run $mine-rejections",
+      "Run $plan-continuous-ai"
+    ]
+  }
+}

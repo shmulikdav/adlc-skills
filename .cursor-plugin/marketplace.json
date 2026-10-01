@@ -1,0 +1,53 @@
+{
+  "name": "adlc-skills",
+  "owner": {
+    "name": "Shmulik Davar — BrAIght Wave",
+    "email": "shmulik@braightwave.com"
+  },
+  "metadata": {
+    "description": "The Agentic Development Lifecycle as skills, commands and agents.",
+    "version": "2.3.0"
+  },
+  "plugins": [
+    {
+      "name": "adlc-foundations",
+      "source": "./adlc-foundations",
+      "description": "ADLC foundations: readiness assessment on the DORA AI capabilities, SDLC-to-ADLC workflow mapping, agent autonomy levels, AI stance policy, ROI metrics, AI champions program, role transitions, and comprehension debt."
+    },
+    {
+      "name": "adlc-intent",
+      "source": "./adlc-intent",
+      "description": "Intent specification for coding agents: Agentic PRDs, spec-driven development, testable acceptance criteria (Given/When/Then, EARS), spec clarification, task decomposition, and architecture guardrails (ADRs, invariants, dependency rules)."
+    },
+    {
+      "name": "adlc-context",
+      "source": "./adlc-context",
+      "description": "Context engineering for coding agents: CLAUDE.md / AGENTS.md authoring and audits, codebase maps, context-window budgeting, codifying conventions as skills, hooks or tests, MCP integration planning, and evidence-based skill library management."
+    },
+    {
+      "name": "adlc-build",
+      "source": "./adlc-build",
+      "description": "Agentic construction at the system level: choosing and composing execution frameworks with one owner per slot, long-running and multi-agent work design, small-batch delivery policy, and legacy modernization strategy with behavior parity."
+    },
+    {
+      "name": "adlc-verify",
+      "source": "./adlc-verify",
+      "description": "Verification of agent-built software: review capacity design for the agent-PR bottleneck, behavioral testing, tests derived from specs, alignment review of agent PRs, hallucination checks, and a Definition of Done for agent work."
+    },
+    {
+      "name": "adlc-govern",
+      "source": "./adlc-govern",
+      "description": "Governance and security for agentic development: OWASP Agentic Top 10 threat modeling, auto-mode-era agent permissions, guardrail hooks, compliance mapping (ISO 42001, NIST AI RMF, EU AI Act, SOC 2), extension vetting, and governance for non-engineers building with AI."
+    },
+    {
+      "name": "adlc-operate",
+      "source": "./adlc-operate",
+      "description": "Operating the ADLC: release gates, Continuous AI background workflows, AgentOps observability, AI cost management, a learning loop from rejected agent work, and blameless agent incident reviews."
+    },
+    {
+      "name": "adlc-agent-engineering",
+      "source": "./adlc-agent-engineering",
+      "description": "Agent engineering for teams building AI agents and LLM features: architecture patterns, tool design, eval suites, prompts as versioned code, and runtime guardrails."
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 ---
+name: adlc-roadmap
 description: Build a phased 90-day ADLC adoption roadmap (Map → Prioritize → Build → Scale) for an engineering organization
 argument-hint: "<org context, readiness findings, or goals>"
 ---
