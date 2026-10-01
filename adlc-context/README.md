@@ -25,7 +25,7 @@ claude plugin install adlc-context@adlc-skills
 ## Commands (4)
 
 - `/audit-skills` — Audit an internal skills or plugin library — triggering, measured value, overlap, and what to keep, fix, or cut
-- `/codify-convention` — Turn a recurring agent mistake or team convention into the right artifact — context line, skill, hook, or test
+- `/codify` — Turn a recurring agent mistake or team convention into the right artifact — context line, skill, hook, or test
 - `/init-agent-context` — Create or audit the agent context file (CLAUDE.md / AGENTS.md) for a repository
 - `/map-codebase` — Generate an agent-oriented codebase map with modules, core flows, change recipes, and a risk register
 

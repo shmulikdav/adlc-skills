@@ -180,7 +180,7 @@ Examples: `/write-agentic-prd Let admins export audit logs as CSV` · `/clarify-
 - `mcp-integration-plan` — Make internal data agent-accessible with least privilege and injection awareness
 - `skill-library-management` — Keep, fix, or cut skills by measured Δ; description and load-budget standards from the benchmarks
 
-Commands: `/init-agent-context` · `/map-codebase` · `/codify-convention` · `/audit-skills`
+Commands: `/init-agent-context` · `/map-codebase` · `/codify` · `/audit-skills`
 
 **4. adlc-build — Execution stack & delivery shape (4 skills, 3 commands)**
 

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Renamed `/codify-convention` to `/codify`: the old name was one letter from its skill (`codify-conventions`), and the model skipped loading the skill.
+- Every command now loads its skills first (Step 0); the smoke test (`scripts/smoke_commands.sh`) verifies this per command.
 - First published eval results for adlc-verify (`docs/EVAL-RESULTS.md`, README).
 - Evals v2/v3: atomic-criteria graders, inline fixtures with planted defects, Sonnet judge recommended.
 - Eval-driven fixes: `hallucination-checks` never asserts unverified facts and adds necessity and approval steps; broader triggers for `review-capacity`, `agent-code-review`, `tests-from-specs`.
