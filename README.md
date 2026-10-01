@@ -43,7 +43,21 @@ Published benchmarks show that skills are not automatically good. Curated, domai
 
 Run the benchmark yourself: `claude plugin eval ./adlc-govern` (or any plugin). Details in [docs/REVIEW.md](docs/REVIEW.md).
 
-**Benchmark status:** the suites are published; the first public WITH / W/OUT / Δ results will be posted here and in the release notes. Skills that don't show a positive Δ will be fixed or removed. Run it on your own model and share results in Discussions.
+### First results: adlc-verify
+
+Measured on 1 October 2026 with `claude plugin eval`: Claude Haiku answering, Claude Sonnet judging, 3 runs per arm, each case scored on 5–7 concrete criteria. Δ is the score with the plugin minus the score without it.
+
+| Skill | Skill loaded | With | Without | Δ |
+| --- | --- | --- | --- | --- |
+| definition-of-done | 3/3 | 0.87 | 0.07 | **+0.80** |
+| review-capacity | 3/3 | 0.57 | 0.05 | **+0.52** |
+| hallucination-checks | 3/3 | 0.60 | 0.40 | **+0.20** |
+| behavioral-testing | 3/3 | 0.73 | 0.67 | +0.07 |
+| agent-code-review | 0/3 | 0.81 | 0.81 | 0.00 |
+| tests-from-specs | 0/3 | 0.87 | 0.67 | not attributable |
+| Unrelated question (negative case) | 0/6 | 1.00 | 1.00 | no false triggers |
+
+What we learned, including what didn't work, is in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). Short version: skills that encode organizational procedure gave large gains; generic code review did not auto-trigger on pasted diffs, because the model already reviews those well; and the evals caught a flaw in `hallucination-checks` that we fixed and re-measured. Seven plugins are not yet measured. Run them yourself and share results in Discussions.
 
 ## Built on market best practices
 

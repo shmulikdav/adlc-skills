@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- First published eval results for adlc-verify (`docs/EVAL-RESULTS.md`, README).
+- Evals v2/v3: atomic-criteria graders, inline fixtures with planted defects, Sonnet judge recommended.
+- Eval-driven fixes: `hallucination-checks` never asserts unverified facts and adds necessity and approval steps; broader triggers for `review-capacity`, `agent-code-review`, `tests-from-specs`.
+
 ## v2.2.0 — 2026-10-01
 
 Grounded every skill in recognized market practice. See docs/STANDARDS-MAP.md.
