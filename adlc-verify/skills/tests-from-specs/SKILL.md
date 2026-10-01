@@ -1,6 +1,6 @@
 ---
 name: tests-from-specs
-description: "Use when generating tests from PRDs, acceptance criteria, Gherkin, or test-management exports (Xray, TestRail, Zephyr), when asked which requirements have no test, or when lifting test coverage with agents."
+description: "Use when asked where test coverage stands, which requirements or test cases have no automated test, or how to close a coverage gap, when mapping test cases from Xray, TestRail, Zephyr, Gherkin, PRDs, or acceptance criteria (pasted inline or exported) to automated tests, or when lifting coverage with agents."
 ---
 
 # Tests from Specs

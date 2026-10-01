@@ -22,7 +22,9 @@ Plausible-but-nonexistent references are a signature failure of generated code. 
 3. **APIs:** for external APIs, confirm endpoints, parameters, and response fields against current official docs or the SDK types.
 4. **Config & flags:** confirm config keys, environment variables, and CLI flags exist and are spelled as the tool expects.
 5. **Paths & links:** confirm referenced files exist; confirm documentation URLs resolve.
-6. **Claims in PR text:** "tests pass", "no breaking changes", "performance improved" must be backed by output in the PR.
+6. **Necessity:** before vetting a new dependency, ask whether it is needed at all. Can an existing dependency or the standard library do the job? Every new package is permanent attack surface.
+7. **Approval and pinning:** a new dependency is a human decision, not an agent's. Require explicit approval, pin the exact version, and commit the lockfile.
+8. **Claims in PR text:** "tests pass", "no breaking changes", "performance improved" must be backed by output in the PR.
 
 ## The rule this skill must follow itself
 
@@ -35,6 +37,8 @@ Run what can be run (install, build, type-check, tests). For what can't be run, 
 ## Output
 
 `| Reference | Type | Status | Evidence | Action |`
+
+For a new dependency, end with a decision line: needed or not, approved by whom, version pinned, lockfile committed.
 
 ## Notes
 

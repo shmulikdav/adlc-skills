@@ -1,6 +1,6 @@
 ---
 name: agent-code-review
-description: "Use when reviewing a pull request or diff written by Claude Code, Cursor, Codex, Copilot, or another agent, when setting up a review process for AI-generated code, or before merging agent work into main."
+description: "Use when asked to review, check, or approve a pull request, diff, or patch written by Claude Code, Cursor, Codex, Copilot, or another agent, whether pasted inline or in the repository, when setting up a review process for AI-generated code, or before merging agent work into main."
 ---
 
 # Agent Code Review (Alignment Review)
