@@ -8,7 +8,7 @@ Read docs/REVIEW.md first: benchmarks show generic skills often add nothing and 
 
 - It encodes an **org- or domain-specific method** with a clear output, not something a strong model already does.
 - Its description states **only when to use it** ("Use when…"), with the phrases and symptoms practitioners actually say. No workflow summary.
-- It is grounded in a **primary source** or real practice, cited under `### Further Reading`.
+- It is **grounded in recognized market practice**: add its standards to `scripts/grounding.py` (at least two primary sources). If you introduce a number or model of your own, label it in the skill as a calibratable default.
 - It keeps humans at the gates where judgment matters and says so explicitly.
 - It is tool-agnostic where possible (Claude Code, Cursor, Codex, Copilot), and names tool-specific details only when necessary.
 

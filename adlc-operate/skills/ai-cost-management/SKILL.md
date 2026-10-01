@@ -5,6 +5,12 @@ description: "Use when token or AI spend is growing or unpredictable, when build
 
 # AI Cost Management
 
+**Grounded in:** FinOps Foundation: FinOps for AI; DX AI Measurement Framework.
+
+
+
+
+
 ## Purpose
 
 Agent costs scale with context size, steps, and retries, not with headcount. Without unit economics, spend grows silently and ROI claims are guesses.
@@ -24,6 +30,10 @@ Agent costs scale with context size, steps, and retries, not with headcount. Wit
 | Step limits & loop detection | Prevents runaway runs | Cutting off legitimately long tasks |
 | Batch/async processing | Lower price for non-urgent work | Latency |
 
+## FinOps alignment
+
+The FinOps Foundation now treats AI as its own technology category. Apply its practices: start with **visibility and allocation** (team, project, environment, model, and cost center cover most chargeback needs), run **showback before chargeback**, track **unit cost per workflow or outcome** rather than total spend, and mature crawl → walk → run. Token spend has no native resource tags, so attribution must be emitted by the code or gateway at request time.
+
 ## Instructions
 
 1. Establish attribution: tag usage by team, workflow, feature, and customer.
@@ -36,3 +46,9 @@ Agent costs scale with context size, steps, and retries, not with headcount. Wit
 ## Output
 
 Cost baseline table, driver analysis, lever plan with guardrails, stress-test table, budget/alert policy.
+
+---
+
+### Further Reading
+- [FinOps Foundation: FinOps for AI](https://www.finops.org/framework/technology-categories/ai/)
+- [DX AI Measurement Framework](https://getdx.com/blog/ai-measurement-framework-guide/)

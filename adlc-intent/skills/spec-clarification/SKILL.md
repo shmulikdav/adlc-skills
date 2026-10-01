@@ -5,6 +5,12 @@ description: "Use when reviewing a spec, PRD, or ticket before an agent builds i
 
 # Spec Clarification (Ambiguity Hunt)
 
+**Grounded in:** GitHub Spec Kit; Thoughtworks Technology Radar (Vol. 34, April 2026).
+
+
+
+
+
 ## Purpose
 
 Every ambiguity left in a spec becomes a silent decision made by the agent. This skill surfaces those decisions so a human makes them deliberately.
@@ -37,3 +43,9 @@ Then the updated spec section(s).
 
 - If the spec is in a repo, check existing code for the answer before asking the human.
 - "Interview me" mode: ask one question at a time and wait.
+
+---
+
+### Further Reading
+- [GitHub Spec Kit](https://github.com/github/spec-kit)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

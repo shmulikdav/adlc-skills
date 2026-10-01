@@ -5,6 +5,12 @@ description: "Use when configuring what a coding agent may read, edit, or run (C
 
 # Agent Permissions (Least Privilege)
 
+**Grounded in:** NIST SP 800-207: Zero Trust Architecture; OWASP Top 10 for Agentic Applications (2026); Claude Code best practices.
+
+
+
+
+
 ## Purpose
 
 Permission prompts that fire constantly get approved blindly. Permissions that are too broad let a single bad step do real damage. The goal is a configuration where routine safe actions flow and dangerous ones are impossible or explicitly approved.
@@ -55,3 +61,4 @@ A permissions matrix (`Action | Local | CI | Rationale`), a draft settings snipp
 
 - [Claude Code documentation (settings, permissions, hooks)](https://code.claude.com/docs/en/best-practices)
 - [OWASP Top 10 for Agentic Applications (2026)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)

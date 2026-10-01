@@ -5,6 +5,12 @@ description: "Use when writing or fixing acceptance criteria for a feature an ag
 
 # Acceptance Criteria for Agents
 
+**Grounded in:** EARS: Easy Approach to Requirements Syntax; Cucumber: Gherkin reference.
+
+
+
+
+
 ## Purpose
 
 Acceptance criteria are the contract between intent and verification. For agents, an untestable criterion is an invitation to guess.
@@ -52,3 +58,5 @@ A table: `ID | Requirement | Criterion | Type (happy/edge/negative/NFR) | Verifi
 ### Further Reading
 
 - [GitHub Spec Kit: Specification-Driven Development](https://github.com/github/spec-kit/blob/main/spec-driven.md)
+- [EARS: Easy Approach to Requirements Syntax](https://alistairmavin.com/ears/)
+- [Cucumber: Gherkin reference](https://cucumber.io/docs/gherkin/reference/)

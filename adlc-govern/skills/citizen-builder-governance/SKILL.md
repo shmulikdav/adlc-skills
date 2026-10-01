@@ -5,6 +5,12 @@ description: "Use when non-engineers (operations, finance, sales, legal, HR, ana
 
 # Citizen-Builder Governance
 
+**Grounded in:** Anthropic: 2026 Agentic Coding Trends Report; Thoughtworks Technology Radar (Vol. 34, April 2026); NIST AI Risk Management Framework.
+
+
+
+
+
 ## Overview
 
 Agentic coding is spreading beyond engineering: Anthropic's 2026 trends report predicts business teams building their own tools without filing tickets. That unlocks real value and creates a new class of software no engineering team owns. The answer is a paved road, not a ban.
@@ -45,3 +51,5 @@ Tier policy, paved-road kit (tools, connectors, templates), tool inventory forma
 ### Further Reading
 
 - [Anthropic: 2026 Agentic Coding Trends Report (Trends 5 and 7)](https://resources.anthropic.com/2026-agentic-coding-trends-report)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)

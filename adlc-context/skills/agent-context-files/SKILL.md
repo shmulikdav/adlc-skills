@@ -5,6 +5,12 @@ description: "Use when setting up or auditing CLAUDE.md, AGENTS.md, .cursor/rule
 
 # Agent Context Files
 
+**Grounded in:** AGENTS.md open format; OpenSSF: Security-Focused Guide for AI Code Assistant Instructions; OpenAI: Harness engineering; Claude Code best practices.
+
+
+
+
+
 ## Purpose
 
 Context files are loaded every session, so every line costs attention. Bloated files cause agents to ignore the instructions that matter. The goal is the smallest file that prevents the most expensive mistakes.
@@ -39,6 +45,10 @@ Context files are loaded every session, so every line costs attention. Bloated f
 
 Target: under ~150 lines for the root file. Treat it as a **table of contents, not an encyclopedia**: point to a structured `docs/` knowledge base (architecture, ADRs, plans, runbooks) that is the versioned system of record. What the agent can't see in the repository doesn't exist for it, so decisions made in chat or meetings must land in `docs/`. Use nested files in subdirectories for area-specific rules, and imports (`@path/to/file`) for occasionally-needed detail.
 
+## Security baseline (OpenSSF)
+
+Include a short secure-coding block, following the OpenSSF *Security-Focused Guide for AI Code Assistant Instructions*: validate inputs, never hardcode or log secrets, apply least privilege, use the project's package manager and pinned dependencies, write negative tests for security-critical code, and flag complex logic for human security review. Keep it concise and specific; OpenSSF does not recommend telling the assistant to act as a security expert.
+
 ## Instructions
 
 **Create mode**
@@ -63,3 +73,6 @@ Target: under ~150 lines for the root file. Treat it as a **table of contents, n
 
 - [Claude Code best practices: write an effective CLAUDE.md](https://code.claude.com/docs/en/best-practices)
 - [Anthropic: Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [AGENTS.md open format](https://agents.md/)
+- [OpenSSF: Security-Focused Guide for AI Code Assistant Instructions](https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions)
+- [OpenAI: Harness engineering](https://openai.com/index/harness-engineering/)

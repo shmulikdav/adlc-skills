@@ -5,6 +5,12 @@ description: "Use when agent quality drops during long sessions, sessions run ou
 
 # Context Budget Management
 
+**Grounded in:** Anthropic: Effective context engineering for AI agents; Claude Code best practices.
+
+
+
+
+
 ## Purpose
 
 Agent performance degrades as the context window fills. Most agentic best practices reduce to one discipline: put the right tokens in context at the right time.

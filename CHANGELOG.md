@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## v2.2.0 — 2026-10-01
+
+Grounded every skill in recognized market practice. See docs/STANDARDS-MAP.md.
+
+- Every skill now opens with a **Grounded in** line naming the standards it applies (DORA, DX, Google Engineering Practices, Google SRE, NIST AI RMF / AI 600-1 / SSDF 800-218A / SP 800-207, ISO/IEC 42001, OWASP Agentic Top 10, OpenSSF, FinOps Foundation, Thoughtworks Technology Radar, OpenTelemetry, MCP security guidance, Spec Kit, AWS AI-DLC, and others) and cites at least two primary sources. 12 skills previously cited none.
+- `autonomy-levels` now uses the published five-level framework (Operator, Collaborator, Consultant, Approver, Observer; Feng, McDonald & Zhang) instead of a home-grown ladder.
+- Replaced or labeled kit-specific numbers: PR-size and review-tier defaults now operationalize Google's small-CL and review guidance and are marked as calibratable; the maturity scale is labeled as this kit's synthesis around DORA capabilities.
+- Added standards-backed practice to skills: OpenSSF security baseline for agent context files, Google SRE postmortem format, FinOps for AI allocation and showback, error budgets in release gates, mutation testing as a feedback control, Scrum Definition of Done, ISO 42001 AI policy.
+- Validator fails any skill without a Grounded-in line and two sources; new `docs/STANDARDS-MAP.md` (generated); new link-check CI workflow.
+
 ## v2.1.0 — 2026-10-01
 
 Pre-launch audit against the 2026 state of agentic development. See docs/LAUNCH-AUDIT.md.

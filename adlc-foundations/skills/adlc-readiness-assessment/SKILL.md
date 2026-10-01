@@ -5,6 +5,12 @@ description: "Use when an organization asks whether it is ready for agentic deve
 
 # ADLC Readiness Assessment
 
+**Grounded in:** DORA research (State of AI-assisted Software Development, AI Capabilities Model); DX AI Measurement Framework; Thoughtworks Technology Radar (Vol. 34, April 2026).
+
+
+
+
+
 ## Purpose
 
 Produce an evidence-based readiness baseline before an organization scales coding agents. The core finding behind this skill: AI is an amplifier. It magnifies strong engineering foundations and magnifies dysfunction. So the question is not "which tool" but "which foundations".
@@ -52,6 +58,9 @@ Score each dimension 1–5 with a one-line evidence note. Never score without ev
 
 ## Maturity levels
 
+This five-level scale is this kit's synthesis, not an industry standard; it is organized around the DORA capabilities above so results stay comparable with DORA-based assessments.
+
+
 - **Level 0 – Ad hoc:** individuals use chat assistants; no shared practice
 - **Level 1 – Assisted:** licensed tools, autocomplete and chat; SDLC unchanged
 - **Level 2 – Delegated:** agents implement scoped tasks; humans review every diff
@@ -88,3 +97,5 @@ Save as `ADLC-Readiness-[team]-[date].md`.
 
 - [DORA research publications (State of AI-assisted Software Development 2025, AI Capabilities Model)](https://dora.dev/research/publications/)
 - [Claude Code best practices](https://code.claude.com/docs/en/best-practices)
+- [DX AI Measurement Framework](https://getdx.com/blog/ai-measurement-framework-guide/)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

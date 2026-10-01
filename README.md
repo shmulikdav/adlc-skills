@@ -45,6 +45,10 @@ Run the benchmark yourself: `claude plugin eval ./adlc-govern` (or any plugin). 
 
 **Benchmark status:** the suites are published; the first public WITH / W/OUT / Δ results will be posted here and in the release notes. Skills that don't show a positive Δ will be fixed or removed. Run it on your own model and share results in Discussions.
 
+## Built on market best practices
+
+Nothing here is invented where an established standard exists. Every skill names what it applies and cites primary sources: **DORA** and the **DX AI Measurement Framework** for measurement; **Google Engineering Practices** and **Google SRE** for review, small changes, postmortems, and error budgets; **NIST** (AI RMF, AI 600-1, SSDF 800-218A, Zero Trust 800-207), **ISO/IEC 42001**, the **EU AI Act**, **OWASP's Agentic Top 10**, **OpenSSF**, and **MCP security guidance** for governance; **FinOps for AI** for cost; **OpenTelemetry GenAI conventions** for observability; **Spec Kit**, **AWS AI-DLC**, **EARS**, and **Gherkin** for specs; the published **Levels of Autonomy for AI Agents** for delegation; and **Thoughtworks' Technology Radar** for which agentic practices the industry is adopting. Where the kit adds its own heuristic, the skill says so. Full matrix: [docs/STANDARDS-MAP.md](docs/STANDARDS-MAP.md).
+
 ## Install by role
 
 Install the profile that matches your job, not everything.

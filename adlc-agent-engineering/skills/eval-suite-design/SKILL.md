@@ -5,6 +5,12 @@ description: "Use when building evals for an agent or LLM feature, before changi
 
 # Eval Suite Design
 
+**Grounded in:** Anthropic: Demystifying evals for AI agents; NIST AI Risk Management Framework.
+
+
+
+
+
 ## Purpose
 
 Without evals, every prompt or model change is a guess and quality is judged by vibes. Evals turn agent quality into a number a team can act on, and they become the regression net for every future change.
@@ -51,3 +57,4 @@ Eval plan (task taxonomy, grader per task, thresholds), a task file format (YAML
 ### Further Reading
 
 - [Anthropic: Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)

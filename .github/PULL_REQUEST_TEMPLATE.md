@@ -6,8 +6,9 @@
 
 - [ ] Description is trigger conditions only ("Use when…"), no workflow summary
 - [ ] Encodes org- or domain-specific procedure, not something a strong model already does
+- [ ] Grounded in market practice: standards added to `scripts/grounding.py` (≥2 primary sources); own heuristics labeled
 - [ ] Eval case added in `scripts/eval_cases.py` (natural phrasing, never names the skill)
-- [ ] `python3 scripts/eval_cases.py && python3 scripts/sync_manifests.py`
+- [ ] `python3 scripts/eval_cases.py && python3 scripts/sync_manifests.py && python3 scripts/grounding.py`
 - [ ] `python3 validate_plugins.py && python3 -m unittest discover -s tests`
 - [ ] README counts updated (if skills/commands changed)
 - [ ] CHANGELOG bullet under `## Unreleased`

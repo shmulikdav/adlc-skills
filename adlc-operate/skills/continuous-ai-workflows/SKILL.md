@@ -5,6 +5,12 @@ description: "Use when a team wants agents running in the background on a schedu
 
 # Continuous AI Workflows
 
+**Grounded in:** GitHub: Continuous AI in practice; OpenAI: Harness engineering; OWASP Top 10 for Agentic Applications (2026).
+
+
+
+
+
 ## Overview
 
 "Continuous AI" is the pattern of background agents operating in the repository the way CI jobs do, but for tasks that need reasoning rather than rules. GitHub ships it as Agentic Workflows (Markdown-defined agents running in Actions, with Copilot, Claude Code, Codex, or Gemini as engines); Claude Code offers routines triggered by schedules, GitHub events, or webhooks. The common rule: these augment deterministic CI/CD, they don't replace it, and they don't merge code.
@@ -53,3 +59,4 @@ Workflow catalogue with trigger, output, permissions, budget, owner, success met
 - [GitHub Blog: Continuous AI in practice](https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/)
 - [GitHub Blog: Automate repository tasks with GitHub Agentic Workflows](https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/)
 - [OpenAI: Harness engineering (background cleanup agents)](https://openai.com/index/harness-engineering/)
+- [OWASP Top 10 for Agentic Applications (2026)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)

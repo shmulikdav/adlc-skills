@@ -5,6 +5,12 @@ description: "Use when choosing or combining agentic coding frameworks such as S
 
 # Execution Rail Selection
 
+**Grounded in:** Thoughtworks Technology Radar (Vol. 34, April 2026); Superpowers; GitHub Spec Kit; Anthropic official plugin directory.
+
+
+
+
+
 ## Overview
 
 ADLC Skills deliberately does not ship its own code-execution workflow. Mature, heavily used "rails" already do that well, and generic coding skills add little on top of a strong model: in SWE-Skills-Bench, 39 of 49 public software-engineering skills produced zero pass-rate gain. This skill picks the rail and wires ADLC artifacts (agent-ready specs, tasks, Definition of Done) into it.
@@ -61,3 +67,4 @@ A one-page stack decision: slot → owner → why, collisions resolved, artifact
 - [GitHub Spec Kit](https://github.com/github/spec-kit)
 - [AWS AI-DLC workflows](https://github.com/awslabs/aidlc-workflows)
 - [SWE-Skills-Bench (arXiv 2603.15401)](https://arxiv.org/abs/2603.15401)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

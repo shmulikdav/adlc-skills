@@ -5,9 +5,15 @@ description: "Use before merging agent-generated code, when a build fails on an 
 
 # Hallucination Checks
 
+**Grounded in:** Spracklen et al.: package hallucinations by code-generating LLMs; OpenSSF: Security-Focused Guide for AI Code Assistant Instructions; NIST SP 800-218A: SSDF Community Profile for Generative AI.
+
+
+
+
+
 ## Purpose
 
-Plausible-but-nonexistent references are a signature failure of generated code. Some are just broken builds; nonexistent package names are a supply-chain risk, because an attacker can register the name an agent tends to invent.
+Plausible-but-nonexistent references are a signature failure of generated code. Research on package hallucinations (Spracklen et al.) found code-generating models regularly recommend packages that don't exist, which attackers can register ("slopsquatting"). Some are just broken builds; nonexistent package names are a supply-chain risk, because an attacker can register the name an agent tends to invent.
 
 ## Checklist
 
@@ -29,3 +35,10 @@ Run what can be run (install, build, type-check, tests). For what can't be run, 
 ## Notes
 
 - Treat a new dependency suggested by an agent as a supply-chain decision requiring human approval.
+
+---
+
+### Further Reading
+- [Spracklen et al.: package hallucinations by code-generating LLMs](https://arxiv.org/abs/2406.10279)
+- [OpenSSF: Security-Focused Guide for AI Code Assistant Instructions](https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions)
+- [NIST SP 800-218A: SSDF Community Profile for Generative AI](https://csrc.nist.gov/pubs/sp/800/218/a/final)

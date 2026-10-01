@@ -1,0 +1,25 @@
+name: Links
+
+# Every skill must cite real, reachable sources. Checks all Markdown links weekly and on PRs.
+on:
+  pull_request:
+    paths: ["**/*.md"]
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-retries 3
+            --accept 200,206,403,429
+            --exclude-path evals
+            './**/*.md'
+          fail: true

@@ -5,6 +5,12 @@ description: "Use when building function-calling tools or an MCP server for agen
 
 # Tool Design for Agents
 
+**Grounded in:** Anthropic: Writing effective tools for agents; Model Context Protocol: Security best practices.
+
+
+
+
+
 ## Purpose
 
 Tools are the agent's interface to the world. A tool designed like a thin wrapper around an internal API forces the agent to do the API's job. A tool designed for the agent's task gets used correctly.
@@ -34,3 +40,4 @@ When reviewing: score each tool on the principles above and propose rewrites of 
 ### Further Reading
 
 - [Anthropic: Writing effective tools for agents](https://www.anthropic.com/engineering/writing-tools-for-agents)
+- [Model Context Protocol: Security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices)

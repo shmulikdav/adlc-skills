@@ -5,6 +5,12 @@ description: "Use when assessing the security of coding agents, MCP connections,
 
 # Agentic Threat Model
 
+**Grounded in:** OWASP Top 10 for Agentic Applications (2026); NIST AI 600-1: Generative AI Profile; Model Context Protocol: Security best practices.
+
+
+
+
+
 ## Purpose
 
 Agents act, not just answer. Every tool, credential, data source, and memory store an agent touches extends the attack surface. This skill produces a threat model in the shared vocabulary security teams now use.
@@ -56,3 +62,5 @@ For each, ask the questions and record exposure and controls:
 ### Further Reading
 
 - [OWASP Top 10 for Agentic Applications (2026)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [NIST AI 600-1: Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
+- [Model Context Protocol: Security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices)

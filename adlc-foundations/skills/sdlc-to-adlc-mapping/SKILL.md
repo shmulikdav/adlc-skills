@@ -5,6 +5,12 @@ description: "Use when redesigning a development process around coding agents, e
 
 # SDLC → ADLC Mapping
 
+**Grounded in:** AWS AI-DLC workflows; Anthropic: 2026 Agentic Coding Trends Report; Thoughtworks Technology Radar (Vol. 34, April 2026).
+
+
+
+
+
 ## Purpose
 
 The ADLC keeps the familiar lifecycle stages and changes who executes them. This skill makes that shift concrete for a specific team so leaders can see where agents add leverage, where humans must stay, and where new risks enter.
@@ -59,3 +65,5 @@ The mapping table, a ranked list of the first three entry points with rationale,
 - [AWS AI-DLC workflows (open-source rules: Inception, Construction, Operations)](https://github.com/awslabs/aidlc-workflows)
 - [EPAM: Agentic Development Lifecycle explained](https://www.epam.com/insights/ai/blogs/agentic-development-lifecycle-explained)
 - [Cycode: Agentic Development Lifecycle (ADLC)](https://cycode.com/blog/agentic-development-lifecycle-adlc/)
+- [Anthropic: 2026 Agentic Coding Trends Report](https://resources.anthropic.com/2026-agentic-coding-trends-report)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

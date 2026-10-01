@@ -5,6 +5,12 @@ description: "Use when a rule must be enforced every time rather than remembered
 
 # Guardrail Hooks
 
+**Grounded in:** Claude Code hooks reference; OpenSSF: Security-Focused Guide for AI Code Assistant Instructions.
+
+
+
+
+
 ## Purpose
 
 Instructions are probabilistic; hooks are deterministic. Anything whose violation is costly should be enforced by a hook, a linter, or CI, not only by a sentence in a context file.
@@ -58,3 +64,5 @@ A ready-to-adapt script lives in this repo under `templates/hooks/`. Verify even
 
 - [Claude Code best practices](https://code.claude.com/docs/en/best-practices)
 - [Claude Code plugins reference (hooks)](https://code.claude.com/docs/en/plugins-reference)
+- [Claude Code hooks reference](https://code.claude.com/docs/en/hooks)
+- [OpenSSF: Security-Focused Guide for AI Code Assistant Instructions](https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions)

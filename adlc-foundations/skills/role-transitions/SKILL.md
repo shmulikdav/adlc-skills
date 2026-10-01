@@ -5,6 +5,12 @@ description: "Use when leaders ask how developer, PM, QA, tech lead, manager, or
 
 # Role Transitions in the ADLC
 
+**Grounded in:** Anthropic: 2026 Agentic Coding Trends Report; Anthropic Research: How AI assistance impacts the formation of coding skills.
+
+
+
+
+
 ## Purpose
 
 When execution moves to agents, the scarce skills become specifying intent, curating context, and verifying output. This skill makes role changes explicit so people know what "good" looks like now.
@@ -40,3 +46,5 @@ One section per role with the structure above, plus a short "what stays the same
 ### Further Reading
 
 - [Claude Code best practices](https://code.claude.com/docs/en/best-practices)
+- [Anthropic: 2026 Agentic Coding Trends Report](https://resources.anthropic.com/2026-agentic-coding-trends-report)
+- [Anthropic Research: How AI assistance impacts the formation of coding skills](https://www.anthropic.com/research/AI-assistance-coding-skills)

@@ -5,6 +5,12 @@ description: "Use when planning agent work that spans many hours, days, or dozen
 
 # Long-Running & Multi-Agent Work
 
+**Grounded in:** Anthropic: Harness design for long-running application development; Anthropic: 2026 Agentic Coding Trends Report.
+
+
+
+
+
 ## Overview
 
 Agents now run for hours or days and coordinate as teams: Anthropic's 2026 trends report expects task horizons to extend from minutes to days, with humans providing oversight at key decision points rather than on every step. The failure modes change accordingly: lost state, drift from intent, duplicated or conflicting work, silent budget burn, and a mountain of output nobody can review.

@@ -5,19 +5,27 @@ description: "Use when someone asks whether an agent can do a task on its own, w
 
 # Agent Autonomy Levels
 
+**Grounded in:** Feng, McDonald, Zhang: Levels of Autonomy for AI Agents (Knight First Amendment Institute); OWASP Top 10 for Agentic Applications (2026); Anthropic: 2026 Agentic Coding Trends Report.
+
+
+
+
+
 ## Purpose
 
-Autonomy should be granted per task type, not per tool or per person. This skill assigns a level to each task class and states what verification earns the next level.
+Autonomy should be a deliberate design decision per task type, separate from what the agent is capable of. This skill uses the five levels of agent autonomy published by Feng, McDonald and Zhang (Knight First Amendment Institute / University of Washington), defined by the role the human plays, and maps each level to concrete coding-agent configurations.
 
-## The ladder
+## The five levels (by the human's role)
 
-| Level | Name | Agent does | Human does | Typical permission mode |
-|-------|------|-----------|------------|-------------------------|
-| L0 | Suggest | Answers, explains, proposes | Writes all code | Read-only / plan mode |
-| L1 | Draft | Writes code in a branch | Reviews every line before commit | Ask before edits |
-| L2 | Execute + review | Implements, runs tests, opens PR | Reviews the PR for alignment | Auto-accept edits, ask for shell |
-| L3 | Execute + gate | Implements end to end, including fixes from CI | Approves at defined gates only | Allow-listed commands, sandbox |
-| L4 | Autonomous | Runs the loop including merge/deploy | Audits samples and metrics | Headless, scoped credentials |
+| Level | Human role | In agentic development this looks like | Typical configuration |
+|-------|-----------|----------------------------------------|-----------------------|
+| L1 | **Operator** | Human drives; agent answers, explains, suggests on request | Read-only or plan mode |
+| L2 | **Collaborator** | Human and agent share planning and execution, handing control back and forth | Interactive session, edits reviewed as they happen |
+| L3 | **Consultant** | Agent leads the task; consults the human for intent, preferences, and expertise | Agent implements and opens a PR; human reviews for alignment |
+| L4 | **Approver** | Agent works independently; human approves at defined gates or for risky actions | Sandboxed, allow-listed or auto-mode execution; approval required for merges, migrations, deploys |
+| L5 | **Observer** | Agent runs fully autonomously; human monitors and can stop it | Background/CI agents with scoped credentials, budgets, audit logs, and a kill switch |
+
+Most production coding work today sits at L3–L4. Anthropic's 2026 research found developers use AI in roughly 60% of their work but fully delegate only 0–20% of tasks, which is consistent with this.
 
 ## Scoring a task type
 
@@ -28,7 +36,9 @@ Score 1–3 on each axis:
 - **Verifiability:** 1 = deterministic tests prove correctness, 3 = only expert judgment can tell
 - **Spec clarity:** 1 = precise acceptance criteria, 3 = vague intent
 
-Total 4–6 → up to L3–L4. 7–9 → L2. 10–12 → L0–L1.
+Total 4–6 → up to L4–L5 (Approver/Observer). 7–9 → L3 (Consultant). 10–12 → L1–L2 (Operator/Collaborator).
+
+These thresholds are a **starting heuristic**, not a standard. Calibrate them with your own rework and incident data.
 
 ## Instructions
 
@@ -48,12 +58,12 @@ Total 4–6 → up to L3–L4. 7–9 → L2. 10–12 → L0–L1.
 | Thought | Reality |
 |---------|---------|
 | "It's worked fine for a week, let's go autonomous" | Promotion needs a defined evidence threshold, not a good week |
-| "Senior engineers can give their agents L4" | Autonomy attaches to task types, not to people |
+| "Senior engineers can give their agents L5" | Autonomy attaches to task types, not to people |
 | "We'll add the gate after the pilot" | Gates removed without replacement verification rarely come back |
 
 ## Notes
 
-- Irreversible actions stay at L1 or below regardless of score.
+- Irreversible actions (data deletion, payments, external messages) never run above L4: a human approves them, regardless of score.
 - Autonomy is earned with data. Track rework rate per task type.
 - Security-sensitive paths (auth, crypto, billing) get a mandatory human gate at any level.
 
@@ -63,3 +73,5 @@ Total 4–6 → up to L3–L4. 7–9 → L2. 10–12 → L0–L1.
 
 - [Claude Code permission modes and best practices](https://code.claude.com/docs/en/best-practices)
 - [OWASP Top 10 for Agentic Applications (2026)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [Feng, McDonald, Zhang: Levels of Autonomy for AI Agents (Knight First Amendment Institute)](https://knightcolumbia.org/content/levels-of-autonomy-for-ai-agents-1)
+- [Anthropic: 2026 Agentic Coding Trends Report](https://resources.anthropic.com/2026-agentic-coding-trends-report)

@@ -5,6 +5,12 @@ description: "Use when a team is building, curating, or pruning an internal libr
 
 # Skill Library Management
 
+**Grounded in:** SkillsBench; SWE-Skills-Bench; Claude Code: test plugins with evals; Thoughtworks Technology Radar (Vol. 34, April 2026).
+
+
+
+
+
 ## Overview
 
 Skills are not free. Benchmarks now show what practitioners suspected:
@@ -65,3 +71,4 @@ A library audit table: `Skill | Owner | Triggers? | Δ | Tokens | Duplicates | D
 - [Agent Skills Can Be Harmful (arXiv 2608.11888)](https://arxiv.org/abs/2608.11888)
 - [Claude Code: Test plugins with evals](https://code.claude.com/docs/en/plugin-evals)
 - [Superpowers: writing-skills](https://github.com/obra/superpowers)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

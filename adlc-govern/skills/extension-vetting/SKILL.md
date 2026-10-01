@@ -5,6 +5,12 @@ description: "Use when someone asks whether a skill, plugin, MCP server, hook, o
 
 # Extension Vetting
 
+**Grounded in:** OWASP Top 10 for Agentic Applications (2026); Snyk: ToxicSkills study of the agent-skills supply chain; Model Context Protocol: Security best practices.
+
+
+
+
+
 ## Purpose
 
 Skills, plugins, and MCP servers are supply chain. A skill is instructions the agent will follow; a hook or MCP server is code that runs with the user's permissions. Both deserve review proportional to what they can do.
@@ -58,3 +64,5 @@ Re-review trigger:
 ### Further Reading
 
 - [OWASP Top 10 for Agentic Applications (2026) — ASI04 Agentic supply chain](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [Snyk: ToxicSkills study of the agent-skills supply chain](https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/)
+- [Model Context Protocol: Security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices)

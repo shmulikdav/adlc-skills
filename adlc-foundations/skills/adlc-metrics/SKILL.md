@@ -5,6 +5,12 @@ description: "Use when someone asks how to measure the ROI or productivity impac
 
 # ADLC Metrics & ROI Measurement
 
+**Grounded in:** DORA research (State of AI-assisted Software Development, AI Capabilities Model); DX AI Measurement Framework; METR: early-2025 AI and experienced OS developer productivity (RCT).
+
+
+
+
+
 ## Purpose
 
 Developers' sense of speed is a poor measurement instrument. In METR's 2025 randomized trial, experienced open-source developers expected AI to make them faster, felt faster afterwards, and were measured as slower. Measure outcomes, not impressions.
@@ -73,3 +79,4 @@ Developers' sense of speed is a poor measurement instrument. In METR's 2025 rand
 
 - [METR: Measuring the impact of early-2025 AI on experienced open-source developer productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/)
 - [DORA research publications](https://dora.dev/research/publications/)
+- [DX AI Measurement Framework](https://getdx.com/blog/ai-measurement-framework-guide/)

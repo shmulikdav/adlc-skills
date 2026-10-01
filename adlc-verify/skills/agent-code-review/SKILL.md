@@ -5,6 +5,12 @@ description: "Use when reviewing a pull request or diff written by Claude Code, 
 
 # Agent Code Review (Alignment Review)
 
+**Grounded in:** Google Engineering Practices: code review guide; OpenSSF: Security-Focused Guide for AI Code Assistant Instructions; Thoughtworks Technology Radar (Vol. 34, April 2026).
+
+
+
+
+
 ## Purpose
 
 Reviewing agent output is a different job from reviewing a colleague's code. The code usually compiles and reads well. The risks hide in what it assumes, what it quietly changed, and what it quietly didn't do.
@@ -61,3 +67,10 @@ Verdict: Approve / Approve with changes / Request changes
 
 - Self-refute each finding before reporting it: look for evidence it's not a problem. Report only what survives.
 - Prefer an independent reviewer context (a fresh session or a reviewer subagent) over the author agent reviewing itself.
+
+---
+
+### Further Reading
+- [Google Engineering Practices: code review guide](https://google.github.io/eng-practices/review/)
+- [OpenSSF: Security-Focused Guide for AI Code Assistant Instructions](https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

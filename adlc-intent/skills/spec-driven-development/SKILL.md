@@ -5,6 +5,12 @@ description: "Use when a team wants a spec-first workflow for coding agents, men
 
 # Spec-Driven Development (SDD)
 
+**Grounded in:** GitHub Spec Kit; AWS AI-DLC workflows; Thoughtworks Technology Radar (Vol. 34, April 2026).
+
+
+
+
+
 ## Purpose
 
 In SDD the specification, not the prompt, is the durable source of truth. Agents implement against versioned artifacts; humans review the artifacts at each gate. This skill runs the loop in a tool-agnostic way and maps it to popular implementations.
@@ -47,3 +53,4 @@ The artifact set in the repo, plus a short status summary listing which gates ar
 
 - [GitHub Spec Kit](https://github.com/github/spec-kit)
 - [AWS AI-DLC workflows](https://github.com/awslabs/aidlc-workflows)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

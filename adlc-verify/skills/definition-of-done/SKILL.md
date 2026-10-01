@@ -5,7 +5,16 @@ description: "Use when agents claim work is done prematurely, when standardizing
 
 # Definition of Done for Agent Work
 
+**Grounded in:** The Scrum Guide (Definition of Done); OpenSSF: Security-Focused Guide for AI Code Assistant Instructions; Claude Code best practices.
+
+
+
+
+
 ## Purpose
+
+The Definition of Done is an established Scrum commitment: a shared, explicit quality bar every increment must meet. This skill adapts it to agent-authored work.
+
 
 "Done" must mean verified, with evidence, not "the agent stopped". A written DoD gives agents a checklist they can execute and reviewers a standard they can enforce.
 
@@ -49,3 +58,5 @@ description: "Use when agents claim work is done prematurely, when standardizing
 ### Further Reading
 
 - [Claude Code best practices: provide verification](https://code.claude.com/docs/en/best-practices)
+- [The Scrum Guide (Definition of Done)](https://scrumguides.org/scrum-guide.html)
+- [OpenSSF: Security-Focused Guide for AI Code Assistant Instructions](https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions)

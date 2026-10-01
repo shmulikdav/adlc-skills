@@ -92,6 +92,11 @@ def main():
                 err(f"{rel}: description must start with 'Use when/before/after' (trigger conditions, not a workflow summary)")
             if len(desc) > 500:
                 warnings.append(f"{rel}: description over 500 characters")
+            if "**Grounded in:**" not in body:
+                err(f"{rel}: missing '**Grounded in:**' line naming the market standards the skill applies")
+            fr = body.split("### Further Reading", 1)[1] if "### Further Reading" in body else ""
+            if len(re.findall(r"\]\(https?://", fr)) < 2:
+                err(f"{rel}: '### Further Reading' needs at least two primary sources")
             if len(body.splitlines()) > 500:
                 warnings.append(f"{rel}: body over 500 lines; consider references/")
             if sk.parent.name in all_skill_names:

@@ -5,6 +5,12 @@ description: "Use when onboarding an agent or a person to an unfamiliar or legac
 
 # Codebase Map
 
+**Grounded in:** The C4 model for software architecture; OpenAI: Harness engineering.
+
+
+
+
+
 ## Purpose
 
 Agents explore efficiently when they know where to look. A codebase map is a compact, navigable index that saves repeated exploration in every session and exposes risk before changes start.
@@ -37,3 +43,9 @@ Save as `docs/codebase-map.md` and link it from the context file rather than inl
 
 - For large repos, run exploration in subagents per top-level module to keep the main context clean.
 - A map ages fast; date it and regenerate after major refactors.
+
+---
+
+### Further Reading
+- [The C4 model for software architecture](https://c4model.com/)
+- [OpenAI: Harness engineering](https://openai.com/index/harness-engineering/)

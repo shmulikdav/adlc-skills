@@ -5,6 +5,12 @@ description: "Use when building a test strategy for AI-generated code, when test
 
 # Behavioral Testing
 
+**Grounded in:** Hypothesis: property-based testing; Pact: consumer-driven contract testing; Stryker: mutation testing; Thoughtworks Technology Radar (Vol. 34, April 2026).
+
+
+
+
+
 ## Purpose
 
 In the ADLC, the main failure mode is plausible-but-wrong output. Example-based tests that mirror the implementation won't catch it. Behavioral testing checks the properties the system must always hold.
@@ -32,4 +38,12 @@ In the ADLC, the main failure mode is plausible-but-wrong output. Example-based 
 ## Notes
 
 - A test the agent cannot run locally does not guide the agent. Keep the fast suite fast.
-- Mutation testing on critical modules measures whether the suite would notice a wrong implementation.
+- Mutation testing on critical modules measures whether the suite would notice a wrong implementation. Thoughtworks' Radar highlights it as a feedback control for agent harnesses, because high coverage can hide logically hollow tests.
+
+---
+
+### Further Reading
+- [Hypothesis: property-based testing](https://hypothesis.works/)
+- [Pact: consumer-driven contract testing](https://docs.pact.io/)
+- [Stryker: mutation testing](https://stryker-mutator.io/)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

@@ -5,6 +5,12 @@ description: "Use when running agents in CI or production, debugging what an age
 
 # AgentOps Observability
 
+**Grounded in:** OpenTelemetry GenAI semantic conventions; OWASP Top 10 for Agentic Applications (2026).
+
+
+
+
+
 ## Purpose
 
 When an agent misbehaves, the transcript is the evidence. Without traces you can't debug, audit, or improve. Observability is also the raw material for evals and for cost control.
@@ -32,3 +38,9 @@ When an agent misbehaves, the transcript is the evidence. Without traces you can
 ## Output
 
 Trace schema, redaction policy, dashboard spec (panels and queries described), alert rules, retention policy.
+
+---
+
+### Further Reading
+- [OpenTelemetry GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai)
+- [OWASP Top 10 for Agentic Applications (2026)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)

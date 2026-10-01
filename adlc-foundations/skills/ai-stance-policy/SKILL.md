@@ -5,6 +5,12 @@ description: "Use when an engineering organization needs an AI usage or acceptab
 
 # AI Stance & Usage Policy (Engineering)
 
+**Grounded in:** DORA research (State of AI-assisted Software Development, AI Capabilities Model); ISO/IEC 42001 AI management system; NIST AI Risk Management Framework.
+
+
+
+
+
 ## Purpose
 
 Ambiguity creates risk and slows adoption. DORA's 2025 research names a clear, communicated AI stance as one of seven capabilities that amplify AI's benefits. This skill drafts a short, enforceable policy people will actually read.
@@ -53,6 +59,7 @@ Owner, review cadence, feedback channel.
 
 - Short beats complete. Link to detailed security standards instead of copying them.
 - State expectations, not just restrictions: e.g., "we expect every engineer to use agents for test generation".
+- An organizational AI policy is also a core requirement of ISO/IEC 42001 (AI management systems), so this document doubles as a starting point for certification.
 - Align with any external framework the company follows (ISO/IEC 42001, EU AI Act obligations, SOC 2 controls) in the appendix, not the core.
 - This is not legal advice; flag sections that need legal review.
 
@@ -61,3 +68,5 @@ Owner, review cadence, feedback channel.
 ### Further Reading
 
 - [DORA AI Capabilities Model](https://dora.dev/research/publications/)
+- [ISO/IEC 42001 AI management system](https://www.iso.org/standard/81230.html)
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)

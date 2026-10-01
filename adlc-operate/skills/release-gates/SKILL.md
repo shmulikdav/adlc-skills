@@ -5,6 +5,12 @@ description: "Use when agents produce changes faster than the release process ca
 
 # Release Gates for Agentic Delivery
 
+**Grounded in:** Google SRE Book: Embracing risk (error budgets); Martin Fowler: Feature toggles; DORA research (State of AI-assisted Software Development, AI Capabilities Model).
+
+
+
+
+
 ## Purpose
 
 Agents compress the build phase; risk concentrates at release. Gates put human judgment where it matters and automation everywhere else.
@@ -23,7 +29,7 @@ Agents compress the build phase; risk concentrates at release. Gates put human j
 1. Define **change classes** (e.g., docs, UI copy, standard feature, data migration, auth/billing, infra). High-risk classes require explicit human approval at G3 regardless of autonomy level.
 2. For each gate, list checks and the evidence format.
 3. Define **progressive delivery**: feature flag default off, percentage rollout, canary duration, success metrics.
-4. Define **rollback triggers** (error rate, latency, business KPI) and who can pull them without a meeting.
+4. Define **rollback triggers** (error rate, latency, business KPI) and who can pull them without a meeting. Where services have SLOs, use the error budget (Google SRE) to decide how much agent-driven change velocity the service can absorb: a spent budget slows or freezes risky releases.
 5. Produce a go/no-go checklist for a specific release when one is provided.
 
 ## Red flags
@@ -37,3 +43,10 @@ Agents compress the build phase; risk concentrates at release. Gates put human j
 ## Output
 
 Gate table, change-class matrix, rollout and rollback policy, and (if requested) a filled go/no-go checklist for the release.
+
+---
+
+### Further Reading
+- [Google SRE Book: Embracing risk (error budgets)](https://sre.google/sre-book/embracing-risk/)
+- [Martin Fowler: Feature toggles](https://martinfowler.com/articles/feature-toggles.html)
+- [DORA research (State of AI-assisted Software Development, AI Capabilities Model)](https://dora.dev/research/publications/)

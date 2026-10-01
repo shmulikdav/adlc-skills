@@ -5,6 +5,12 @@ description: "Use when agent-built code drifts from the intended architecture, m
 
 # Architecture Guardrails
 
+**Grounded in:** MADR: Markdown Architectural Decision Records; ArchUnit: architecture tests; OpenAI: Harness engineering; Thoughtworks Technology Radar (Vol. 34, April 2026).
+
+
+
+
+
 ## Overview
 
 Agents follow the architecture they can see. Decisions made in meetings and chat don't exist for them. Teams running agent-first codebases report the same lesson: encode the architecture in the repository, and **enforce invariants rather than micromanage implementations** (require that data is validated at the boundary, not which library does it).
@@ -47,3 +53,5 @@ ADR backlog, dependency rule set, invariant checks added to CI, golden-principle
 
 - [OpenAI: Harness engineering (enforce invariants, not implementations)](https://openai.com/index/harness-engineering/)
 - [MADR: Markdown Architectural Decision Records](https://adr.github.io/madr/)
+- [ArchUnit: architecture tests](https://www.archunit.org/)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

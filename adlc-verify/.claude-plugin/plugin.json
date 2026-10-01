@@ -1,6 +1,6 @@
 {
   "name": "adlc-verify",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Verification of agent-built software: review capacity design for the agent-PR bottleneck, behavioral testing, tests derived from specs, alignment review of agent PRs, hallucination checks, and a Definition of Done for agent work.",
   "author": {
     "name": "Shmulik Davar — BrAIght Wave",

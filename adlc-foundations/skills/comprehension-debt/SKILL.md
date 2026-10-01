@@ -5,6 +5,12 @@ description: "Use when teams ship code faster than they understand it, nobody ca
 
 # Comprehension Debt
 
+**Grounded in:** Anthropic Research: How AI assistance impacts the formation of coding skills; Thoughtworks Technology Radar (Vol. 34, April 2026).
+
+
+
+
+
 ## Overview
 
 Comprehension debt is the gap between the code a team owns and the code it actually understands. It hides behind green tests until the first serious incident. In Anthropic's 2026 randomized trial, developers learning a new library with AI assistance scored 17% lower on comprehension (50% vs 67%), with debugging hit hardest; but those who used AI for conceptual questions rather than delegation preserved most of their learning. How AI is used matters more than whether it is used.
@@ -48,3 +54,4 @@ Comprehension-debt assessment (module × owner × explainability), chosen practi
 
 - [Anthropic Research: How AI assistance impacts the formation of coding skills (2026)](https://www.anthropic.com/research/AI-assistance-coding-skills)
 - [Addy Osmani: Comprehension debt](https://addyosmani.com/blog/comprehension-debt/)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

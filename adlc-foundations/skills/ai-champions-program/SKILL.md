@@ -5,6 +5,12 @@ description: "Use when a company wants to spread agentic development practices b
 
 # AI Champions Program
 
+**Grounded in:** Team Topologies: key concepts (enabling teams); DORA research (State of AI-assisted Software Development, AI Capabilities Model).
+
+
+
+
+
 ## Purpose
 
 Tools spread by licence; practices spread by people. A champions network turns a few strong practitioners into a distribution channel for context files, skills, and working patterns.
@@ -47,3 +53,4 @@ Tools spread by licence; practices spread by people. A champions network turns a
 ### Further Reading
 
 - [DORA AI Capabilities Model](https://dora.dev/research/publications/)
+- [Team Topologies: key concepts (enabling teams)](https://teamtopologies.com/key-concepts)

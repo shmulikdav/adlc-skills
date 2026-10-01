@@ -5,6 +5,12 @@ description: "Use when generating tests from PRDs, acceptance criteria, Gherkin,
 
 # Tests from Specs
 
+**Grounded in:** Cucumber: Gherkin reference; GitHub Spec Kit.
+
+
+
+
+
 ## Purpose
 
 Coverage percentages say which lines ran. Traceability says which promises are verified. This skill builds the second.
@@ -31,3 +37,9 @@ Traceability matrix, new test files, run results, and a list of criteria that ne
 
 - When test cases come from a test-management system, keep their IDs in test names or annotations so results can be pushed back.
 - Never mark a criterion Verified on the basis of a test you didn't run.
+
+---
+
+### Further Reading
+- [Cucumber: Gherkin reference](https://cucumber.io/docs/gherkin/reference/)
+- [GitHub Spec Kit](https://github.com/github/spec-kit)

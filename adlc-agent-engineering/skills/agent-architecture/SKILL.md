@@ -5,6 +5,12 @@ description: "Use when designing a new AI agent or LLM feature, when someone ask
 
 # Agent Architecture
 
+**Grounded in:** Anthropic: Building effective agents; 12-Factor Agents; Feng, McDonald, Zhang: Levels of Autonomy for AI Agents (Knight First Amendment Institute).
+
+
+
+
+
 ## Purpose
 
 Most problems that look like they need an agent are better served by a workflow. Start with the simplest design that meets the goal; add autonomy only when the task genuinely requires open-ended decisions.
@@ -48,3 +54,5 @@ Eval plan (link) | Cost envelope
 ### Further Reading
 
 - [Anthropic: Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
+- [12-Factor Agents](https://github.com/humanlayer/12-factor-agents)
+- [Feng, McDonald, Zhang: Levels of Autonomy for AI Agents (Knight First Amendment Institute)](https://knightcolumbia.org/content/levels-of-autonomy-for-ai-agents-1)

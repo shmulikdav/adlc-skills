@@ -5,6 +5,12 @@ description: "Use when someone says the agent keeps doing something wrong, descr
 
 # Codify Conventions
 
+**Grounded in:** Thoughtworks Technology Radar (Vol. 34, April 2026); Claude Code: skills; Claude Code hooks reference.
+
+
+
+
+
 ## Purpose
 
 Every repeated correction to an agent is a convention that has not been written down in the right place. This skill picks the right enforcement mechanism and writes it.
@@ -18,6 +24,8 @@ Every repeated correction to an agent is a convention that has not been written 
 | Scoped to a folder or file type | Nested context file / path-scoped rule | Applies only where needed |
 | Must happen every time, no exceptions | Hook, linter rule, or CI check | Deterministic; doesn't rely on the model remembering |
 | A correctness property | Test | Verifiable forever |
+
+In Thoughtworks' Radar terms, context files and skills are **feedforward** controls (guiding the agent before it acts) and hooks, linters, and tests are **feedback** controls (catching it after). Strong harnesses use both.
 
 Rule of thumb: if breaking it is costly, do not rely on instructions alone. Enforce it with a hook, linter, or test.
 
@@ -50,3 +58,5 @@ Keep SKILL.md focused (well under 500 lines). Move long references into `referen
 
 - [Claude Code: Extend Claude with skills](https://code.claude.com/docs/en/skills)
 - [Agent Skills open standard](https://agentskills.io)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)
+- [Claude Code hooks reference](https://code.claude.com/docs/en/hooks)

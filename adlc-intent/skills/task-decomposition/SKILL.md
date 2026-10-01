@@ -5,6 +5,12 @@ description: "Use when converting a spec or plan into tasks for coding agents, p
 
 # Task Decomposition for Agents
 
+**Grounded in:** Bill Wake: INVEST in good stories and SMART tasks; GitHub Spec Kit.
+
+
+
+
+
 ## Purpose
 
 Agents succeed on tasks that are small, well-bounded, and verifiable. Big tasks drift. Good decomposition is the cheapest reliability improvement available.
@@ -42,3 +48,9 @@ T-07 [P] Implement POST /invoices validation
 
 - Write tests-first tasks before implementation tasks when the behavior is clear.
 - If a task needs more than one sentence of "and also", split it.
+
+---
+
+### Further Reading
+- [Bill Wake: INVEST in good stories and SMART tasks](https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/)
+- [GitHub Spec Kit](https://github.com/github/spec-kit)

@@ -5,6 +5,12 @@ description: "Use when agents keep making the same kinds of mistakes across PRs,
 
 # Learning Loop (Compounding Agent Work)
 
+**Grounded in:** Google SRE Book: Postmortem culture; Thoughtworks Technology Radar (Vol. 34, April 2026); OpenAI: Harness engineering.
+
+
+
+
+
 ## Overview
 
 Every rejected agent PR and every repeated review comment is free training data for your harness. Teams that capture it make the next run better; teams that don't pay for the same mistake indefinitely. With roughly two of three AI PRs not accepted within 30 days in 2026 benchmark data, rejections are the richest signal most teams ignore.
@@ -55,3 +61,5 @@ Monthly learning report: signal volume, root-cause clusters, artifacts shipped (
 
 - [OpenAI: Harness engineering (encode golden principles in the repo)](https://openai.com/index/harness-engineering/)
 - [Claude Code best practices: treat CLAUDE.md like code](https://code.claude.com/docs/en/best-practices)
+- [Google SRE Book: Postmortem culture](https://sre.google/sre-book/postmortem-culture/)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

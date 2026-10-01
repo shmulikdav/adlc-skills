@@ -5,6 +5,12 @@ description: "Use when deciding which internal systems coding agents should acce
 
 # MCP Integration Plan
 
+**Grounded in:** Model Context Protocol: Security best practices; OWASP Top 10 for Agentic Applications (2026); DORA research (State of AI-assisted Software Development, AI Capabilities Model).
+
+
+
+
+
 ## Purpose
 
 DORA's 2025 research lists AI-accessible internal data as an amplifying capability. MCP (Model Context Protocol) is the standard way to give agents that access, and every connection is also an attack surface. Plan both together.
@@ -38,3 +44,4 @@ Integration table, rollout order, approval/vetting process for new servers, and 
 
 - [OWASP Top 10 for Agentic Applications (2026)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 - [DORA AI Capabilities Model](https://dora.dev/research/publications/)
+- [Model Context Protocol: Security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices)

@@ -5,6 +5,12 @@ description: "Use after a bug, outage, data issue, security event, or near-miss 
 
 # Agent Incident Review
 
+**Grounded in:** Google SRE Book: Postmortem culture; Etsy Code as Craft: Blameless postmortems and a just culture; OWASP Top 10 for Agentic Applications (2026).
+
+
+
+
+
 ## Purpose
 
 "The AI did it" is not a root cause. Agents act inside a system of specs, context, permissions, and gates. The review finds which layer let the failure through and fixes that layer so the next agent run is safer.
@@ -38,4 +44,11 @@ Summary | Impact | Timeline | Layer analysis | Contributing factors
 ### Regression test / eval added
 ```
 
-Keep it blameless toward people and precise about systems.
+Keep it blameless toward people and precise about systems. Follow Google SRE postmortem practice: contributing causes rather than a single culprit, a "what went well" section, action items with owners and due dates, and no postmortem left unreviewed.
+
+---
+
+### Further Reading
+- [Google SRE Book: Postmortem culture](https://sre.google/sre-book/postmortem-culture/)
+- [Etsy Code as Craft: Blameless postmortems and a just culture](https://www.etsy.com/codeascraft/blameless-postmortems)
+- [OWASP Top 10 for Agentic Applications (2026)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)

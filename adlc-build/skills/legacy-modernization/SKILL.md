@@ -5,6 +5,12 @@ description: "Use when planning a rebuild, rewrite, framework or language migrat
 
 # Legacy Modernization with Agents
 
+**Grounded in:** Martin Fowler: Strangler fig application; Anthropic official plugin directory.
+
+
+
+
+
 ## Purpose
 
 This skill owns the *strategy*: what to keep, what to change, how to slice, and how to prove parity. For execution, pair it with Anthropic's official `code-modernization` plugin (assessment, business-rule extraction, transform, verify agents) rather than re-implementing those steps.
@@ -45,3 +51,4 @@ Audit summary, behavior spec with keep/change/drop decisions, strategy rationale
 ### Further Reading
 
 - [Anthropic official code-modernization plugin](https://github.com/anthropics/claude-plugins-official)
+- [Martin Fowler: Strangler fig application](https://martinfowler.com/bliki/StranglerFigApplication.html)

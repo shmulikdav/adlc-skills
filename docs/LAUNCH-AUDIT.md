@@ -42,6 +42,10 @@ Checked the kit against: Anthropic's *2026 Agentic Coding Trends Report* (eight 
 
 Other public "ADLC" repos exist: gate CLIs (voodootikigod/adlc), ADR and use-case skills (wuersch/adlc), a GitHub-automation pipeline (juanjtov/adlc-pipeline), and Salesforce's Agentforce agent lifecycle. None targets the organizational operating model for engineering leaders; this kit's positioning holds. Plugin names (`adlc-*` under the `adlc-skills` marketplace) don't collide.
 
+## Grounding pass (v2.2)
+
+Every skill was checked for whether it applies recognized market practice or something invented. 12 skills cited no sources; the autonomy ladder, PR-size thresholds, review tiers, and maturity scale were home-grown. Fixed: all skills now cite standards (see STANDARDS-MAP.md), the autonomy skill uses the published Levels of Autonomy for AI Agents, and the remaining kit-specific heuristics are labeled as calibratable defaults.
+
 ## What is still not good enough (honest list)
 
 1. **No measured Δ yet.** 55 eval cases exist; none has been run with credentials. Until results are published, every skill is a well-sourced hypothesis. This is the most important pre-announcement task.

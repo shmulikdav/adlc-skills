@@ -1,6 +1,6 @@
 {
   "name": "adlc-govern",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Governance and security for agentic development: OWASP Agentic Top 10 threat modeling, auto-mode-era agent permissions, guardrail hooks, compliance mapping (ISO 42001, NIST AI RMF, EU AI Act, SOC 2), extension vetting, and governance for non-engineers building with AI.",
   "author": {
     "name": "Shmulik Davar — BrAIght Wave",

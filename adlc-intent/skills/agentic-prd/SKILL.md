@@ -5,6 +5,12 @@ description: "Use when a PM or engineer is about to hand a feature, ticket, or P
 
 # Agentic PRD (Agent Execution Specification)
 
+**Grounded in:** GitHub Spec Kit; Thoughtworks Technology Radar (Vol. 34, April 2026); Claude Code best practices.
+
+
+
+
+
 ## Purpose
 
 A classic PRD is written for humans who fill gaps with judgment and hallway conversations. An agent fills gaps with plausible guesses. An Agentic PRD removes the gaps that matter: intent, boundaries, and how "done" is verified.
@@ -83,3 +89,5 @@ The agent must stop and ask when: a requirement conflicts with existing behavior
 
 - [GitHub Spec Kit: Specification-Driven Development](https://github.com/github/spec-kit/blob/main/spec-driven.md)
 - [Claude Code best practices: give verification criteria](https://code.claude.com/docs/en/best-practices)
+- [GitHub Spec Kit](https://github.com/github/spec-kit)
+- [Thoughtworks Technology Radar (Vol. 34, April 2026)](https://www.thoughtworks.com/radar)

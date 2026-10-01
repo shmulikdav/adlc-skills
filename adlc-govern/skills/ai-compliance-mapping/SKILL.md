@@ -5,6 +5,12 @@ description: "Use when preparing for an AI audit or certification (ISO/IEC 42001
 
 # AI Compliance Mapping
 
+**Grounded in:** ISO/IEC 42001 AI management system; NIST AI Risk Management Framework; EU AI Act resource site; NIST SP 800-218A: SSDF Community Profile for Generative AI.
+
+
+
+
+
 ## Purpose
 
 Auditors and enterprise customers increasingly ask two questions: how do you govern AI in your products, and how do you govern AI in your development process. This skill maps existing ADLC practices to framework expectations and shows the gaps.
@@ -41,3 +47,4 @@ Auditors and enterprise customers increasingly ask two questions: how do you gov
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
 - [ISO/IEC 42001](https://www.iso.org/standard/81230.html)
 - [EU AI Act resource site](https://artificialintelligenceact.eu/)
+- [NIST SP 800-218A: SSDF Community Profile for Generative AI](https://csrc.nist.gov/pubs/sp/800/218/a/final)
