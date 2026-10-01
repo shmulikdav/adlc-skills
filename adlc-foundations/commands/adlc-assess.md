@@ -23,7 +23,7 @@ Before anything else, load each skill this command uses with the Skill tool: `ad
 Read $ARGUMENTS and any attached files. Ask, in a single message, only for the missing inputs listed in the **adlc-readiness-assessment** skill.
 
 ### Step 2: Score
-Apply the **adlc-readiness-assessment** skill: score the seven DORA AI capabilities and the five agent-specific dimensions, with evidence for each score.
+Apply the **adlc-readiness-assessment** skill: score all 15 dimensions (the seven DORA AI capabilities and the eight agent-specific dimensions), with evidence for each score; mark anything unknown as unknown rather than guessing.
 
 ### Step 3: Calibrate autonomy
 Apply the **autonomy-levels** skill to the team's top 5 recurring task types to show what can be delegated today.
