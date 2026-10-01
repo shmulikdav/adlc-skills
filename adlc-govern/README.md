@@ -20,7 +20,7 @@ claude plugin install adlc-govern@adlc-skills
 - `ai-compliance-mapping` — Use when preparing for an AI audit or certification (ISO/IEC 42001, SOC 2), answering customer security questionnaires about AI use in development, or aligning agentic development practices with NIST AI RMF or the EU AI Act
 - `citizen-builder-governance` — Use when non-engineers (operations, finance, sales, legal, HR, analysts) are building tools, automations, or apps with Claude Cowork, Claude Code, Lovable, or similar, when shadow AI apps appear on company data, or when leaders ask how to enable business teams to build without creating security and maintenance risk
 - `extension-vetting` — Use when someone asks whether a skill, plugin, MCP server, hook, or agent rules file is safe to install, before adding a new plugin marketplace, or when building an approved-extensions list for a team
-- `guardrail-hooks` — Use when a rule must be enforced every time rather than remembered, when CLAUDE.md instructions are not followed reliably, when protecting secrets, CI config, or migrations from agent edits, or when setting up Claude Code hooks
+- `guardrail-hooks` — Use when something must never happen no matter what (an agent editing .env files, secrets, CI workflows, or migrations), when a rule must be enforced every time rather than remembered, when CLAUDE.md instructions are not followed reliably, or when setting up Claude Code hooks
 
 ## Commands (4)
 

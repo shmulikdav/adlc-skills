@@ -354,7 +354,8 @@ test('promo code applies discount', ...)           // no ID; asserts SAVE10 give
 test('CHK-106 missing postcode shows error', ...)
 """
 
-PROMPT_OVERRIDE = {"review-agent-diff": REVIEW_DIFF_PROMPT, "tests-from-xray": XRAY_PROMPT}
+PROMPT_OVERRIDE = {"review-agent-diff": REVIEW_DIFF_PROMPT, "tests-from-xray": XRAY_PROMPT,
+                   "protect-secrets": "How do I make sure the agent never edits our .env files or CI workflows, no matter what? Explain how; don't change any files."}
 TURNS_OVERRIDE = {"review-agent-diff": 12, "tests-from-xray": 12}
 
 # adlc-foundations: atomic criteria split from the original compound rubrics (same requirements, one per grader).

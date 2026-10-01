@@ -15,6 +15,10 @@ description: "Use when someone asks whether a skill, plugin, MCP server, hook, o
 
 Skills, plugins, and MCP servers are supply chain. A skill is instructions the agent will follow; a hook or MCP server is code that runs with the user's permissions. Both deserve review proportional to what they can do.
 
+## When no specific extension has been shared
+
+Don't stop to ask for the link. Give the checklist below and the install / restrict / reject rule as complete guidance now, then offer to run the review on the specific extension once the user shares it.
+
 ## Review checklist
 
 **Provenance**

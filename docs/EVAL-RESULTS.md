@@ -7,8 +7,9 @@ How each plugin performs against a no-plugin baseline, measured with `claude plu
 | Plugin | Status | Skills with a clear gain |
 | --- | --- | --- |
 | adlc-foundations | ✅ Measured (5 runs per arm) | 8 of 8 |
+| adlc-govern | ✅ Measured (5 runs per arm) | 4 of 6; 2 being re-measured after fixes |
 | adlc-verify | ✅ Measured (3 runs per arm) | 3 of 6; 2 did not auto-trigger |
-| adlc-intent, adlc-context, adlc-build, adlc-govern, adlc-operate, adlc-agent-engineering | Not yet measured | — |
+| adlc-intent, adlc-context, adlc-build, adlc-operate, adlc-agent-engineering | Not yet measured | — |
 
 This table is the single source for which plugins are measured; other docs link here instead of repeating counts.
 
@@ -35,6 +36,27 @@ This table is the single source for which plugins are measured; other docs link 
 - **The first run overstated the gains.** With one all-or-nothing rubric per case, every baseline scored 0.00 and four skills showed Δ +1.00. Split into atomic criteria, baselines earn partial credit and the honest gains are +0.24 to +0.77.
 - **The evals caught a usability bug.** With the old `adlc-readiness-assessment`, Haiku asked for more inputs and never assessed (0.00 with the skill), even when the user said "give me your assessment". The skill now gives a provisional assessment and marks gaps as unknown: 1.00 with the skill.
 - **Two gaps to fix next.** `ai-stance-policy` never produced a policy short enough (the "one page" criterion failed in every run, both arms), and `comprehension-debt` never proposed named module owners, one of its own core practices.
+
+## adlc-govern (1 October 2026)
+
+**Setup:** as for foundations: Claude Haiku answering, Claude Sonnet judging, 5 runs per arm, 3–6 atomic criteria per case.
+
+| Case | Skill | Skill loaded | With | Without | Δ |
+| --- | --- | --- | --- | --- | --- |
+| business-teams-building | citizen-builder-governance | 5/5 | 0.83 | 0.27 | +0.57 |
+| permissions-ci | agent-permissions | 5/5 | 0.93 | 0.40 | +0.53 |
+| threat-model-ci-agent | agentic-threat-model | 5/5 | 1.00 | 0.63 | +0.37 |
+| iso-42001 | ai-compliance-mapping | 5/5 | 0.75 | 0.45 | +0.30 |
+| protect-secrets | guardrail-hooks | 0/5 | 0.73 | 0.33 | re-measuring |
+| vet-plugin | extension-vetting | 1/5 | 0.10 | 0.30 | −0.20, re-measuring |
+| near-miss, unrelated-request | none (negative cases) | 0/20 | 1.00 | 0.95 | — |
+
+**What we learned.**
+
+- Four skills give clear gains on the questions security and platform teams ask: citizen-builder governance, agent permissions, threat modeling, and compliance mapping.
+- **`extension-vetting` made answers worse, and not because of its content.** With the kit installed, Haiku saw that a vetting workflow existed and replied "share the link and I'll vet it" with a thin checklist, instead of answering. Without the kit it gave a fuller checklist. The skill and the `/vet-extension` command now give the full framework and decision rule first, then offer to vet the specific extension.
+- **`protect-secrets` exposed a skill collision.** The neighboring `agent-permissions` skill answered instead of `guardrail-hooks`. It helped, but missed the point `guardrail-hooks` exists to make: instructions alone are not enforcement. Both skills now make that point, and `guardrail-hooks` triggers on "must never happen, no matter what". The case prompt now says "don't change any files", because the baseline kept trying to write a settings file it had no tool for and ran out of turns.
+- "Confirm with counsel or the auditor" failed in all ten `iso-42001` runs, with and without the kit. `ai-compliance-mapping` now states it as part of the required output.
 
 ## adlc-verify (1 October 2026)
 

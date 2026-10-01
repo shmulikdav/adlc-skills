@@ -20,7 +20,7 @@ $vet-extension ./downloads/cool-skill/
 Before anything else, open and read each of these skills from this plugin's skill list: `adlc-govern:extension-vetting`. This workflow is only an outline: the method, rubrics, templates and defaults live in those skills, so do not answer from the outline or from general knowledge. If a skill fails to load, say so in the first line of the answer.
 
 ### Step 1: Fetch and inventory
-Read the user's request. List every component and file. Do not install or execute anything.
+If no extension was given, apply the checklist and the install / restrict / reject rule as general guidance, then ask for the link. Otherwise read the user's request, list every component and file, and do not install or execute anything.
 
 ### Step 2: Review
 Apply the **extension-vetting** skill checklist. Delegate code-heavy components to the **security-reviewer** agent when available.

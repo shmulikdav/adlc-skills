@@ -72,6 +72,11 @@ Measured with `claude plugin eval`: Claude Haiku answering, Claude Sonnet judgin
 | foundations | role-transitions | 5/5 | 0.85 | 0.50 | **+0.35** |
 | foundations | adlc-readiness-assessment | 5/5 | 1.00 | 0.67 | **+0.33** |
 | foundations | adlc-metrics | 5/5 | 0.96 | 0.72 | **+0.24** |
+| govern | citizen-builder-governance | 5/5 | 0.83 | 0.27 | **+0.57** |
+| govern | agent-permissions | 5/5 | 0.93 | 0.40 | **+0.53** |
+| govern | agentic-threat-model | 5/5 | 1.00 | 0.63 | **+0.37** |
+| govern | ai-compliance-mapping | 5/5 | 0.75 | 0.45 | **+0.30** |
+| govern | extension-vetting, guardrail-hooks | 1/5, 0/5 | — | — | fixed, re-measuring |
 | verify | definition-of-done | 3/3 | 0.87 | 0.07 | **+0.80** |
 | verify | review-capacity | 3/3 | 0.57 | 0.05 | **+0.52** |
 | verify | hallucination-checks | 3/3 | 0.60 | 0.40 | **+0.20** |
@@ -81,7 +86,7 @@ Measured with `claude plugin eval`: Claude Haiku answering, Claude Sonnet judgin
 
 Negative cases, including near-misses next to each plugin's territory, triggered no skills.
 
-Which plugins are measured, the method, and what didn't work: [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). Short version: skills that encode organizational procedure gave clear gains; generic code review didn't auto-trigger on pasted diffs, because the model already reviews those well; and the evals caught two skill flaws (in `hallucination-checks` and `adlc-readiness-assessment`) that we fixed and re-measured. Run the suites yourself and share results in Discussions.
+Which plugins are measured, the method, and what didn't work: [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). Short version: skills that encode organizational procedure gave clear gains; generic code review didn't auto-trigger on pasted diffs, because the model already reviews those well; and the evals caught skill flaws, including two that made the model ask questions instead of answering, which we fixed and are re-measuring. Run the suites yourself and share results in Discussions.
 
 ## Built on market best practices
 

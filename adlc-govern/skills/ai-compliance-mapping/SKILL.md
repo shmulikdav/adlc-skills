@@ -35,6 +35,10 @@ Auditors and enterprise customers increasingly ask two questions: how do you gov
 4. Prioritize gaps by audit or customer impact.
 5. List the evidence pack: policy doc, risk register, threat model, permission configs, review records, agent audit logs, vendor DPAs, eval results.
 
+## Output
+
+A mapping table (framework expectation → current practice → gap → evidence), the prioritized gaps, and the evidence pack. End with one line stating that the mapping is a starting point and that counsel or the certification auditor must confirm the interpretation.
+
 ## Notes
 
 - This is a structured starting point, not legal advice. Flag items for counsel or a certified auditor.

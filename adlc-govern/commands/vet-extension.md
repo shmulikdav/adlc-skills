@@ -19,7 +19,7 @@ argument-hint: "<repo URL, local path, or package name>"
 Your first action must be a Skill tool call for each of these skills: `adlc-govern:extension-vetting`. This command file is only an outline: the method, rubrics, templates and defaults live in those skills, so do not answer from the outline or from general knowledge. If a skill fails to load, say so in the first line of the answer.
 
 ### Step 1: Fetch and inventory
-Read $ARGUMENTS. List every component and file. Do not install or execute anything.
+If no extension was given, apply the checklist and the install / restrict / reject rule as general guidance, then ask for the link. Otherwise read $ARGUMENTS, list every component and file, and do not install or execute anything.
 
 ### Step 2: Review
 Apply the **extension-vetting** skill checklist. Delegate code-heavy components to the **security-reviewer** agent when available.

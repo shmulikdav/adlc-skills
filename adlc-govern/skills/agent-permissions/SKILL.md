@@ -36,7 +36,7 @@ Deny rules and hooks still matter: auto mode reduces prompt fatigue, but determi
 3. **Bound the filesystem:** deny reads of `.env*`, key files, credential directories; restrict edits to the workspace.
 4. **Profiles:** local interactive (auto mode with org rules, or ask for high-risk repos), CI/headless (no ask possible → narrow allow-list, sandboxed container, scoped token, network allow-list), and review-only (read-only).
 5. **Secrets:** inject at runtime through environment or secret managers the agent cannot read back; never paste them into prompts or context files.
-6. **Back it with enforcement:** where a rule must never be broken, add a hook or CI check in addition to the permission rule.
+6. **Back it with enforcement:** where a rule must never be broken, add a hook or CI check in addition to the permission rule, and say why: instructions in a context file are guidance the model can miss, not enforcement. Only deny rules, hooks, and CI checks hold every time.
 
 ## Red flags
 

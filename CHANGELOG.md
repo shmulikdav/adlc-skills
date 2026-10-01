@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- **adlc-govern measured:** four skills with clear gains (+0.30 to +0.57); results in `docs/EVAL-RESULTS.md` and the README.
+- **extension-vetting** and **/vet-extension** give the full checklist and install / restrict / reject rule before asking for a link. Found by the govern eval: with the kit installed, the model deferred instead of answering (Δ −0.20).
+- **guardrail-hooks** triggers on "must never happen, no matter what"; **agent-permissions** now says why must-never rules need hooks. Found by the govern eval: the two skills collided and the answer missed the key point.
+- **ai-compliance-mapping** has an Output section that ends with the counsel-or-auditor confirmation.
+- **protect-secrets eval** prompt says "don't change any files", so neither arm burns its turns trying to write a settings file.
+
 - **adlc-govern evals:** compound rubrics split into atomic criteria (same requirements, one per grader), ready to measure.
 - **ai-stance-policy:** the policy must fit on one page (about 400 words); items needing legal review are marked [LEGAL]; the decision table and announcement are offered instead of written unasked; an Output section was added. Found by the foundations eval: no run produced a policy short enough.
 - **comprehension-debt:** the ownership map (a named owner for each critical module) is now the baseline practice, not one option among several. Found by the foundations eval: no run proposed named owners.

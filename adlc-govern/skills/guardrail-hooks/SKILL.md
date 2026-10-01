@@ -1,6 +1,6 @@
 ---
 name: guardrail-hooks
-description: "Use when a rule must be enforced every time rather than remembered, when CLAUDE.md instructions are not followed reliably, when protecting secrets, CI config, or migrations from agent edits, or when setting up Claude Code hooks."
+description: "Use when something must never happen no matter what (an agent editing .env files, secrets, CI workflows, or migrations), when a rule must be enforced every time rather than remembered, when CLAUDE.md instructions are not followed reliably, or when setting up Claude Code hooks."
 ---
 
 # Guardrail Hooks
