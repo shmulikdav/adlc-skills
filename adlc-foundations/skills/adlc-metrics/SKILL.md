@@ -22,6 +22,11 @@ Developers' sense of speed is a poor measurement instrument. In METR's 2025 rand
 - Escaped defects attributed to agent-authored code
 - Share of tasks completed at each autonomy level
 
+**2b. Review flow (where the 2026 bottleneck sits)**
+- Pickup time and review time by PR type (human / AI-assisted / agentic)
+- PR size, acceptance rate within 30 days, re-review rounds
+- Open agent PRs per reviewer (queue depth)
+
 **3. Economics**
 - Token/licence cost per merged change and per active engineer
 - Cost per resolved ticket for agent-handled task types
@@ -29,6 +34,12 @@ Developers' sense of speed is a poor measurement instrument. In METR's 2025 rand
 **4. Adoption & experience (leading indicators only)**
 - Weekly active users, sessions per engineer
 - Developer-reported friction (short pulse survey)
+
+## Reference frameworks
+
+- **DORA** delivery metrics, including rework rate
+- **DX AI Measurement Framework** (utilization, impact, cost) alongside DX Core 4 (speed, effectiveness, quality, impact). DX's Q2 2026 data is the cautionary tale: median AI spend grew roughly 28× in a year while the share of time on new capabilities stayed flat around 57–58%
+- Expect gains to show up as **more output** (including work that would not have been done at all) more than as faster tasks, so measure throughput and what it was spent on, not only cycle time
 
 ## Instructions
 

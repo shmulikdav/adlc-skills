@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## v2.1.0 — 2026-10-01
+
+Pre-launch audit against the 2026 state of agentic development. See docs/LAUNCH-AUDIT.md.
+
+- New skills: `review-capacity` (agent-PR review bottleneck), `continuous-ai-workflows` (background agents in CI), `learning-loop` (compounding fixes from rejected agent work), `comprehension-debt` (keeping humans able to verify agent output), `architecture-guardrails` (ADRs, invariants, dependency rules), `long-running-agent-work` (multi-hour and multi-agent runs), `citizen-builder-governance` (non-engineers building with AI).
+- New commands: `/fix-review-queue`, `/plan-continuous-ai`, `/mine-rejections`, `/plan-long-run`, `/citizen-builder-policy`.
+- Updated for 2026 reality: auto-mode-era permissions; built-in `/code-review`, `/ultrareview`, `/security-review` composition; AGENTS.md as table of contents with `docs/` as system of record; 2026 skill-supply-chain attack patterns in extension vetting; EU AI Act timeline after the Digital Omnibus; OpenTelemetry GenAI conventions status; DX AI Measurement Framework and review-flow metrics; three new readiness dimensions.
+- 55 eval cases (every skill covered).
+- Validator now fails the build on hidden zero-width or bidirectional Unicode characters anywhere in the repo.
+
 ## v2.0.0 — 2026-10-01
 
 First public release: 8 plugins, 40 skills, 23 commands, 2 agents, 48 eval cases. Start with docs/TRY-IT.md.

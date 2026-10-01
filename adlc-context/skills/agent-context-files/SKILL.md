@@ -37,7 +37,7 @@ Context files are loaded every session, so every line costs attention. Bloated f
 - ADRs: docs/adr/
 ```
 
-Target: under ~150 lines for the root file. Use nested files in subdirectories for area-specific rules, and imports (`@path/to/file`) for occasionally-needed detail.
+Target: under ~150 lines for the root file. Treat it as a **table of contents, not an encyclopedia**: point to a structured `docs/` knowledge base (architecture, ADRs, plans, runbooks) that is the versioned system of record. What the agent can't see in the repository doesn't exist for it, so decisions made in chat or meetings must land in `docs/`. Use nested files in subdirectories for area-specific rules, and imports (`@path/to/file`) for occasionally-needed detail.
 
 ## Instructions
 
@@ -49,7 +49,7 @@ Target: under ~150 lines for the root file. Use nested files in subdirectories f
 **Audit mode**
 1. Score each line: *prevents a real mistake* / *derivable from code* / *stale* / *contradictory*.
 2. Propose cuts, merges, and moves to nested files. Show a before/after line count.
-3. Check cross-tool consistency: if both CLAUDE.md and AGENTS.md exist, make one the source of truth and reference it from the other.
+3. Check cross-tool consistency: AGENTS.md is the cross-tool convention (Codex, Cursor, Copilot, and recent Claude Code versions read it). Keep one source of truth and make the other a pointer or symlink, so tools never see conflicting rules.
 
 ## Notes
 

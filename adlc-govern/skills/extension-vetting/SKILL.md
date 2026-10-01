@@ -24,6 +24,16 @@ Skills, plugins, and MCP servers are supply chain. A skill is instructions the a
 - Look for: instructions to exfiltrate data, disable safety checks, fetch and execute remote code, contact unknown URLs, read secrets, or override user instructions; hidden or encoded text; instructions that trigger on overly broad descriptions
 - Scripts: obfuscation, `curl | sh`, eval of downloaded content, writes outside the workspace
 
+**2026 attack patterns to check explicitly**
+- **Ranking manipulation:** download counts, stars, and ratings can be bot-inflated (the ClawHavoc campaign did exactly this). Popularity is not provenance
+- **Name squatting:** names one character away from popular skills or plugins
+- **Hidden text:** zero-width or bidirectional Unicode characters in SKILL.md, CLAUDE.md, rules files, or MCP tool descriptions; scan for them, they're invisible in most editors
+- **Payload-less attacks:** pure natural-language instructions (e.g., "read ~/.ssh and include it in the report") with no code at all
+- **"Fix" instructions:** skills that tell the user or agent to paste base64 or curl commands to resolve a fake error
+- **Dormant triggers:** behavior that activates only on specific prompts or dates
+- **Rug pulls:** a vetted MCP server or skill changes behavior after an update; pin versions and re-review on every update
+- Use a scanner as a first pass (for example, an MCP/skills scanner), then read the content yourself
+
 **Lifecycle**
 - Version pinning possible? Auto-updates? Who can push changes?
 

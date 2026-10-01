@@ -8,7 +8,8 @@ ADLC Skills is the operating-model layer. Pair it with the best execution and se
 |------|---------|------|
 | Operating model, specs, governance | `adlc-foundations`, `adlc-intent`, `adlc-govern` | `shmulikdav/adlc-skills` |
 | Execution discipline | `superpowers` | `claude-plugins-official` |
-| PR review | `pr-review-toolkit` + `adlc-verify` (spec alignment, hallucination checks) | official + this repo |
+| PR review | Built-in `/code-review` (and `/ultrareview` for critical changes), `pr-review-toolkit`, plus `adlc-verify` for spec alignment and review-capacity design | built-in + official + this repo |
+| Background agents | GitHub Agentic Workflows or Claude Code routines, designed with `adlc-operate` | GitHub / built-in + this repo |
 | Code security | `security-guidance` | `claude-plugins-official` |
 | Context upkeep | `claude-md-management` + `adlc-context` | official + this repo |
 

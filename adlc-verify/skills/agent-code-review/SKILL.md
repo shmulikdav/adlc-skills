@@ -42,6 +42,8 @@ Reviewing agent output is a different job from reviewing a colleague's code. The
 
 ## Composition
 
+Run machine review first: Claude Code's built-in `/code-review` (multi-agent) and `/ultrareview` (cloud fleet with adversarial critique, for auth, payments, migrations) and `/security-review`. Start the human pass with test integrity: weakened tests, disabled lint, and gated CI steps are where agent-PR risk concentrates.
+
 For general code-quality passes (comments, types, silent failures, simplification), Anthropic's official `pr-review-toolkit` provides specialist reviewers. Use this skill for what those don't check: alignment with the spec and the agent-specific failure patterns.
 
 ## Output

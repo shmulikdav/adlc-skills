@@ -2,7 +2,7 @@
 
 # ADLC Skills: The Operating Model for Agentic Development
 
-> 40 skills, 23 commands, 2 agents, and 48 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, context, governance, release, operations, and agent engineering. Built for Claude Code and Cowork; composes with Superpowers and Anthropic's official plugins.
+> 47 skills, 28 commands, 2 agents, and 55 eval cases across 8 plugins. The layer that coding-agent frameworks leave out: readiness, agent-ready specs, architecture guardrails, context, review capacity, governance, Continuous AI, and agent engineering. Built for Claude Code and Cowork; composes with Superpowers and Anthropic's official plugins.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Tests](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml/badge.svg)](https://github.com/shmulikdav/adlc-skills/actions/workflows/tests.yml) [![Release](https://img.shields.io/github/v/release/shmulikdav/adlc-skills)](https://github.com/shmulikdav/adlc-skills/releases) [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin%20marketplace-7B61FF)](#installation) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -20,13 +20,15 @@ Then paste:
 /adlc-assess 40 engineers, Claude Code for everyone for two months, weekly deploys, ~35% test coverage, no written AI policy, PRs wait 3 days for review
 ```
 
-You get a maturity level, a scorecard against the DORA AI capabilities and agent-specific readiness, the constraints that will break first, and three first moves. Five more role-based prompts: [docs/TRY-IT.md](docs/TRY-IT.md).
+You get a maturity level, a scorecard against the DORA AI capabilities and agent-specific readiness, the constraints that will break first, and three first moves. More role-based prompts: [docs/TRY-IT.md](docs/TRY-IT.md). Pre-launch audit against 2026 trends: [docs/LAUNCH-AUDIT.md](docs/LAUNCH-AUDIT.md).
 
 ## Why this kit exists
 
 Coding agents changed who executes the software lifecycle. They did not change what makes delivery work. DORA's 2025 research calls AI an amplifier of the system it lands in. Teams with clear specs, fast tests, small batches, and real governance get faster. Teams without them get faster at producing rework.
 
 The execution layer is already well served. Superpowers, Anthropic's `feature-dev` and `pr-review-toolkit`, and spec rails like Spec Kit do planning, TDD, and review inside a session. What no kit covered was the **operating model** around them: whether the org is ready, how much autonomy each task type gets, what an agent-ready spec looks like, how to govern agents that hold real permissions, how releases are gated, and how to prove any of it pays off.
+
+The 2026 picture makes that layer urgent. Agent PRs now wait about five times longer for review than human ones, background agents run in CI, agents work for hours or days, business teams build their own tools, and agent-skill marketplaces have become a malware vector. Each of those has a plugin here.
 
 AI adoption is an execution problem, not a technology problem. This kit encodes the execution.
 
@@ -51,9 +53,11 @@ Install the profile that matches your job, not everything.
 |----------|---------|-----------|
 | CTO / VP Eng / AI transformation lead | `adlc-foundations`, `adlc-operate` | `/adlc-assess`, `/adlc-roadmap` |
 | Product manager | `adlc-intent` | `/write-agentic-prd` |
-| Tech lead / staff engineer | `adlc-context`, `adlc-build`, `adlc-verify` | `/init-agent-context`, `/choose-rail`, `/review-agent-pr` |
+| Tech lead / staff engineer | `adlc-context`, `adlc-build`, `adlc-verify` | `/init-agent-context`, `/fix-review-queue`, `/choose-rail` |
+| Platform / DevEx | `adlc-operate`, `adlc-govern` | `/plan-continuous-ai`, `/mine-rejections` |
 | QA lead | `adlc-verify` | `/derive-tests` |
-| Security / platform | `adlc-govern` | `/threat-model`, `/vet-extension` |
+| Security | `adlc-govern` | `/threat-model`, `/vet-extension` |
+| Business / operations leader enabling non-engineers | `adlc-govern` | `/citizen-builder-policy` |
 | Building AI agents or LLM features | `adlc-agent-engineering`, `adlc-operate` | `/design-agent`, `/build-evals` |
 
 **Recommended companion stack:** `superpowers` for execution discipline, `pr-review-toolkit` for code-quality review, `security-guidance` for code security, `claude-md-management` for context upkeep, all from the official marketplace. One owner per slot; see [docs/RECOMMENDED-STACK.md](docs/RECOMMENDED-STACK.md).
@@ -121,7 +125,7 @@ The `skills/*/SKILL.md` files follow the Agent Skills format. Commands, subagent
 
 ## Available Plugins
 
-**1. adlc-foundations — Readiness, operating model & adoption (7 skills, 3 commands)**
+**1. adlc-foundations — Readiness, operating model & adoption (8 skills, 3 commands)**
 
 - `adlc-readiness-assessment` — Score the seven DORA AI capabilities plus agent-specific readiness; get a maturity level and first moves
 - `sdlc-to-adlc-mapping` — Map each workflow step to its agentic equivalent: executor, artifact, human gate, new failure mode
@@ -130,18 +134,20 @@ The `skills/*/SKILL.md` files follow the Agent Skills format. Commands, subagent
 - `adlc-metrics` — Measure outcomes, rework, and cost per change; separate perceived from actual productivity
 - `ai-champions-program` — Train-the-trainer network that spreads practices, context files, and shared skills
 - `role-transitions` — How developer, PM, QA, tech lead, manager, and designer roles change
+- `comprehension-debt` — Keep humans able to explain and debug what agents build (explain-back gates, owners, drills)
 
 Commands: `/adlc-assess` · `/map-to-adlc` · `/adlc-roadmap` (90-day Map → Prioritize → Build → Scale plan)
 
 Examples: `/adlc-assess Platform team, 9 engineers, Claude Code for all, weekly deploys, 45% coverage` · `Can we let the agent do dependency upgrades on its own?`
 
-**2. adlc-intent — Agent-ready specs (5 skills, 3 commands)**
+**2. adlc-intent — Agent-ready specs (6 skills, 3 commands)**
 
 - `agentic-prd` — Agent Execution Spec: intent, non-goals, guardrails, repo context, acceptance tests, stop conditions
 - `spec-driven-development` — Constitution → specify → clarify → plan → tasks → implement → converge (Spec Kit, Kiro, AI-DLC aware)
 - `acceptance-criteria` — Given/When/Then and EARS criteria, each with a verification method
 - `spec-clarification` — Hunt ambiguities and silent decisions; prioritized questions with recommended defaults
 - `task-decomposition` — Agent-sized, verifiable tasks with dependencies and parallel markers
+- `architecture-guardrails` — ADRs agents read plus dependency rules and invariants CI enforces
 
 Commands: `/write-agentic-prd` · `/spec-feature` · `/clarify-spec`
 
@@ -158,44 +164,49 @@ Examples: `/write-agentic-prd Let admins export audit logs as CSV` · `/clarify-
 
 Commands: `/init-agent-context` · `/map-codebase` · `/codify-convention` · `/audit-skills`
 
-**4. adlc-build — Execution stack & delivery shape (3 skills, 2 commands)**
+**4. adlc-build — Execution stack & delivery shape (4 skills, 3 commands)**
 
 This plugin does not ship its own coding workflow. It picks and wires the best one.
 
 - `execution-rail-selection` — One owner per slot across Superpowers, Spec Kit, GSD, BMAD, gstack, and built-in plan mode
+- `long-running-agent-work` — Multi-hour and multi-agent runs with state files, checkpoints, budgets, and abort criteria
 - `small-batch-delivery` — PR budgets, stacked PRs, flags, trunk-based integration, rollback readiness
 - `legacy-modernization` — Characterize behavior first, extract the implicit spec, migrate in parity-checked slices (pairs with the official `code-modernization` plugin)
 
-Commands: `/choose-rail` · `/modernize`
+Commands: `/choose-rail` · `/plan-long-run` · `/modernize`
 
-**5. adlc-verify — Behavioral validation & review (5 skills, 3 commands, 1 agent)**
+**5. adlc-verify — Review capacity & behavioral validation (6 skills, 4 commands, 1 agent)**
 
+- `review-capacity` — Fix the agent-PR review bottleneck: ownership, risk tiers, machine first pass, WIP limits
 - `behavioral-testing` — Properties, invariants, contracts, state transitions, permission matrices
 - `tests-from-specs` — Traceability matrix from ACs or Xray/TestRail/Gherkin; generate the missing tests
 - `agent-code-review` — Spec-alignment review tuned to AI failure patterns (composes with `pr-review-toolkit`)
 - `hallucination-checks` — Verify packages, APIs, config keys, flags, paths, and PR claims actually exist
 - `definition-of-done` — Evidence an agent must attach before "done", and the human gates that remain
 
-Commands: `/review-agent-pr` · `/derive-tests` · `/verify-change` — Agent: `agent-output-reviewer`
+Commands: `/fix-review-queue` · `/review-agent-pr` · `/derive-tests` · `/verify-change` — Agent: `agent-output-reviewer`
 
-**6. adlc-govern — Security, permissions & compliance (5 skills, 3 commands, 1 agent)**
+**6. adlc-govern — Security, permissions & compliance (6 skills, 4 commands, 1 agent)**
 
 - `agentic-threat-model` — Walk the OWASP Top 10 for Agentic Applications (ASI01–ASI10) for your setup
 - `agent-permissions` — Allow / ask / deny profiles for local, CI, and review-only agents
 - `guardrail-hooks` — Deterministic enforcement for rules that must never break (template included)
 - `ai-compliance-mapping` — Map practices to ISO/IEC 42001, NIST AI RMF, EU AI Act, SOC 2; list the evidence pack
-- `extension-vetting` — Review skills, plugins, MCP servers, and hooks before installing them
+- `extension-vetting` — Review skills, plugins, MCP servers, and hooks before installing them, including 2026 attack patterns (fake popularity, hidden Unicode, rug pulls)
+- `citizen-builder-governance` — Paved road for non-engineers building tools with AI: tiers, data rules, inventory, promotion
 
-Commands: `/threat-model` · `/governance-pack` · `/vet-extension` — Agent: `security-reviewer`
+Commands: `/threat-model` · `/governance-pack` · `/vet-extension` · `/citizen-builder-policy` — Agent: `security-reviewer`
 
-**7. adlc-operate — Release, observe, learn (4 skills, 2 commands)**
+**7. adlc-operate — Release, observe, learn (6 skills, 4 commands)**
 
+- `continuous-ai-workflows` — Background agents for triage, CI failures, docs, tests, and cleanup, with proposal-only outputs
+- `learning-loop` — Turn rejected agent PRs and repeated review comments into context, hooks, tests, and evals
 - `release-gates` — Merge / staging / production / post-release gates by change class
 - `agentops-observability` — Traces, redaction, quality and cost views, alerts for loops and anomalies
 - `ai-cost-management` — Unit economics, cost levers with quality guardrails, 2×/5× price stress tests
 - `agent-incident-review` — Blameless reviews that find which layer failed and feed fixes back into context, hooks, tests, and evals
 
-Commands: `/release-check` · `/agent-postmortem`
+Commands: `/release-check` · `/plan-continuous-ai` · `/mine-rejections` · `/agent-postmortem`
 
 **8. adlc-agent-engineering — Building agents as products (5 skills, 3 commands)**
 

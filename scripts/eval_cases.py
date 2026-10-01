@@ -182,6 +182,44 @@ EXTRA = {
 for k, v in EXTRA.items():
     CASES[k].extend(v)
 
+EXTRA_V21 = {
+"adlc-foundations": [
+ ("nobody-understands-it", "comprehension-debt",
+  "Half our services were mostly written by agents this year. Last week an outage in one took six hours to diagnose because nobody really knew the code. How do we stop this from getting worse?",
+  "PASS if the response names the problem as a team understanding gap rather than a tooling gap, proposes concrete practices such as named module owners who can explain and debug the code, an explain-back step before merge for risky changes, incident drills on agent-built components, and protecting how juniors learn, and suggests a way to track it. FAIL if it only recommends better documentation generation or more tests."),
+],
+"adlc-intent": [
+ ("architecture-drift", "architecture-guardrails",
+  "Our agents keep calling the database directly from API handlers even though we use a service layer, and they re-debate decisions we made months ago. How do we make them stick to the architecture?",
+  "PASS if the response recommends recording decisions in the repository (ADRs or equivalent) the agent can read, encoding the allowed dependency structure as an automated architecture or dependency test in CI, enforcing invariants rather than prescribing implementations, and requiring a stop-and-propose step when a change needs to break a rule. FAIL if it only suggests adding the rule to the prompt or CLAUDE.md."),
+],
+"adlc-build": [
+ ("two-week-migration", "long-running-agent-work",
+  "We want agents to migrate 300 API endpoints to a new framework over the next two weeks, running mostly unattended. How should we set this up?",
+  "PASS if the response decomposes the work into packages with clear ownership, externalizes plan and progress state in the repository, defines human checkpoints and abort criteria, sets cost and time budgets, starts with a pilot package, and shapes the output as small reviewable PRs. FAIL if it suggests launching many agents on the whole migration at once without checkpoints or budgets."),
+],
+"adlc-verify": [
+ ("pr-queue", "review-capacity",
+  "Agent PRs sit for two days before anyone looks at them, and when someone does they approve 1,500-line diffs in five minutes. Adding reviewers didn't help. What should we change?",
+  "PASS if the response redesigns the review system rather than asking for faster reviewers: clear ownership and auto-assignment of agent PRs, risk tiers that route high-risk changes to deeper review, automated and AI first-pass review before humans, a size budget, a context packet attached to each PR, and limits on open agent PRs. FAIL if it mainly recommends hiring or adding more reviewers or reviewing faster."),
+],
+"adlc-govern": [
+ ("business-teams-building", "citizen-builder-governance",
+  "Our finance and ops people started building their own tools with AI app builders connected to the ERP. IT is nervous. Should we stop them?",
+  "PASS if the response recommends enabling with guardrails rather than banning, defines tiers based on data sensitivity and how many people depend on a tool, requires an inventory and named owners, sets rules for data and connectors, and defines when a tool must be reviewed or taken over by engineering. FAIL if it recommends an outright ban or no controls at all."),
+],
+"adlc-operate": [
+ ("background-agents", "continuous-ai-workflows",
+  "What could we safely automate with agents running in the background on our GitHub repo, like nightly or on new issues?",
+  "PASS if the response proposes low-risk starter workflows such as issue triage, CI failure investigation, documentation updates, or test gap filling, insists that outputs are proposals like comments or draft PRs rather than merges, treats issue and comment text as untrusted input, and sets permissions, budgets, an owner, and a shadow-mode trial. FAIL if it suggests letting background agents merge or deploy."),
+ ("repeated-mistakes", "learning-loop",
+  "Two thirds of our agent PRs get closed without merging, and reviewers keep leaving the same comments. How do we make the agents stop repeating these mistakes?",
+  "PASS if the response proposes collecting rejected PRs and repeated review comments, clustering them by root cause, converting each recurring cause into a durable artifact such as a context-file line, skill, hook, test, or eval case, verifying the fix, and tracking rejection or rework rate over time. FAIL if it only suggests writing better prompts each time."),
+],
+}
+for k, v in EXTRA_V21.items():
+    CASES[k].extend(v)
+
 
 def write(path: Path, text: str):
     path.parent.mkdir(parents=True, exist_ok=True)

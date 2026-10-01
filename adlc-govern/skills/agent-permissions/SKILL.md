@@ -9,6 +9,17 @@ description: "Use when configuring what a coding agent may read, edit, or run (C
 
 Permission prompts that fire constantly get approved blindly. Permissions that are too broad let a single bad step do real damage. The goal is a configuration where routine safe actions flow and dangerous ones are impossible or explicitly approved.
 
+## The 2026 baseline: classifier-based auto mode
+
+Static allow/ask/deny lists are no longer the whole picture. Since August 2026, Claude Code starts new Pro, Max, and Team sessions in **auto mode**, where a classifier reviews actions and blocks risky ones instead of prompting for each. That shifts the design question from "which commands need a prompt" to:
+
+- Which **custom rules** extend the built-in classifier list (keep the defaults and add your own, rather than replacing them)
+- Whether **all shell commands** go through the classifier, or only arbitrary-code-execution patterns
+- Which **network hosts** each command may reach when sandboxed
+- What **managed settings** the organization enforces so individuals can't loosen them
+
+Deny rules and hooks still matter: auto mode reduces prompt fatigue, but deterministic rules remain the backstop for anything that must never happen. Check current setting names in the Claude Code permissions and auto-mode documentation before rollout; they change frequently.
+
 ## Design steps
 
 1. **Inventory actions** the agent needs for the team's task types: read/edit paths, test/lint/build commands, git operations, package installs, network calls, deploys.
@@ -17,7 +28,7 @@ Permission prompts that fire constantly get approved blindly. Permissions that a
    - **Ask** — side effects that are reversible but notable (install packages, git push to a branch, run migrations locally)
    - **Deny** — irreversible or out of scope (read secrets files, `rm -rf` outside workspace, push to main, production credentials, curl to arbitrary hosts)
 3. **Bound the filesystem:** deny reads of `.env*`, key files, credential directories; restrict edits to the workspace.
-4. **Profiles:** local interactive (more ask), CI/headless (no ask possible → narrow allow-list, sandboxed container, scoped token), and review-only (read-only).
+4. **Profiles:** local interactive (auto mode with org rules, or ask for high-risk repos), CI/headless (no ask possible → narrow allow-list, sandboxed container, scoped token, network allow-list), and review-only (read-only).
 5. **Secrets:** inject at runtime through environment or secret managers the agent cannot read back; never paste them into prompts or context files.
 6. **Back it with enforcement:** where a rule must never be broken, add a hook or CI check in addition to the permission rule.
 

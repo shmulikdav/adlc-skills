@@ -28,7 +28,7 @@ Apply **spec-clarification**. Stop and wait for the user's answers to blocking q
 Apply **acceptance-criteria** to every requirement.
 
 ### Step 5: Plan — GATE
-Draft `plan.md` with a constitution compliance check. Stop for approval.
+Draft `plan.md` with a constitution compliance check and the relevant architecture decisions and invariants (**architecture-guardrails**). Stop for approval.
 
 ### Step 6: Tasks
 Apply **task-decomposition** to produce `tasks.md` with parallel markers and an AC coverage table.

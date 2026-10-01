@@ -33,7 +33,7 @@ One section per role with the structure above, plus a short "what stays the same
 ## Notes
 
 - Accountability does not move to the agent. The person who merges owns the outcome.
-- Protect junior growth deliberately: pair them on spec writing and review, not only on prompting.
+- Protect junior growth deliberately: pair them on spec writing and review, not only on prompting. See the comprehension-debt skill for practices backed by Anthropic's 2026 skill-formation study.
 
 ---
 

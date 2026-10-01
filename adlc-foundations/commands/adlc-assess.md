@@ -28,6 +28,9 @@ Apply the **autonomy-levels** skill to the team's top 5 recurring task types to 
 ### Step 4: Measurement baseline
 Apply the **adlc-metrics** skill to define the minimum baseline the team must capture before the rollout.
 
+### Step 4b: Comprehension check
+Apply the **comprehension-debt** skill's assessment to the team's critical modules.
+
 ### Step 5: Report
 Produce the readiness report (maturity level, scorecard, top constraints, first three moves, what not to do yet) and the autonomy table. Save as markdown.
 

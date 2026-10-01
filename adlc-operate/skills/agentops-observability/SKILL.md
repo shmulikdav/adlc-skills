@@ -23,7 +23,7 @@ When an agent misbehaves, the transcript is the evidence. Without traces you can
 ## Instructions
 
 1. Identify the agent runs to instrument (interactive coding, CI agents, production agent features).
-2. Choose capture points and a trace schema; prefer an OpenTelemetry-compatible format so traces join existing observability.
+2. Choose capture points and a trace schema. Target the OpenTelemetry GenAI semantic conventions (agent, model, and tool spans; MCP conventions in draft), but note they are still in *Development* status and moved to a dedicated `semantic-conventions-genai` repository in June 2026: pin a version and expect renames. Claude Code and Codex can already export OpenTelemetry metrics and events, which covers coding-agent usage without custom instrumentation.
 3. Define redaction rules before turning capture on.
 4. Build three views: **operations** (errors, latency, volume), **quality** (success, overrides, rework), **economics** (cost per outcome).
 5. Set alerts on: error spikes, cost anomalies per run, loops (step count above threshold), repeated blocked actions.

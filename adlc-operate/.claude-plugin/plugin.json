@@ -1,7 +1,7 @@
 {
   "name": "adlc-operate",
-  "version": "2.0.0",
-  "description": "Operating the ADLC: release gates for agent-built changes, AgentOps observability, AI cost management and unit economics, and blameless agent incident reviews that feed durable fixes back into the lifecycle.",
+  "version": "2.1.0",
+  "description": "Operating the ADLC: release gates, Continuous AI background workflows, AgentOps observability, AI cost management, a learning loop from rejected agent work, and blameless agent incident reviews.",
   "author": {
     "name": "Shmulik Davar — BrAIght Wave",
     "email": "shmulik@braightwave.com",
@@ -16,6 +16,7 @@
     "observability",
     "release",
     "finops",
-    "postmortem"
+    "postmortem",
+    "continuous-ai"
   ]
 }

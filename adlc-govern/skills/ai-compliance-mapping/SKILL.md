@@ -13,7 +13,7 @@ Auditors and enterprise customers increasingly ask two questions: how do you gov
 
 - **ISO/IEC 42001** — AI management system: policy, roles, risk assessment, impact assessment, lifecycle controls, monitoring, improvement.
 - **NIST AI RMF** — Govern, Map, Measure, Manage.
-- **EU AI Act** — obligations depend on role (provider/deployer) and risk classification of the AI system; development tooling itself is usually not high-risk, but AI features shipped to users may be.
+- **EU AI Act** — obligations depend on role (provider/deployer) and risk classification of the AI system; development tooling itself is usually not high-risk, but AI features shipped to users may be. Timeline after the Digital Omnibus (Regulation (EU) 2026/1744, in force 27 July 2026): prohibited practices and AI literacy since February 2025; GPAI provider obligations since August 2025; Article 50 transparency obligations from 2 August 2026 (with a grace period to 2 December 2026 for some generative systems already on the market); Annex III high-risk obligations moved to 2 December 2027; Annex I (product-embedded) to 2 August 2028. Verify current dates before advising; this area keeps moving.
 - **SOC 2** — change management, access control, and vendor management controls touched by coding agents and AI vendors.
 
 ## Instructions

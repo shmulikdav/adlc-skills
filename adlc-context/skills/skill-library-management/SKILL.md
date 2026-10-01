@@ -46,6 +46,8 @@ Skills are not free. Benchmarks now show what practitioners suspected:
 
 ## Library hygiene
 
+- Measure real usage, not just installs: Claude Code's OpenTelemetry export emits a skill-activation event (including whether the user or Claude triggered it). Skills nobody activates are candidates for cutting
+
 - Per-team load budget: install by role or phase, not everything.
 - Owners and review dates per skill; prune quarterly.
 - Vet third-party skills before adoption (provenance, executable content, permissions).

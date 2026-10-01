@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "marketplace": "adlc-skills",
   "owner": {
     "name": "Shmulik Davar — BrAIght Wave",
@@ -12,7 +12,7 @@
       "name": "adlc-foundations",
       "phase": "0 · Foundations",
       "title": "Readiness, operating model & adoption",
-      "description": "ADLC foundations: readiness assessment on the DORA AI capabilities, SDLC-to-ADLC workflow mapping, agent autonomy levels, AI stance policy, ROI metrics, AI champions program, and role transitions.",
+      "description": "ADLC foundations: readiness assessment on the DORA AI capabilities, SDLC-to-ADLC workflow mapping, agent autonomy levels, AI stance policy, ROI metrics, AI champions program, role transitions, and comprehension debt.",
       "keywords": [
         "adlc",
         "agentic-development",
@@ -26,7 +26,7 @@
       "name": "adlc-intent",
       "phase": "1 · Intent",
       "title": "Agent-ready specs",
-      "description": "Intent specification for coding agents: Agentic PRDs, spec-driven development (constitution, spec, plan, tasks), testable acceptance criteria (Given/When/Then, EARS), spec clarification, and task decomposition.",
+      "description": "Intent specification for coding agents: Agentic PRDs, spec-driven development, testable acceptance criteria (Given/When/Then, EARS), spec clarification, task decomposition, and architecture guardrails (ADRs, invariants, dependency rules).",
       "keywords": [
         "adlc",
         "spec-driven-development",
@@ -54,7 +54,7 @@
       "name": "adlc-build",
       "phase": "3 · Build",
       "title": "Execution stack & delivery shape",
-      "description": "Agentic construction at the system level: choosing and composing execution frameworks (Superpowers, Spec Kit, GSD, BMAD, built-in plan mode) with one owner per slot, small-batch delivery policy, and legacy modernization strategy with behavior parity.",
+      "description": "Agentic construction at the system level: choosing and composing execution frameworks with one owner per slot, long-running and multi-agent work design, small-batch delivery policy, and legacy modernization strategy with behavior parity.",
       "keywords": [
         "adlc",
         "execution-framework",
@@ -68,7 +68,7 @@
       "name": "adlc-verify",
       "phase": "4 · Verify",
       "title": "Behavioral validation & review",
-      "description": "Verification of agent-built software: behavioral testing, tests derived from specs, alignment review of agent PRs, hallucination checks for APIs and dependencies, and a Definition of Done for agent work.",
+      "description": "Verification of agent-built software: review capacity design for the agent-PR bottleneck, behavioral testing, tests derived from specs, alignment review of agent PRs, hallucination checks, and a Definition of Done for agent work.",
       "keywords": [
         "adlc",
         "testing",
@@ -82,28 +82,30 @@
       "name": "adlc-govern",
       "phase": "5 · Govern",
       "title": "Security, permissions & compliance",
-      "description": "Governance and security for agentic development: OWASP Agentic Top 10 threat modeling, least-privilege agent permissions, guardrail hooks, compliance mapping (ISO 42001, NIST AI RMF, EU AI Act, SOC 2), and extension vetting.",
+      "description": "Governance and security for agentic development: OWASP Agentic Top 10 threat modeling, auto-mode-era agent permissions, guardrail hooks, compliance mapping (ISO 42001, NIST AI RMF, EU AI Act, SOC 2), extension vetting, and governance for non-engineers building with AI.",
       "keywords": [
         "adlc",
         "ai-security",
         "owasp",
         "governance",
         "iso-42001",
-        "hooks"
+        "hooks",
+        "citizen-developers"
       ]
     },
     {
       "name": "adlc-operate",
       "phase": "6 · Operate",
       "title": "Release, observe, learn",
-      "description": "Operating the ADLC: release gates for agent-built changes, AgentOps observability, AI cost management and unit economics, and blameless agent incident reviews that feed durable fixes back into the lifecycle.",
+      "description": "Operating the ADLC: release gates, Continuous AI background workflows, AgentOps observability, AI cost management, a learning loop from rejected agent work, and blameless agent incident reviews.",
       "keywords": [
         "adlc",
         "agentops",
         "observability",
         "release",
         "finops",
-        "postmortem"
+        "postmortem",
+        "continuous-ai"
       ]
     },
     {

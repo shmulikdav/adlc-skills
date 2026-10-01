@@ -1,6 +1,6 @@
 # Try ADLC Skills in 10 Minutes
 
-Five prompts, one per role. Each works in an empty folder; no codebase needed. Paste them as-is, then swap in your own context.
+Six prompts, one per role. Each works in an empty folder; no codebase needed. Paste them as-is, then swap in your own context.
 
 ## Setup (1 minute)
 
@@ -45,7 +45,15 @@ Can we let the coding agent handle dependency bumps, CRUD endpoints, and databas
 
 **You should get:** a risk register across the OWASP Top 10 for Agentic Applications (ASI01–ASI10), with scenarios specific to your setup and concrete controls.
 
-## 5. Anyone: vet a plugin before installing
+## 5. Tech lead: unblock the review queue
+
+```
+/fix-review-queue 14 engineers, ~120 PRs/week, half agent-authored, median pickup 2 days, big diffs get rubber-stamped
+```
+
+**You should get:** a diagnosis by PR type, risk tiers with routing rules, a machine first-pass layer, a PR context-packet template, and WIP limits. (Install `adlc-verify` first.)
+
+## 6. Anyone: vet a plugin before installing
 
 ```
 /vet-extension https://github.com/<some-org>/<some-claude-plugin>

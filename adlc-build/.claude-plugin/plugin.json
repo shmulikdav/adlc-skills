@@ -1,7 +1,7 @@
 {
   "name": "adlc-build",
-  "version": "2.0.0",
-  "description": "Agentic construction at the system level: choosing and composing execution frameworks (Superpowers, Spec Kit, GSD, BMAD, built-in plan mode) with one owner per slot, small-batch delivery policy, and legacy modernization strategy with behavior parity.",
+  "version": "2.1.0",
+  "description": "Agentic construction at the system level: choosing and composing execution frameworks with one owner per slot, long-running and multi-agent work design, small-batch delivery policy, and legacy modernization strategy with behavior parity.",
   "author": {
     "name": "Shmulik Davar — BrAIght Wave",
     "email": "shmulik@braightwave.com",

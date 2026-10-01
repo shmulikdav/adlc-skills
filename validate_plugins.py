@@ -169,6 +169,14 @@ def main():
                     if msg not in errors:
                         err(msg)
 
+    # hidden-text scan: zero-width and bidirectional control characters (a known skill-poisoning vector)
+    hidden = re.compile("[\u200b\u200c\u200d\u2060\ufeff\u202a-\u202e\u2066-\u2069]")
+    for f in ROOT.rglob("*"):
+        if f.is_file() and f.suffix in {".md", ".json", ".py", ".yml", ".yaml", ".sh", ".txt"} and ".git" not in f.parts:
+            for i, line in enumerate(f.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
+                if hidden.search(line):
+                    err(f"{f.relative_to(ROOT)}:{i}: hidden zero-width/bidi Unicode character")
+
     for w in warnings:
         print(f"WARN  {w}")
     for e in errors:

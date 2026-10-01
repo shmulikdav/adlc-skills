@@ -64,6 +64,18 @@ See docs/REVIEW.md for how these shaped v2.
 
 **AWS AI-DLC workflows.** Methodology over tool; human approval required to move between phases; documentation first; runs as steering rules in many IDEs and agents. → `spec-driven-development`, `release-gates`, `execution-rail-selection`.
 
+## 3b. The 2026 picture (added for v2.1)
+
+- **Anthropic 2026 Agentic Coding Trends Report:** eight trends (SDLC transformation; coordinated agent teams; long-running agents; oversight that scales; new surfaces and users; economics; non-technical use; dual-use security). Developers use AI in ~60% of work but fully delegate only 0–20% of tasks.
+- **Review is the bottleneck:** LinearB 2026 (8.1M PRs): agentic PRs wait ~5× longer for pickup; AI-assisted PRs ~2.6× larger at P75; ~33% of AI PRs accepted within 30 days vs ~84% manual.
+- **Continuous AI:** GitHub Agentic Workflows (technical preview since Feb 2026) run Copilot, Claude Code, Codex, or Gemini in Actions with sandboxing and proposal-only outputs.
+- **Harness engineering:** OpenAI's Codex team shipped ~1M lines with no hand-written code by investing in repository legibility, enforced invariants, and background cleanup agents.
+- **Comprehension debt:** Anthropic RCT (52 developers): 50% vs 67% comprehension with vs without AI while learning a new library; conceptual-inquiry use preserved learning.
+- **Skill supply chain:** ClawHavoc (1,184 malicious skills), Snyk ToxicSkills (3,984 skills scanned; prompt injection in 36%).
+- **Measurement:** DX Q2 2026: median AI spend up ~28× in a year, innovation ratio flat at ~57–58%.
+
+Full critique: docs/LAUNCH-AUDIT.md.
+
 ## 4. Security and governance
 
 **OWASP Top 10 for Agentic Applications (2026)**, announced December 2025 by the OWASP GenAI Security Project:
@@ -123,4 +135,12 @@ See docs/REVIEW.md for how these shaped v2.
 - Superpowers: https://github.com/obra/superpowers
 - Anthropic official plugins: https://github.com/anthropics/claude-plugins-official
 - Trail of Bits skills: https://github.com/trailofbits/skills
+- Anthropic 2026 Agentic Coding Trends Report: https://resources.anthropic.com/2026-agentic-coding-trends-report
+- Anthropic: How AI assistance impacts the formation of coding skills: https://www.anthropic.com/research/AI-assistance-coding-skills
+- Anthropic: Harness design for long-running application development: https://www.anthropic.com/engineering/harness-design-long-running-apps
+- OpenAI: Harness engineering: https://openai.com/index/harness-engineering/
+- LinearB 2026 data: https://linearb.io/library/ai-in-software-development
+- GitHub: Continuous AI in practice: https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/
+- Snyk ToxicSkills: https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/
+- DX Q2 2026 State of AI Impact: https://getdx.com/news/dx-releases-q2-2026-state-of-ai-impact-in-engineering-report/
 - Reference structure: https://github.com/phuryn/pm-skills

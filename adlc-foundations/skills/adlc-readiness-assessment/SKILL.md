@@ -46,6 +46,9 @@ Score each dimension 1–5 with a one-line evidence note. Never score without ev
 | 10 | Spec discipline | Features start from a written spec with acceptance criteria |
 | 11 | Governance & security | Agent permissions, secrets handling, audit trail defined |
 | 12 | Measurement | Baseline of delivery metrics exists before rollout |
+| 13 | Review capacity | Agent PRs have owners, risk tiers, and machine first-pass review; pickup time is tracked |
+| 14 | Environment legibility | Agents can run the app, read logs and metrics, and reach the docs that encode decisions |
+| 15 | Comprehension | Every critical module has a human who can explain and debug it without AI |
 
 ## Maturity levels
 
@@ -55,7 +58,7 @@ Score each dimension 1–5 with a one-line evidence note. Never score without ev
 - **Level 3 – Orchestrated:** spec-driven work, parallel agents, verification gates, shared context files
 - **Level 4 – Agentic:** agents run large parts of the lifecycle end to end; humans own intent, gates, and governance
 
-Assign the level from the weakest critical dimensions (4, 8, 9, 11), not the average. A team with great tools and no tests is Level 1.
+Assign the level from the weakest critical dimensions (4, 8, 9, 11, 13), not the average. A team with great tools and no tests is Level 1.
 
 ## Output
 
