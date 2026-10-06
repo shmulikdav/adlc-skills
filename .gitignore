@@ -5,3 +5,8 @@ __pycache__/
 .vscode/
 **/evals/results/
 smoke-results/
+.env
+.env.*
+.claude/settings.local.json
+*.log
+results-*.json

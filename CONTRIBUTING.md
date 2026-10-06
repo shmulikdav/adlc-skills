@@ -40,3 +40,7 @@ python3 -m unittest discover -s tests
 ## Releases
 
 Maintainers bump the version in `scripts/plugins_meta.json`, add a `## vX.Y.Z — YYYY-MM-DD` heading in `CHANGELOG.md`, run the sync script, and tag.
+
+## What never goes in this repo
+
+Do not commit client or company data (names, identifiable details, logs, tickets, screenshots), raw eval transcripts or results, local agent session files or logs, secrets or credentials, or private roadmap and business notes. Eval prompts must be synthetic. Use `example.com` and obviously fictional names for anything an eval presents as malicious.
